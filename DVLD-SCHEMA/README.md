@@ -164,10 +164,11 @@ This project demonstrates:
 
 ---
 ## SCHEMA
-![Database Schema](DVLD-SCHEMA/drawSQL-image-export-2026-02-09.png)
+![Database Schema](drawSQL-image-export-2026-02-09.png)
 
 ## Author
 Mahmoud Bakir  
+
 
 
 

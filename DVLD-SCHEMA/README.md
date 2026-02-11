@@ -163,8 +163,11 @@ This project demonstrates:
 - Integrate with ASP.NET Core application layer
 
 ---
+## SCHEMA
+![Database Schema](DVLD-SCHEMA/drawSQL-image-export-2026-02-09.png)
 
 ## Author
 Mahmoud Bakir  
+
 
 

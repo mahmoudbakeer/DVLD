@@ -6,13 +6,16 @@
       "AbsoluteMoniker": "D:0:0:{83581BAD-FB3B-4A13-A0DC-E968E8BA65E6}|..\\DVLD_DataAccess\\DVLD_DataAccess.csproj|c:\\users\\mahmo\\dir\\dvld\\dvld_dataaccess\\clspeopledataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1640776E-CC66-4399-ADD7-38467A0C575A}|..\\DVLD_BusinessLogic\\DVLD_BusinessLogic.csproj|c:\\users\\mahmo\\dir\\dvld\\dvld_businesslogic\\clscountry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83581BAD-FB3B-4A13-A0DC-E968E8BA65E6}|..\\DVLD_DataAccess\\DVLD_DataAccess.csproj|c:\\users\\mahmo\\dir\\dvld\\dvld_dataaccess\\clscountriesdataaccess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{83581BAD-FB3B-4A13-A0DC-E968E8BA65E6}|..\\DVLD_DataAccess\\DVLD_DataAccess.csproj|c:\\users\\mahmo\\dir\\dvld\\dvld_dataaccess\\clsdataaccesssettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1640776E-CC66-4399-ADD7-38467A0C575A}|..\\DVLD_BusinessLogic\\DVLD_BusinessLogic.csproj|c:\\users\\mahmo\\dir\\dvld\\dvld_businesslogic\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|c:\\users\\mahmo\\dir\\dvld\\dvld_ui\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
@@ -23,8 +26,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "clsCountriesDataAccess.cs",
+              "DocumentMoniker": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_DataAccess\\clsCountriesDataAccess.cs",
+              "RelativeDocumentMoniker": "..\\DVLD_DataAccess\\clsCountriesDataAccess.cs",
+              "ToolTip": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_DataAccess\\clsCountriesDataAccess.cs",
+              "RelativeToolTip": "..\\DVLD_DataAccess\\clsCountriesDataAccess.cs",
+              "ViewState": "AgIAADkBAAAAAAAAAAAMwJ0AAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-12T18:05:32.835Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -33,27 +49,27 @@
               "RelativeDocumentMoniker": "..\\DVLD_DataAccess\\clsPeopleDataAccess.cs",
               "ToolTip": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_DataAccess\\clsPeopleDataAccess.cs",
               "RelativeToolTip": "..\\DVLD_DataAccess\\clsPeopleDataAccess.cs",
-              "ViewState": "AgIAAJ4AAAAAAAAAAAAwwOsAAABhAAAAAAAAAA==",
+              "ViewState": "AgIAAB8BAAAAAAAAAADwvzEBAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-11T15:52:43.729Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_BusinessLogic\\Class1.cs",
-              "RelativeDocumentMoniker": "..\\DVLD_BusinessLogic\\Class1.cs",
-              "ToolTip": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_BusinessLogic\\Class1.cs",
-              "RelativeToolTip": "..\\DVLD_BusinessLogic\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAXAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "clsCountry.cs",
+              "DocumentMoniker": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_BusinessLogic\\clsCountry.cs",
+              "RelativeDocumentMoniker": "..\\DVLD_BusinessLogic\\clsCountry.cs",
+              "ToolTip": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_BusinessLogic\\clsCountry.cs",
+              "RelativeToolTip": "..\\DVLD_BusinessLogic\\clsCountry.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAYwDsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-11T13:51:53.233Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "clsDataAccessSettings.cs",
               "DocumentMoniker": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_DataAccess\\clsDataAccessSettings.cs",
               "RelativeDocumentMoniker": "..\\DVLD_DataAccess\\clsDataAccessSettings.cs",
@@ -66,15 +82,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-11T13:49:29.126Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-02-11T13:49:29.126Z"
             }
           ]
         }

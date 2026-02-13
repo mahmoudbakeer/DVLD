@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DVLD_DataAccess
 {
-    internal class clsPeopleDataAccess
+    public static class clsPeopleDataAccess
     {
         public static bool GetPersonByID(
     int PersonID,
@@ -83,7 +83,7 @@ namespace DVLD_DataAccess
             string Phone, 
             string Address,
             DateTime DateOfBirth, 
-            int NationalitCountryID,
+            int NationalityCountryID,
             string NationalNo, 
             string ImagePath)
         {
@@ -106,7 +106,7 @@ namespace DVLD_DataAccess
                     command.Parameters.AddWithValue("@Phone", Phone);
                     command.Parameters.AddWithValue("@Address", Address);
                     command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
-                    command.Parameters.AddWithValue("@NationalitCountryID", NationalitCountryID);
+                    command.Parameters.AddWithValue("@NationalitCountryID", NationalityCountryID);
                     command.Parameters.AddWithValue("@NationalNo", NationalNo);
 
                     if (ImagePath != "" && ImagePath != null)

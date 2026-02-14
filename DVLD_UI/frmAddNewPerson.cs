@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace DVLD_UI
 {
-    public partial class Form1 : Form
+    public partial class frmAddNewPerson : Form
     {
-        public Form1()
+        public frmAddNewPerson()
         {
             InitializeComponent();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

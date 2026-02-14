@@ -8,6 +8,6 @@ namespace DVLD_DataAccess
 {
     public class clsDataAccessSettings
     {
-        public static string ConnectionString = "Server=.;Database=DVLD_MAHMOUD;Trusted_Connection=True;";
+        public static string ConnectionString = "Server=.;Database=DVLD_Mahmoud;Trusted_Connection=True;";
     }
 }

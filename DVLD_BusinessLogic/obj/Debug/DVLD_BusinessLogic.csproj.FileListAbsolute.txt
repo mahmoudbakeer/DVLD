@@ -1,0 +1,9 @@
+C:\Users\mahmo\dir\DVLD\DVLD_BusinessLogic\bin\Debug\DVLD_BusinessLogic.dll
+C:\Users\mahmo\dir\DVLD\DVLD_BusinessLogic\bin\Debug\DVLD_BusinessLogic.pdb
+C:\Users\mahmo\dir\DVLD\DVLD_BusinessLogic\bin\Debug\DVLD_DataAccess.dll
+C:\Users\mahmo\dir\DVLD\DVLD_BusinessLogic\bin\Debug\DVLD_DataAccess.pdb
+C:\Users\mahmo\dir\DVLD\DVLD_BusinessLogic\obj\Debug\DVLD_BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\mahmo\dir\DVLD\DVLD_BusinessLogic\obj\Debug\DVLD_BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\mahmo\dir\DVLD\DVLD_BusinessLogic\obj\Debug\DVLD_Bus.216D2D89.Up2Date
+C:\Users\mahmo\dir\DVLD\DVLD_BusinessLogic\obj\Debug\DVLD_BusinessLogic.dll
+C:\Users\mahmo\dir\DVLD\DVLD_BusinessLogic\obj\Debug\DVLD_BusinessLogic.pdb

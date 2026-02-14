@@ -106,7 +106,7 @@ namespace DVLD_DataAccess
                     command.Parameters.AddWithValue("@Phone", Phone);
                     command.Parameters.AddWithValue("@Address", Address);
                     command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
-                    command.Parameters.AddWithValue("@NationalitCountryID", NationalityCountryID);
+                    command.Parameters.AddWithValue("@NationalityCountryID", NationalityCountryID);
                     command.Parameters.AddWithValue("@NationalNo", NationalNo);
 
                     if (ImagePath != "" && ImagePath != null)
@@ -301,7 +301,40 @@ namespace DVLD_DataAccess
 
             return isFound;
         }
+        public static bool IsPersonExist(string NationalNo)
+        {
+            bool isFound = false;
 
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                string query = "SELECT Found=1 FROM People WHERE NationalNo = @NationalNo";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@NationalNo", NationalNo);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            isFound = reader.HasRows;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //Console.WriteLine("Error: " + ex.Message);
+                        isFound = false;
+                    }
+                }
+            }
+
+            return isFound;
+        }
 
     }
 }

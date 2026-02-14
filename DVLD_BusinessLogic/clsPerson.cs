@@ -185,11 +185,14 @@ namespace DVLD_BusinessLogic
             return clsPeopleDataAccess.DeletePerson(ID);
         }
 
-        public static bool isContactExist(int ID)
+        public static bool isPersonExist(int ID)
         {
             return clsPeopleDataAccess.IsPersonExist(ID);
         }
-
+        public static bool isPersonExist(string NationalNo)
+        {
+            return clsPeopleDataAccess.IsPersonExist(NationalNo);
+        }
 
     }
 }

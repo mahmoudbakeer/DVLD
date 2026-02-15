@@ -28,13 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ManagePeopleTitle = new System.Windows.Forms.Label();
             this.dgvAllPeople = new System.Windows.Forms.DataGridView();
+            this.cmsManagePerson = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnAddNewPerson = new System.Windows.Forms.Button();
             this.cbSortBy = new System.Windows.Forms.ComboBox();
             this.SortTitle = new System.Windows.Forms.Label();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmShowDetails = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDeletePerson = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmEditPerson = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmAddNewPerson = new System.Windows.Forms.ToolStripMenuItem();
             this.pbManagePeopleForm = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllPeople)).BeginInit();
+            this.cmsManagePerson.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbManagePeopleForm)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,11 +66,25 @@
             this.dgvAllPeople.AllowUserToOrderColumns = true;
             this.dgvAllPeople.BackgroundColor = System.Drawing.Color.LightSalmon;
             this.dgvAllPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAllPeople.ContextMenuStrip = this.cmsManagePerson;
             this.dgvAllPeople.Location = new System.Drawing.Point(5, 298);
             this.dgvAllPeople.Name = "dgvAllPeople";
             this.dgvAllPeople.ReadOnly = true;
             this.dgvAllPeople.Size = new System.Drawing.Size(922, 295);
             this.dgvAllPeople.TabIndex = 2;
+            // 
+            // cmsManagePerson
+            // 
+            this.cmsManagePerson.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2,
+            this.tsmShowDetails,
+            this.toolStripMenuItem1,
+            this.tsmDeletePerson,
+            this.tsmEditPerson,
+            this.tsmAddNewPerson,
+            this.toolStripMenuItem3});
+            this.cmsManagePerson.Name = "contextMenuStrip1";
+            this.cmsManagePerson.Size = new System.Drawing.Size(181, 132);
             // 
             // btnAddNewPerson
             // 
@@ -102,6 +126,53 @@
             this.SortTitle.TabIndex = 5;
             this.SortTitle.Text = "Sort By";
             // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(177, 6);
+            // 
+            // tsmShowDetails
+            // 
+            this.tsmShowDetails.Image = global::DVLD_UI.Properties.Resources.show_details;
+            this.tsmShowDetails.Name = "tsmShowDetails";
+            this.tsmShowDetails.Size = new System.Drawing.Size(180, 22);
+            this.tsmShowDetails.Text = "Show Details";
+            this.tsmShowDetails.Click += new System.EventHandler(this.tsmShowDetails_Click);
+            // 
+            // tsmDeletePerson
+            // 
+            this.tsmDeletePerson.Image = global::DVLD_UI.Properties.Resources.delete;
+            this.tsmDeletePerson.Name = "tsmDeletePerson";
+            this.tsmDeletePerson.Size = new System.Drawing.Size(180, 22);
+            this.tsmDeletePerson.Text = "Delete Person";
+            this.tsmDeletePerson.Click += new System.EventHandler(this.tsmDeletePerson_Click);
+            // 
+            // tsmEditPerson
+            // 
+            this.tsmEditPerson.Image = global::DVLD_UI.Properties.Resources.update;
+            this.tsmEditPerson.Name = "tsmEditPerson";
+            this.tsmEditPerson.Size = new System.Drawing.Size(180, 22);
+            this.tsmEditPerson.Text = "Edit Info";
+            this.tsmEditPerson.Click += new System.EventHandler(this.tsmEditPerson_Click);
+            // 
+            // tsmAddNewPerson
+            // 
+            this.tsmAddNewPerson.Image = global::DVLD_UI.Properties.Resources.Addnew;
+            this.tsmAddNewPerson.Name = "tsmAddNewPerson";
+            this.tsmAddNewPerson.Size = new System.Drawing.Size(180, 22);
+            this.tsmAddNewPerson.Text = "Add New Person";
+            this.tsmAddNewPerson.Click += new System.EventHandler(this.tsmAddNewPerson_Click);
+            // 
             // pbManagePeopleForm
             // 
             this.pbManagePeopleForm.Image = global::DVLD_UI.Properties.Resources.group;
@@ -128,6 +199,7 @@
             this.Text = "ManagePeople";
             this.Load += new System.EventHandler(this.frmManagePeople_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllPeople)).EndInit();
+            this.cmsManagePerson.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbManagePeopleForm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -142,5 +214,13 @@
         private System.Windows.Forms.Button btnAddNewPerson;
         private System.Windows.Forms.ComboBox cbSortBy;
         private System.Windows.Forms.Label SortTitle;
+        private System.Windows.Forms.ContextMenuStrip cmsManagePerson;
+        private System.Windows.Forms.ToolStripMenuItem tsmShowDetails;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsmDeletePerson;
+        private System.Windows.Forms.ToolStripMenuItem tsmEditPerson;
+        private System.Windows.Forms.ToolStripMenuItem tsmAddNewPerson;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
     }
 }

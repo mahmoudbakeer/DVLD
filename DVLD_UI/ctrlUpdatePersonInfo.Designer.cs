@@ -5,7 +5,7 @@ using System.Drawing.Drawing2D;
 
 namespace DVLD_UI
 {
-    partial class ctrlAddNewPerson
+    partial class ctrlUpdatePersonInfo
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -74,7 +74,6 @@ namespace DVLD_UI
             this.pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epValidation)).BeginInit();
             this.SuspendLayout();
-
             // 
             // pnlMain
             // 
@@ -463,7 +462,7 @@ namespace DVLD_UI
             this.btnAddPicture.Name = "btnAddPicture";
             this.btnAddPicture.Size = new System.Drawing.Size(130, 35);
             this.btnAddPicture.TabIndex = 1;
-            this.btnAddPicture.Text = "📷 Add Photo";
+            this.btnAddPicture.Text = "📷 Change Photo";
             this.btnAddPicture.UseVisualStyleBackColor = false;
             this.btnAddPicture.Click += new System.EventHandler(this.btnAddPicture_Click);
             this.btnAddPicture.Paint += new System.Windows.Forms.PaintEventHandler(this.btnAddPicture_Paint);
@@ -509,9 +508,9 @@ namespace DVLD_UI
             this.lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
             this.lblSubtitle.Location = new System.Drawing.Point(28, 57);
             this.lblSubtitle.Name = "lblSubtitle";
-            this.lblSubtitle.Size = new System.Drawing.Size(259, 19);
+            this.lblSubtitle.Size = new System.Drawing.Size(153, 19);
             this.lblSubtitle.TabIndex = 2;
-            this.lblSubtitle.Text = "Enter person details to create new profile";
+            this.lblSubtitle.Text = "Update personal details";
             // 
             // lblAddNewPerson
             // 
@@ -521,9 +520,9 @@ namespace DVLD_UI
             this.lblAddNewPerson.ForeColor = System.Drawing.Color.White;
             this.lblAddNewPerson.Location = new System.Drawing.Point(25, 20);
             this.lblAddNewPerson.Name = "lblAddNewPerson";
-            this.lblAddNewPerson.Size = new System.Drawing.Size(236, 37);
+            this.lblAddNewPerson.Size = new System.Drawing.Size(272, 37);
             this.lblAddNewPerson.TabIndex = 1;
-            this.lblAddNewPerson.Text = " Add New Person";
+            this.lblAddNewPerson.Text = "Update Person";
             // 
             // pnlHeaderAccent
             // 
@@ -545,14 +544,14 @@ namespace DVLD_UI
             // 
             this.epValidation.ContainerControl = this;
             // 
-            // ctrlAddNewPerson
+            // ctrlUpdatePersonInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
             this.Controls.Add(this.pnlMain);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Name = "ctrlAddNewPerson";
+            this.Name = "ctrlUpdatePersonInfo";
             this.Size = new System.Drawing.Size(900, 600);
             this.pnlMain.ResumeLayout(false);
             this.pnlFooter.ResumeLayout(false);

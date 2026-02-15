@@ -33,5 +33,49 @@ namespace DVLD_UI
             form.ShowDialog();
             _RefreshAllPeople();
         }
+
+        private void tsmShowDetails_Click(object sender, EventArgs e)
+        {
+            Form form = new frmShowPersonInfo((int)dgvAllPeople.CurrentRow.Cells[0].Value);
+            form.ShowDialog();
+            _RefreshAllPeople();
+        }
+
+        private void tsmDeletePerson_Click(object sender, EventArgs e)
+        {
+            if (dgvAllPeople.CurrentRow == null)
+                return;
+
+            int id = (int)dgvAllPeople.CurrentRow.Cells[0].Value;
+
+            try
+            {
+                clsPerson.DeletePerson(id);
+                _RefreshAllPeople();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(
+                    "You can't delete this person because it is linked to other records.",
+                    "Delete Failed",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void tsmEditPerson_Click(object sender, EventArgs e)
+        {
+            Form form = new frmUpdatePersonInfo((int)dgvAllPeople.CurrentRow.Cells[0].Value);
+            form.ShowDialog();
+            _RefreshAllPeople();
+        }
+
+        private void tsmAddNewPerson_Click(object sender, EventArgs e)
+        {
+            Form form = new frmAddNewPerson();
+            form.ShowDialog();
+            _RefreshAllPeople();
+        }
     }
 }

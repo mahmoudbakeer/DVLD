@@ -1,31 +1,60 @@
 ﻿using DVLD_BusinessLogic;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DVLD_UI
 {
-    public partial class ctrlAddNewPerson : UserControl
+    public partial class ctrlUpdatePersonInfo : UserControl
     {
         clsPerson _Person;
-        string _SelectedImagePath = "";
-
-        public ctrlAddNewPerson()
+        string _SelectedImagePath;
+     
+        public ctrlUpdatePersonInfo()
         {
-            InitializeComponent();
             InitializeColors();
             SetInitialButtonColors();
-            // Allow only past dates for birth
-            dtpDateOfBirth.MaxDate = DateTime.Now.AddYears(-18);
-            dtpDateOfBirth.MinDate = DateTime.Now.AddYears(-120);
-
-            _Person = new clsPerson();
-
-            _FillCountriesInComoboBox();
+            InitializeComponent();
+            
+            
         }
 
+        private void _LoadInfo()
+        {
+            _FillCountriesInComoboBox();
+            txtFirstName.Text = _Person.FirstName;
+            txtLastName.Text = _Person.LastName;
+            txtSecondName.Text = _Person.SecondName;
+            txtThirdName.Text = _Person.ThirdName;
+            txtEmail.Text = _Person.Email;
+            txtNationalNo.Text = _Person.NationalNo;
+            txtAddress.Text = _Person.Address;
+            dtpDateOfBirth.Value = _Person.DateOfBirth;
+            txtPhone.Text = _Person.Phone;
+
+            // Select the correct country in combobox
+            string countryName = clsCountry.Find(_Person.NationalityCountryID).CountryName;
+            cbCountries.SelectedItem = countryName;
+
+            if (!string.IsNullOrEmpty(_Person.ImagePath))
+            {
+                ProfilePicture.Load(_Person.ImagePath);
+                _SelectedImagePath = _Person.ImagePath;
+                btnDeletePicture.Visible = true;
+            }
+            else
+            {
+                btnDeletePicture.Visible = false;
+            }
+
+        }
         private void _FillCountriesInComoboBox()
         {
             DataTable dtCountries = clsCountry.GetAllCountries();
@@ -83,7 +112,7 @@ namespace DVLD_UI
                 epValidation.SetError(txtPhone, "Required");
                 isValid = false;
             }
-          
+
             if (string.IsNullOrWhiteSpace(txtThirdName.Text))
             {
                 epValidation.SetError(txtThirdName, "Required");
@@ -102,11 +131,6 @@ namespace DVLD_UI
             if (string.IsNullOrWhiteSpace(txtNationalNo.Text))
             {
                 epValidation.SetError(txtNationalNo, "Required");
-                isValid = false;
-            }
-            else if (clsPerson.isPersonExist(txtNationalNo.Text))
-            {
-                epValidation.SetError(txtNationalNo, "Already exists");
                 isValid = false;
             }
 
@@ -183,6 +207,19 @@ namespace DVLD_UI
 
             if (btnDeletePicture != null)
                 btnDeletePicture.BackColor = this.accentRed;
+        }
+
+        public void _SetInformation(int PersonID)
+        {
+            _Person = clsPerson.Find(PersonID);
+            if (_Person != null)
+            {
+                _LoadInfo();
+            }
+            else
+            {
+                _Person = new clsPerson();
+            }
         }
     }
 }

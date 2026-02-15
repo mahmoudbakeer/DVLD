@@ -58,6 +58,12 @@
     <Compile Include="ctrlPersonCard.Designer.cs">
       <DependentUpon>ctrlPersonCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="ctrlUpdatePersonInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlUpdatePersonInfo.Designer.cs">
+      <DependentUpon>ctrlUpdatePersonInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddNewPerson.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +82,18 @@
     <Compile Include="frmManagePeople.Designer.cs">
       <DependentUpon>frmManagePeople.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmShowPersonInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShowPersonInfo.Designer.cs">
+      <DependentUpon>frmShowPersonInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdatePersonInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdatePersonInfo.Designer.cs">
+      <DependentUpon>frmUpdatePersonInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ctrlAddNewPerson.resx">
@@ -83,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ctrlPersonCard.resx">
       <DependentUpon>ctrlPersonCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlUpdatePersonInfo.resx">
+      <DependentUpon>ctrlUpdatePersonInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddNewPerson.resx">
       <DependentUpon>frmAddNewPerson.cs</DependentUpon>
@@ -92,6 +113,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmManagePeople.resx">
       <DependentUpon>frmManagePeople.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShowPersonInfo.resx">
+      <DependentUpon>frmShowPersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdatePersonInfo.resx">
+      <DependentUpon>frmUpdatePersonInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -172,6 +199,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\application.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show details.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Addnew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id-card %281%291.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

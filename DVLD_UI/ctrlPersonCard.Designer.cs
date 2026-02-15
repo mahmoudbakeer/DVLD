@@ -1,8 +1,4 @@
-﻿using System.Windows.Forms;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-
-namespace DVLD_UI
+﻿namespace DVLD_UI
 {
     partial class ctrlPersonCard
     {
@@ -22,668 +18,660 @@ namespace DVLD_UI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-
-            // Enhanced Modern Color Palette
-            Color primaryColor = Color.FromArgb(99, 102, 241);        // Indigo
-            Color primaryLight = Color.FromArgb(129, 140, 248);       // Light Indigo
-            Color secondaryColor = Color.FromArgb(16, 185, 129);      // Emerald
-            Color accentOrange = Color.FromArgb(251, 146, 60);        // Orange
-            Color accentPink = Color.FromArgb(236, 72, 153);          // Pink
-            Color darkText = Color.FromArgb(30, 41, 59);              // Slate 800
-            Color mediumText = Color.FromArgb(71, 85, 105);           // Slate 600
-            Color lightText = Color.FromArgb(148, 163, 184);          // Slate 400
-            Color cardBackground = Color.White;
-            Color sectionBackground = Color.FromArgb(248, 250, 252);  // Slate 50
-            Color borderColor = Color.FromArgb(226, 232, 240);        // Slate 200
-            Color hoverColor = Color.FromArgb(241, 245, 249);         // Slate 100
-
-            // Create panels
-            this.pnlMain = new Panel();
-            this.pnlHeader = new Panel();
-            this.pnlPhotoSection = new Panel();
-            this.pnlPhoto = new Panel();
-            this.pnlContent = new Panel();
-            this.pnlPersonalInfo = new Panel();
-            this.pnlContactInfo = new Panel();
-            this.pnlFooter = new Panel();
-            this.pnlDivider = new Panel();
-
-            // Header elements
-            this.lblCardTitle = new Label();
-            this.lblCardSubtitle = new Label();
-            this.pnlHeaderAccent = new Panel();
-
-            // Photo section
-            this.pbSelfiPicture = new PictureBox();
-            this.lblPhotoPlaceholder = new Label();
-            this.pnlPhotoFrame = new Panel();
-
-            // Personal Information section
-            this.lblPersonalInfoHeader = new Label();
-            this.lblNameTitle = new Label();
-            this.lblPersonIDTitle = new Label();
-            this.lblNationalNoTitle = new Label();
-            this.lblDateOfBirthTitle = new Label();
-            this.lblAddressTitle = new Label();
-            this.lblGenderTitle = new Label();
-
-            this.lblFullName = new Label();
-            this.lblPersonID = new Label();
-            this.lblNationalNo = new Label();
-            this.lblDateOfBirth = new Label();
-            this.lblAddress = new Label();
-            this.lblGender = new Label();
-
-            // Contact Information section
-            this.lblContactInfoHeader = new Label();
-            this.lblCountryTitle = new Label();
-            this.lblPhoneTitle = new Label();
-            this.lblEmailTitle = new Label();
-
-            this.lblCountry = new Label();
-            this.lblPhone = new Label();
-            this.lblEmail = new Label();
-
-            // Icons
-            this.pbNameIcon = new PictureBox();
-            this.pbPersonIDIcon = new PictureBox();
-            this.pbNationalNoIcon = new PictureBox();
-            this.pbDateOfBirthIcon = new PictureBox();
-            this.pbAddressIcon = new PictureBox();
-            this.pbGenderIcon = new PictureBox();
-            this.pbCountryIcon = new PictureBox();
-            this.pbPhoneIcon = new PictureBox();
-            this.pbEmailIcon = new PictureBox();
-
-            // Footer elements
-            this.lblLastUpdated = new Label();
-            this.lblStatus = new Label();
-            this.pnlStatusIndicator = new Panel();
-
-            // ToolTip
-            this.toolTip = new ToolTip(this.components);
-
-            // Begin initialization
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.pnlFooter = new System.Windows.Forms.Panel();
+            this.pnlStatusIndicator = new System.Windows.Forms.Panel();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblLastUpdated = new System.Windows.Forms.Label();
+            this.pnlDivider = new System.Windows.Forms.Panel();
+            this.pnlContent = new System.Windows.Forms.Panel();
+            this.pnlContactInfo = new System.Windows.Forms.Panel();
+            this.pbEmailIcon = new System.Windows.Forms.PictureBox();
+            this.pbAddressIconPersonal = new System.Windows.Forms.PictureBox();
+            this.pbPhoneIcon = new System.Windows.Forms.PictureBox();
+            this.pbCountryIcon = new System.Windows.Forms.PictureBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.lblCountry = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblEmailTitle = new System.Windows.Forms.Label();
+            this.lblPhoneTitle = new System.Windows.Forms.Label();
+            this.lblCountryTitle = new System.Windows.Forms.Label();
+            this.lblContactInfoHeader = new System.Windows.Forms.Label();
+            this.lblAddressTitle = new System.Windows.Forms.Label();
+            this.pnlPersonalInfo = new System.Windows.Forms.Panel();
+            this.pbDateOfBirthIcon = new System.Windows.Forms.PictureBox();
+            this.pbNationalNoIcon = new System.Windows.Forms.PictureBox();
+            this.pbPersonIDIcon = new System.Windows.Forms.PictureBox();
+            this.pbNameIcon = new System.Windows.Forms.PictureBox();
+            this.lblDateOfBirth = new System.Windows.Forms.Label();
+            this.lblNationalNo = new System.Windows.Forms.Label();
+            this.lblPersonID = new System.Windows.Forms.Label();
+            this.lblFullName = new System.Windows.Forms.Label();
+            this.lblDateOfBirthTitle = new System.Windows.Forms.Label();
+            this.lblNationalNoTitle = new System.Windows.Forms.Label();
+            this.lblPersonIDTitle = new System.Windows.Forms.Label();
+            this.lblNameTitle = new System.Windows.Forms.Label();
+            this.lblPersonalInfoHeader = new System.Windows.Forms.Label();
+            this.pnlPhotoSection = new System.Windows.Forms.Panel();
+            this.pnlPhoto = new System.Windows.Forms.Panel();
+            this.pbSelfiPicture = new System.Windows.Forms.PictureBox();
+            this.lblPhotoPlaceholder = new System.Windows.Forms.Label();
+            this.pnlHeader = new System.Windows.Forms.Panel();
+            this.lblCardSubtitle = new System.Windows.Forms.Label();
+            this.lblCardTitle = new System.Windows.Forms.Label();
+            this.pnlHeaderAccent = new System.Windows.Forms.Panel();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.pnlPhotoFrame = new System.Windows.Forms.Panel();
             this.pnlMain.SuspendLayout();
-            this.pnlHeader.SuspendLayout();
+            this.pnlFooter.SuspendLayout();
+            this.pnlContent.SuspendLayout();
+            this.pnlContactInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEmailIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddressIconPersonal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPhoneIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCountryIcon)).BeginInit();
+            this.pnlPersonalInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDateOfBirthIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNationalNoIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonIDIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNameIcon)).BeginInit();
             this.pnlPhotoSection.SuspendLayout();
             this.pnlPhoto.SuspendLayout();
-            this.pnlContent.SuspendLayout();
-            this.pnlPersonalInfo.SuspendLayout();
-            this.pnlContactInfo.SuspendLayout();
-            this.pnlFooter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSelfiPicture)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNameIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPersonIDIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNationalNoIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDateOfBirthIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAddressIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGenderIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCountryIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPhoneIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEmailIcon)).BeginInit();
+            this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
-
             // 
-            // pnlMain - Main Container
+            // pnlMain
             // 
-            this.pnlMain.BackColor = cardBackground;
-            this.pnlMain.BorderStyle = BorderStyle.None;
+            this.pnlMain.BackColor = System.Drawing.Color.White;
             this.pnlMain.Controls.Add(this.pnlFooter);
             this.pnlMain.Controls.Add(this.pnlDivider);
             this.pnlMain.Controls.Add(this.pnlContent);
             this.pnlMain.Controls.Add(this.pnlPhotoSection);
             this.pnlMain.Controls.Add(this.pnlHeader);
-            this.pnlMain.Dock = DockStyle.Fill;
-            this.pnlMain.Location = new Point(0, 0);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(0, 0);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Padding = new Padding(0);
-            this.pnlMain.Size = new Size(800, 450);
+            this.pnlMain.Size = new System.Drawing.Size(800, 450);
             this.pnlMain.TabIndex = 0;
-
-            // Add shadow and rounded corners effect
-            this.pnlMain.Paint += (s, e) =>
-            {
-                Graphics g = e.Graphics;
-                g.SmoothingMode = SmoothingMode.AntiAlias;
-
-                // Draw subtle border
-                using (Pen pen = new Pen(borderColor, 1))
-                {
-                    Rectangle rect = new Rectangle(0, 0, this.pnlMain.Width - 1, this.pnlMain.Height - 1);
-                    g.DrawRectangle(pen, rect);
-                }
-            };
-
-            // 
-            // pnlHeader - Gradient Header
-            // 
-            this.pnlHeader.BackColor = primaryColor;
-            this.pnlHeader.Controls.Add(this.lblCardSubtitle);
-            this.pnlHeader.Controls.Add(this.lblCardTitle);
-            this.pnlHeader.Controls.Add(this.pnlHeaderAccent);
-            this.pnlHeader.Dock = DockStyle.Top;
-            this.pnlHeader.Location = new Point(0, 0);
-            this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new Size(800, 80);
-            this.pnlHeader.TabIndex = 0;
-
-            // Gradient paint
-            this.pnlHeader.Paint += (s, e) =>
-            {
-                Rectangle rect = new Rectangle(0, 0, this.pnlHeader.Width, this.pnlHeader.Height);
-                using (LinearGradientBrush brush = new LinearGradientBrush(
-                    rect, primaryColor, primaryLight, LinearGradientMode.Horizontal))
-                {
-                    e.Graphics.FillRectangle(brush, rect);
-                }
-            };
-
-            // 
-            // pnlHeaderAccent
-            // 
-            this.pnlHeaderAccent.BackColor = Color.FromArgb(100, 255, 255, 255);
-            this.pnlHeaderAccent.Location = new Point(0, 0);
-            this.pnlHeaderAccent.Name = "pnlHeaderAccent";
-            this.pnlHeaderAccent.Size = new Size(5, 80);
-            this.pnlHeaderAccent.TabIndex = 0;
-
-            // 
-            // lblCardTitle
-            // 
-            this.lblCardTitle.AutoSize = true;
-            this.lblCardTitle.BackColor = Color.Transparent;
-            this.lblCardTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            this.lblCardTitle.ForeColor = Color.White;
-            this.lblCardTitle.Location = new Point(25, 20);
-            this.lblCardTitle.Name = "lblCardTitle";
-            this.lblCardTitle.Size = new Size(200, 32);
-            this.lblCardTitle.TabIndex = 1;
-            this.lblCardTitle.Text = "Person Profile";
-
-            // 
-            // lblCardSubtitle
-            // 
-            this.lblCardSubtitle.AutoSize = true;
-            this.lblCardSubtitle.BackColor = Color.Transparent;
-            this.lblCardSubtitle.Font = new Font("Segoe UI", 9F);
-            this.lblCardSubtitle.ForeColor = Color.FromArgb(220, 230, 255);
-            this.lblCardSubtitle.Location = new Point(28, 52);
-            this.lblCardSubtitle.Name = "lblCardSubtitle";
-            this.lblCardSubtitle.Size = new Size(180, 15);
-            this.lblCardSubtitle.TabIndex = 2;
-            this.lblCardSubtitle.Text = "Complete personal information";
-
-            // 
-            // pnlPhotoSection - Photo Container
-            // 
-            this.pnlPhotoSection.BackColor = sectionBackground;
-            this.pnlPhotoSection.Controls.Add(this.pnlPhoto);
-            this.pnlPhotoSection.Dock = DockStyle.Left;
-            this.pnlPhotoSection.Location = new Point(0, 80);
-            this.pnlPhotoSection.Name = "pnlPhotoSection";
-            this.pnlPhotoSection.Padding = new Padding(25, 25, 15, 25);
-            this.pnlPhotoSection.Size = new Size(220, 315);
-            this.pnlPhotoSection.TabIndex = 1;
-
-            // 
-            // pnlPhoto - Photo Frame
-            // 
-            this.pnlPhoto.BackColor = Color.White;
-            this.pnlPhoto.Controls.Add(this.pnlPhotoFrame);
-            this.pnlPhoto.Controls.Add(this.pbSelfiPicture);
-            this.pnlPhoto.Controls.Add(this.lblPhotoPlaceholder);
-            this.pnlPhoto.Dock = DockStyle.Top;
-            this.pnlPhoto.Location = new Point(25, 25);
-            this.pnlPhoto.Name = "pnlPhoto";
-            this.pnlPhoto.Size = new Size(180, 220);
-            this.pnlPhoto.TabIndex = 0;
-
-            // Rounded corners and shadow
-            this.pnlPhoto.Paint += (s, e) =>
-            {
-                Graphics g = e.Graphics;
-                g.SmoothingMode = SmoothingMode.AntiAlias;
-
-                Rectangle rect = new Rectangle(0, 0, this.pnlPhoto.Width - 1, this.pnlPhoto.Height - 1);
-
-                // Draw border
-                using (Pen pen = new Pen(borderColor, 2))
-                {
-                    g.DrawRectangle(pen, rect);
-                }
-            };
-
-            // 
-            // pnlPhotoFrame - Decorative frame
-            // 
-            this.pnlPhotoFrame.BackColor = Color.Transparent;
-            this.pnlPhotoFrame.Location = new Point(15, 15);
-            this.pnlPhotoFrame.Name = "pnlPhotoFrame";
-            this.pnlPhotoFrame.Size = new Size(150, 150);
-            this.pnlPhotoFrame.TabIndex = 0;
-
-            this.pnlPhotoFrame.Paint += (s, e) =>
-            {
-                Graphics g = e.Graphics;
-                g.SmoothingMode = SmoothingMode.AntiAlias;
-
-                // Draw gradient circle border
-                Rectangle rect = new Rectangle(2, 2, this.pnlPhotoFrame.Width - 5, this.pnlPhotoFrame.Height - 5);
-                using (LinearGradientBrush brush = new LinearGradientBrush(
-                    rect, primaryColor, accentPink, LinearGradientMode.ForwardDiagonal))
-                {
-                    using (Pen pen = new Pen(brush, 3))
-                    {
-                        g.DrawEllipse(pen, rect);
-                    }
-                }
-            };
-
-            // 
-            // pbSelfiPicture
-            // 
-            this.pbSelfiPicture.BackColor = Color.FromArgb(245, 247, 250);
-            this.pbSelfiPicture.Location = new Point(20, 20);
-            this.pbSelfiPicture.Name = "pbSelfiPicture";
-            this.pbSelfiPicture.Size = new Size(140, 140);
-            this.pbSelfiPicture.SizeMode = PictureBoxSizeMode.Zoom;
-            this.pbSelfiPicture.TabIndex = 1;
-            this.pbSelfiPicture.TabStop = false;
-            this.toolTip.SetToolTip(this.pbSelfiPicture, "Person Photo");
-
-            // Circular image mask
-            this.pbSelfiPicture.Paint += (s, e) =>
-            {
-                using (GraphicsPath path = new GraphicsPath())
-                {
-                    path.AddEllipse(0, 0, this.pbSelfiPicture.Width - 1, this.pbSelfiPicture.Height - 1);
-                    this.pbSelfiPicture.Region = new Region(path);
-                }
-            };
-
-            // 
-            // lblPhotoPlaceholder
-            // 
-            this.lblPhotoPlaceholder.AutoSize = true;
-            this.lblPhotoPlaceholder.Font = new Font("Segoe UI", 9F);
-            this.lblPhotoPlaceholder.ForeColor = mediumText;
-            this.lblPhotoPlaceholder.Location = new Point(40, 175);
-            this.lblPhotoPlaceholder.Name = "lblPhotoPlaceholder";
-            this.lblPhotoPlaceholder.Size = new Size(100, 15);
-            this.lblPhotoPlaceholder.TabIndex = 2;
-            this.lblPhotoPlaceholder.Text = "Profile Photo";
-            this.lblPhotoPlaceholder.TextAlign = ContentAlignment.MiddleCenter;
-
-            // 
-            // pnlDivider - Vertical divider
-            // 
-            this.pnlDivider.BackColor = borderColor;
-            this.pnlDivider.Dock = DockStyle.Left;
-            this.pnlDivider.Location = new Point(220, 80);
-            this.pnlDivider.Name = "pnlDivider";
-            this.pnlDivider.Size = new Size(1, 315);
-            this.pnlDivider.TabIndex = 2;
-
-            // 
-            // pnlContent - Main content area
-            // 
-            this.pnlContent.BackColor = cardBackground;
-            this.pnlContent.Controls.Add(this.pnlContactInfo);
-            this.pnlContent.Controls.Add(this.pnlPersonalInfo);
-            this.pnlContent.Dock = DockStyle.Fill;
-            this.pnlContent.Location = new Point(221, 80);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Padding = new Padding(25, 20, 25, 20);
-            this.pnlContent.Size = new Size(579, 315);
-            this.pnlContent.TabIndex = 3;
-
-            // 
-            // pnlPersonalInfo
-            // 
-            this.pnlPersonalInfo.BackColor = cardBackground;
-            this.pnlPersonalInfo.Controls.Add(this.lblPersonalInfoHeader);
-            this.pnlPersonalInfo.Controls.Add(this.CreateInfoRow(this.pbNameIcon, this.lblNameTitle, this.lblFullName, 50));
-            this.pnlPersonalInfo.Controls.Add(this.CreateInfoRow(this.pbPersonIDIcon, this.lblPersonIDTitle, this.lblPersonID, 90));
-            this.pnlPersonalInfo.Controls.Add(this.CreateInfoRow(this.pbNationalNoIcon, this.lblNationalNoTitle, this.lblNationalNo, 130));
-            this.pnlPersonalInfo.Controls.Add(this.CreateInfoRow(this.pbGenderIcon, this.lblGenderTitle, this.lblGender, 170));
-            this.pnlPersonalInfo.Controls.Add(this.CreateInfoRow(this.pbDateOfBirthIcon, this.lblDateOfBirthTitle, this.lblDateOfBirth, 210));
-            this.pnlPersonalInfo.Dock = DockStyle.Left;
-            this.pnlPersonalInfo.Location = new Point(25, 20);
-            this.pnlPersonalInfo.Name = "pnlPersonalInfo";
-            this.pnlPersonalInfo.Size = new Size(260, 275);
-            this.pnlPersonalInfo.TabIndex = 0;
-
-            // 
-            // lblPersonalInfoHeader
-            // 
-            this.lblPersonalInfoHeader.AutoSize = true;
-            this.lblPersonalInfoHeader.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            this.lblPersonalInfoHeader.ForeColor = primaryColor;
-            this.lblPersonalInfoHeader.Location = new Point(0, 5);
-            this.lblPersonalInfoHeader.Name = "lblPersonalInfoHeader";
-            this.lblPersonalInfoHeader.Size = new Size(140, 20);
-            this.lblPersonalInfoHeader.TabIndex = 0;
-            this.lblPersonalInfoHeader.Text = "📋 Personal Details";
-
-            // Configure Personal Info Labels
-            ConfigureFieldTitle(this.lblNameTitle, "Full Name");
-            ConfigureFieldValue(this.lblFullName, "[Full Name]", darkText, FontStyle.Bold);
-
-            ConfigureFieldTitle(this.lblPersonIDTitle, "Person ID");
-            ConfigureFieldValue(this.lblPersonID, "[PersonID]", mediumText);
-
-            ConfigureFieldTitle(this.lblNationalNoTitle, "National No");
-            ConfigureFieldValue(this.lblNationalNo, "[NationalNo]", mediumText);
-
-            ConfigureFieldTitle(this.lblGenderTitle, "Gender");
-            ConfigureFieldValue(this.lblGender, "[Gender]", mediumText);
-
-            ConfigureFieldTitle(this.lblDateOfBirthTitle, "Date of Birth");
-            ConfigureFieldValue(this.lblDateOfBirth, "[DateOfBirth]", mediumText);
-
-            // 
-            // pnlContactInfo
-            // 
-            this.pnlContactInfo.BackColor = sectionBackground;
-            this.pnlContactInfo.Controls.Add(this.lblContactInfoHeader);
-            this.pnlContactInfo.Controls.Add(this.CreateInfoRow(this.pbCountryIcon, this.lblCountryTitle, this.lblCountry, 50));
-            this.pnlContactInfo.Controls.Add(this.CreateInfoRow(this.pbPhoneIcon, this.lblPhoneTitle, this.lblPhone, 90));
-            this.pnlContactInfo.Controls.Add(this.CreateInfoRow(this.pbEmailIcon, this.lblEmailTitle, this.lblEmail, 130));
-            this.pnlContactInfo.Controls.Add(this.CreateInfoRow(this.pbAddressIcon, this.lblAddressTitle, this.lblAddress, 170));
-            this.pnlContactInfo.Dock = DockStyle.Right;
-            this.pnlContactInfo.Location = new Point(299, 20);
-            this.pnlContactInfo.Name = "pnlContactInfo";
-            this.pnlContactInfo.Padding = new Padding(20, 0, 0, 0);
-            this.pnlContactInfo.Size = new Size(255, 275);
-            this.pnlContactInfo.TabIndex = 1;
-
-            // Rounded corners for contact section
-            this.pnlContactInfo.Paint += (s, e) =>
-            {
-                Graphics g = e.Graphics;
-                g.SmoothingMode = SmoothingMode.AntiAlias;
-
-                Rectangle rect = new Rectangle(0, 0, this.pnlContactInfo.Width - 1, this.pnlContactInfo.Height - 1);
-                using (Pen pen = new Pen(borderColor, 1))
-                {
-                    g.DrawRectangle(pen, rect);
-                }
-            };
-
-            // 
-            // lblContactInfoHeader
-            // 
-            this.lblContactInfoHeader.AutoSize = true;
-            this.lblContactInfoHeader.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            this.lblContactInfoHeader.ForeColor = accentOrange;
-            this.lblContactInfoHeader.Location = new Point(20, 5);
-            this.lblContactInfoHeader.Name = "lblContactInfoHeader";
-            this.lblContactInfoHeader.Size = new Size(140, 20);
-            this.lblContactInfoHeader.TabIndex = 0;
-            this.lblContactInfoHeader.Text = "📞 Contact Details";
-
-            // Configure Contact Info Labels
-            ConfigureFieldTitle(this.lblCountryTitle, "Country");
-            ConfigureFieldValue(this.lblCountry, "[Country]", mediumText);
-
-            ConfigureFieldTitle(this.lblPhoneTitle, "Phone");
-            ConfigureFieldValue(this.lblPhone, "[Phone]", mediumText);
-
-            ConfigureFieldTitle(this.lblEmailTitle, "Email");
-            ConfigureFieldValue(this.lblEmail, "[Email]", mediumText);
-            this.lblEmail.MaximumSize = new Size(200, 60);
-
-            ConfigureFieldTitle(this.lblAddressTitle, "Address");
-            ConfigureFieldValue(this.lblAddress, "[Address]", mediumText);
-            this.lblAddress.MaximumSize = new Size(200, 60);
-
-            // Configure Icons
-            ConfigureIcon(this.pbNameIcon, 20);
-            ConfigureIcon(this.pbPersonIDIcon, 20);
-            ConfigureIcon(this.pbNationalNoIcon, 20);
-            ConfigureIcon(this.pbGenderIcon, 20);
-            ConfigureIcon(this.pbDateOfBirthIcon, 20);
-            ConfigureIcon(this.pbCountryIcon, 20);
-            ConfigureIcon(this.pbPhoneIcon, 20);
-            ConfigureIcon(this.pbEmailIcon, 20);
-            ConfigureIcon(this.pbAddressIcon, 20);
-
-            // Set icon images (using your existing resources)
-            this.pbNameIcon.Image = global::DVLD_UI.Properties.Resources.id_card;
-            this.pbPersonIDIcon.Image = global::DVLD_UI.Properties.Resources.id_card__1_;
-            this.pbNationalNoIcon.Image = global::DVLD_UI.Properties.Resources.id_card__1_;
-            this.pbGenderIcon.Image = global::DVLD_UI.Properties.Resources.id_card;
-            this.pbDateOfBirthIcon.Image = global::DVLD_UI.Properties.Resources.date_of_birth;
-            this.pbCountryIcon.Image = global::DVLD_UI.Properties.Resources.coronavirus;
-            this.pbPhoneIcon.Image = global::DVLD_UI.Properties.Resources.phone_call;
-            this.pbEmailIcon.Image = global::DVLD_UI.Properties.Resources.mail;
-            this.pbAddressIcon.Image = global::DVLD_UI.Properties.Resources.address;
-
             // 
             // pnlFooter
             // 
-            this.pnlFooter.BackColor = sectionBackground;
-            this.pnlFooter.BorderStyle = BorderStyle.None;
+            this.pnlFooter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
             this.pnlFooter.Controls.Add(this.pnlStatusIndicator);
             this.pnlFooter.Controls.Add(this.lblStatus);
             this.pnlFooter.Controls.Add(this.lblLastUpdated);
-            this.pnlFooter.Dock = DockStyle.Bottom;
-            this.pnlFooter.Location = new Point(0, 395);
+            this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlFooter.Location = new System.Drawing.Point(221, 395);
             this.pnlFooter.Name = "pnlFooter";
-            this.pnlFooter.Padding = new Padding(25, 10, 25, 10);
-            this.pnlFooter.Size = new Size(800, 55);
+            this.pnlFooter.Padding = new System.Windows.Forms.Padding(25, 10, 25, 10);
+            this.pnlFooter.Size = new System.Drawing.Size(579, 55);
             this.pnlFooter.TabIndex = 4;
-
-            // Footer top border
-            this.pnlFooter.Paint += (s, e) =>
-            {
-                using (Pen pen = new Pen(borderColor, 1))
-                {
-                    e.Graphics.DrawLine(pen, 0, 0, this.pnlFooter.Width, 0);
-                }
-            };
-
             // 
             // pnlStatusIndicator
             // 
-            this.pnlStatusIndicator.BackColor = secondaryColor;
-            this.pnlStatusIndicator.Location = new Point(660, 20);
+            this.pnlStatusIndicator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
+            this.pnlStatusIndicator.Location = new System.Drawing.Point(660, 20);
             this.pnlStatusIndicator.Name = "pnlStatusIndicator";
-            this.pnlStatusIndicator.Size = new Size(10, 10);
+            this.pnlStatusIndicator.Size = new System.Drawing.Size(10, 10);
             this.pnlStatusIndicator.TabIndex = 0;
-
-            // Circular indicator
-            this.pnlStatusIndicator.Paint += (s, e) =>
-            {
-                Graphics g = e.Graphics;
-                g.SmoothingMode = SmoothingMode.AntiAlias;
-                g.FillEllipse(new SolidBrush(secondaryColor), 0, 0, 10, 10);
-            };
-
             // 
             // lblStatus
             // 
             this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            this.lblStatus.ForeColor = secondaryColor;
-            this.lblStatus.Location = new Point(675, 17);
+            this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(185)))), ((int)(((byte)(129)))));
+            this.lblStatus.Location = new System.Drawing.Point(675, 17);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new Size(60, 15);
+            this.lblStatus.Size = new System.Drawing.Size(47, 15);
             this.lblStatus.TabIndex = 1;
             this.lblStatus.Text = "ACTIVE";
-
             // 
             // lblLastUpdated
             // 
             this.lblLastUpdated.AutoSize = true;
-            this.lblLastUpdated.Font = new Font("Segoe UI", 8F);
-            this.lblLastUpdated.ForeColor = lightText;
-            this.lblLastUpdated.Location = new Point(25, 18);
+            this.lblLastUpdated.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.lblLastUpdated.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(163)))), ((int)(((byte)(184)))));
+            this.lblLastUpdated.Location = new System.Drawing.Point(25, 18);
             this.lblLastUpdated.Name = "lblLastUpdated";
-            this.lblLastUpdated.Size = new Size(110, 13);
+            this.lblLastUpdated.Size = new System.Drawing.Size(99, 13);
             this.lblLastUpdated.TabIndex = 2;
-            this.lblLastUpdated.Text = "⏱️ Last updated: N/A";
-
+            this.lblLastUpdated.Text = "Last updated: N/A";
             // 
-            // ctrlPersonCard - Main Control
+            // pnlDivider
             // 
-            this.AutoScaleDimensions = new SizeF(7F, 15F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.BackColor = Color.FromArgb(241, 245, 249);
+            this.pnlDivider.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(232)))), ((int)(((byte)(240)))));
+            this.pnlDivider.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlDivider.Location = new System.Drawing.Point(220, 80);
+            this.pnlDivider.Name = "pnlDivider";
+            this.pnlDivider.Size = new System.Drawing.Size(1, 370);
+            this.pnlDivider.TabIndex = 2;
+            // 
+            // pnlContent
+            // 
+            this.pnlContent.BackColor = System.Drawing.Color.White;
+            this.pnlContent.Controls.Add(this.pnlContactInfo);
+            this.pnlContent.Controls.Add(this.pnlPersonalInfo);
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(220, 80);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Padding = new System.Windows.Forms.Padding(25, 20, 25, 20);
+            this.pnlContent.Size = new System.Drawing.Size(580, 370);
+            this.pnlContent.TabIndex = 3;
+            // 
+            // pnlContactInfo
+            // 
+            this.pnlContactInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.pnlContactInfo.Controls.Add(this.pbEmailIcon);
+            this.pnlContactInfo.Controls.Add(this.pbAddressIconPersonal);
+            this.pnlContactInfo.Controls.Add(this.pbPhoneIcon);
+            this.pnlContactInfo.Controls.Add(this.pbCountryIcon);
+            this.pnlContactInfo.Controls.Add(this.lblEmail);
+            this.pnlContactInfo.Controls.Add(this.lblPhone);
+            this.pnlContactInfo.Controls.Add(this.lblCountry);
+            this.pnlContactInfo.Controls.Add(this.lblAddress);
+            this.pnlContactInfo.Controls.Add(this.lblEmailTitle);
+            this.pnlContactInfo.Controls.Add(this.lblPhoneTitle);
+            this.pnlContactInfo.Controls.Add(this.lblCountryTitle);
+            this.pnlContactInfo.Controls.Add(this.lblContactInfoHeader);
+            this.pnlContactInfo.Controls.Add(this.lblAddressTitle);
+            this.pnlContactInfo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnlContactInfo.Location = new System.Drawing.Point(300, 20);
+            this.pnlContactInfo.Name = "pnlContactInfo";
+            this.pnlContactInfo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.pnlContactInfo.Size = new System.Drawing.Size(255, 330);
+            this.pnlContactInfo.TabIndex = 1;
+            // 
+            // pbEmailIcon
+            // 
+            this.pbEmailIcon.Image = global::DVLD_UI.Properties.Resources.mail;
+            this.pbEmailIcon.Location = new System.Drawing.Point(25, 147);
+            this.pbEmailIcon.Name = "pbEmailIcon";
+            this.pbEmailIcon.Size = new System.Drawing.Size(20, 20);
+            this.pbEmailIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbEmailIcon.TabIndex = 11;
+            this.pbEmailIcon.TabStop = false;
+            // 
+            // pbAddressIconPersonal
+            // 
+            this.pbAddressIconPersonal.Image = global::DVLD_UI.Properties.Resources.address;
+            this.pbAddressIconPersonal.Location = new System.Drawing.Point(23, 193);
+            this.pbAddressIconPersonal.Name = "pbAddressIconPersonal";
+            this.pbAddressIconPersonal.Size = new System.Drawing.Size(20, 20);
+            this.pbAddressIconPersonal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbAddressIconPersonal.TabIndex = 16;
+            this.pbAddressIconPersonal.TabStop = false;
+            // 
+            // pbPhoneIcon
+            // 
+            this.pbPhoneIcon.Image = global::DVLD_UI.Properties.Resources.phone_call;
+            this.pbPhoneIcon.Location = new System.Drawing.Point(25, 107);
+            this.pbPhoneIcon.Name = "pbPhoneIcon";
+            this.pbPhoneIcon.Size = new System.Drawing.Size(20, 20);
+            this.pbPhoneIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPhoneIcon.TabIndex = 10;
+            this.pbPhoneIcon.TabStop = false;
+            // 
+            // pbCountryIcon
+            // 
+            this.pbCountryIcon.Image = global::DVLD_UI.Properties.Resources.coronavirus;
+            this.pbCountryIcon.Location = new System.Drawing.Point(25, 67);
+            this.pbCountryIcon.Name = "pbCountryIcon";
+            this.pbCountryIcon.Size = new System.Drawing.Size(20, 20);
+            this.pbCountryIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbCountryIcon.TabIndex = 9;
+            this.pbCountryIcon.TabStop = false;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.lblEmail.Location = new System.Drawing.Point(50, 147);
+            this.lblEmail.MaximumSize = new System.Drawing.Size(180, 40);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(47, 17);
+            this.lblEmail.TabIndex = 7;
+            this.lblEmail.Text = "[Email]";
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.lblPhone.Location = new System.Drawing.Point(50, 107);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(52, 17);
+            this.lblPhone.TabIndex = 6;
+            this.lblPhone.Text = "[Phone]";
+            // 
+            // lblCountry
+            // 
+            this.lblCountry.AutoSize = true;
+            this.lblCountry.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblCountry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.lblCountry.Location = new System.Drawing.Point(50, 67);
+            this.lblCountry.Name = "lblCountry";
+            this.lblCountry.Size = new System.Drawing.Size(61, 17);
+            this.lblCountry.TabIndex = 5;
+            this.lblCountry.Text = "[Country]";
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.lblAddress.Location = new System.Drawing.Point(50, 196);
+            this.lblAddress.MaximumSize = new System.Drawing.Size(120, 40);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(64, 17);
+            this.lblAddress.TabIndex = 12;
+            this.lblAddress.Text = "[Address]";
+            // 
+            // lblEmailTitle
+            // 
+            this.lblEmailTitle.AutoSize = true;
+            this.lblEmailTitle.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.lblEmailTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(163)))), ((int)(((byte)(184)))));
+            this.lblEmailTitle.Location = new System.Drawing.Point(50, 130);
+            this.lblEmailTitle.Name = "lblEmailTitle";
+            this.lblEmailTitle.Size = new System.Drawing.Size(38, 13);
+            this.lblEmailTitle.TabIndex = 3;
+            this.lblEmailTitle.Text = "EMAIL";
+            // 
+            // lblPhoneTitle
+            // 
+            this.lblPhoneTitle.AutoSize = true;
+            this.lblPhoneTitle.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.lblPhoneTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(163)))), ((int)(((byte)(184)))));
+            this.lblPhoneTitle.Location = new System.Drawing.Point(50, 90);
+            this.lblPhoneTitle.Name = "lblPhoneTitle";
+            this.lblPhoneTitle.Size = new System.Drawing.Size(44, 13);
+            this.lblPhoneTitle.TabIndex = 2;
+            this.lblPhoneTitle.Text = "PHONE";
+            // 
+            // lblCountryTitle
+            // 
+            this.lblCountryTitle.AutoSize = true;
+            this.lblCountryTitle.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.lblCountryTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(163)))), ((int)(((byte)(184)))));
+            this.lblCountryTitle.Location = new System.Drawing.Point(50, 50);
+            this.lblCountryTitle.Name = "lblCountryTitle";
+            this.lblCountryTitle.Size = new System.Drawing.Size(56, 13);
+            this.lblCountryTitle.TabIndex = 1;
+            this.lblCountryTitle.Text = "COUNTRY";
+            // 
+            // lblContactInfoHeader
+            // 
+            this.lblContactInfoHeader.AutoSize = true;
+            this.lblContactInfoHeader.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.lblContactInfoHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(146)))), ((int)(((byte)(60)))));
+            this.lblContactInfoHeader.Location = new System.Drawing.Point(20, 5);
+            this.lblContactInfoHeader.Name = "lblContactInfoHeader";
+            this.lblContactInfoHeader.Size = new System.Drawing.Size(115, 20);
+            this.lblContactInfoHeader.TabIndex = 0;
+            this.lblContactInfoHeader.Text = "Contact Details";
+            // 
+            // lblAddressTitle
+            // 
+            this.lblAddressTitle.AutoSize = true;
+            this.lblAddressTitle.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.lblAddressTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(163)))), ((int)(((byte)(184)))));
+            this.lblAddressTitle.Location = new System.Drawing.Point(51, 180);
+            this.lblAddressTitle.Name = "lblAddressTitle";
+            this.lblAddressTitle.Size = new System.Drawing.Size(55, 13);
+            this.lblAddressTitle.TabIndex = 4;
+            this.lblAddressTitle.Text = "ADDRESS";
+            // 
+            // pnlPersonalInfo
+            // 
+            this.pnlPersonalInfo.BackColor = System.Drawing.Color.White;
+            this.pnlPersonalInfo.Controls.Add(this.pbDateOfBirthIcon);
+            this.pnlPersonalInfo.Controls.Add(this.pbNationalNoIcon);
+            this.pnlPersonalInfo.Controls.Add(this.pbPersonIDIcon);
+            this.pnlPersonalInfo.Controls.Add(this.pbNameIcon);
+            this.pnlPersonalInfo.Controls.Add(this.lblDateOfBirth);
+            this.pnlPersonalInfo.Controls.Add(this.lblNationalNo);
+            this.pnlPersonalInfo.Controls.Add(this.lblPersonID);
+            this.pnlPersonalInfo.Controls.Add(this.lblFullName);
+            this.pnlPersonalInfo.Controls.Add(this.lblDateOfBirthTitle);
+            this.pnlPersonalInfo.Controls.Add(this.lblNationalNoTitle);
+            this.pnlPersonalInfo.Controls.Add(this.lblPersonIDTitle);
+            this.pnlPersonalInfo.Controls.Add(this.lblNameTitle);
+            this.pnlPersonalInfo.Controls.Add(this.lblPersonalInfoHeader);
+            this.pnlPersonalInfo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlPersonalInfo.Location = new System.Drawing.Point(25, 20);
+            this.pnlPersonalInfo.Name = "pnlPersonalInfo";
+            this.pnlPersonalInfo.Size = new System.Drawing.Size(260, 330);
+            this.pnlPersonalInfo.TabIndex = 0;
+            // 
+            // pbDateOfBirthIcon
+            // 
+            this.pbDateOfBirthIcon.Image = global::DVLD_UI.Properties.Resources.date_of_birth;
+            this.pbDateOfBirthIcon.Location = new System.Drawing.Point(3, 169);
+            this.pbDateOfBirthIcon.Name = "pbDateOfBirthIcon";
+            this.pbDateOfBirthIcon.Size = new System.Drawing.Size(20, 20);
+            this.pbDateOfBirthIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbDateOfBirthIcon.TabIndex = 18;
+            this.pbDateOfBirthIcon.TabStop = false;
+            // 
+            // pbNationalNoIcon
+            // 
+            this.pbNationalNoIcon.Image = global::DVLD_UI.Properties.Resources.id_card;
+            this.pbNationalNoIcon.Location = new System.Drawing.Point(5, 117);
+            this.pbNationalNoIcon.Name = "pbNationalNoIcon";
+            this.pbNationalNoIcon.Size = new System.Drawing.Size(20, 20);
+            this.pbNationalNoIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbNationalNoIcon.TabIndex = 15;
+            this.pbNationalNoIcon.TabStop = false;
+            // 
+            // pbPersonIDIcon
+            // 
+            this.pbPersonIDIcon.Image = global::DVLD_UI.Properties.Resources.id_card;
+            this.pbPersonIDIcon.Location = new System.Drawing.Point(5, 77);
+            this.pbPersonIDIcon.Name = "pbPersonIDIcon";
+            this.pbPersonIDIcon.Size = new System.Drawing.Size(20, 20);
+            this.pbPersonIDIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbPersonIDIcon.TabIndex = 14;
+            this.pbPersonIDIcon.TabStop = false;
+            // 
+            // pbNameIcon
+            // 
+            this.pbNameIcon.Image = global::DVLD_UI.Properties.Resources.id_card__1_1;
+            this.pbNameIcon.Location = new System.Drawing.Point(5, 37);
+            this.pbNameIcon.Name = "pbNameIcon";
+            this.pbNameIcon.Size = new System.Drawing.Size(20, 20);
+            this.pbNameIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbNameIcon.TabIndex = 13;
+            this.pbNameIcon.TabStop = false;
+            // 
+            // lblDateOfBirth
+            // 
+            this.lblDateOfBirth.AutoSize = true;
+            this.lblDateOfBirth.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblDateOfBirth.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.lblDateOfBirth.Location = new System.Drawing.Point(130, 169);
+            this.lblDateOfBirth.Name = "lblDateOfBirth";
+            this.lblDateOfBirth.Size = new System.Drawing.Size(83, 17);
+            this.lblDateOfBirth.TabIndex = 11;
+            this.lblDateOfBirth.Text = "[DateOfBirth]";
+            // 
+            // lblNationalNo
+            // 
+            this.lblNationalNo.AutoSize = true;
+            this.lblNationalNo.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblNationalNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.lblNationalNo.Location = new System.Drawing.Point(130, 117);
+            this.lblNationalNo.Name = "lblNationalNo";
+            this.lblNationalNo.Size = new System.Drawing.Size(83, 17);
+            this.lblNationalNo.TabIndex = 9;
+            this.lblNationalNo.Text = "[NationalNo]";
+            // 
+            // lblPersonID
+            // 
+            this.lblPersonID.AutoSize = true;
+            this.lblPersonID.Font = new System.Drawing.Font("Segoe UI", 9.5F);
+            this.lblPersonID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.lblPersonID.Location = new System.Drawing.Point(130, 77);
+            this.lblPersonID.Name = "lblPersonID";
+            this.lblPersonID.Size = new System.Drawing.Size(68, 17);
+            this.lblPersonID.TabIndex = 8;
+            this.lblPersonID.Text = "[PersonID]";
+            // 
+            // lblFullName
+            // 
+            this.lblFullName.AutoSize = true;
+            this.lblFullName.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold);
+            this.lblFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(41)))), ((int)(((byte)(59)))));
+            this.lblFullName.Location = new System.Drawing.Point(130, 37);
+            this.lblFullName.Name = "lblFullName";
+            this.lblFullName.Size = new System.Drawing.Size(81, 17);
+            this.lblFullName.TabIndex = 7;
+            this.lblFullName.Text = "[Full Name]";
+            // 
+            // lblDateOfBirthTitle
+            // 
+            this.lblDateOfBirthTitle.AutoSize = true;
+            this.lblDateOfBirthTitle.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.lblDateOfBirthTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(163)))), ((int)(((byte)(184)))));
+            this.lblDateOfBirthTitle.Location = new System.Drawing.Point(30, 169);
+            this.lblDateOfBirthTitle.Name = "lblDateOfBirthTitle";
+            this.lblDateOfBirthTitle.Size = new System.Drawing.Size(83, 13);
+            this.lblDateOfBirthTitle.TabIndex = 5;
+            this.lblDateOfBirthTitle.Text = "DATE OF BIRTH";
+            // 
+            // lblNationalNoTitle
+            // 
+            this.lblNationalNoTitle.AutoSize = true;
+            this.lblNationalNoTitle.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.lblNationalNoTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(163)))), ((int)(((byte)(184)))));
+            this.lblNationalNoTitle.Location = new System.Drawing.Point(30, 120);
+            this.lblNationalNoTitle.Name = "lblNationalNoTitle";
+            this.lblNationalNoTitle.Size = new System.Drawing.Size(78, 13);
+            this.lblNationalNoTitle.TabIndex = 3;
+            this.lblNationalNoTitle.Text = "NATIONAL NO";
+            // 
+            // lblPersonIDTitle
+            // 
+            this.lblPersonIDTitle.AutoSize = true;
+            this.lblPersonIDTitle.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.lblPersonIDTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(163)))), ((int)(((byte)(184)))));
+            this.lblPersonIDTitle.Location = new System.Drawing.Point(30, 80);
+            this.lblPersonIDTitle.Name = "lblPersonIDTitle";
+            this.lblPersonIDTitle.Size = new System.Drawing.Size(63, 13);
+            this.lblPersonIDTitle.TabIndex = 2;
+            this.lblPersonIDTitle.Text = "PERSON ID";
+            // 
+            // lblNameTitle
+            // 
+            this.lblNameTitle.AutoSize = true;
+            this.lblNameTitle.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.lblNameTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(163)))), ((int)(((byte)(184)))));
+            this.lblNameTitle.Location = new System.Drawing.Point(30, 40);
+            this.lblNameTitle.Name = "lblNameTitle";
+            this.lblNameTitle.Size = new System.Drawing.Size(65, 13);
+            this.lblNameTitle.TabIndex = 1;
+            this.lblNameTitle.Text = "FULL NAME";
+            // 
+            // lblPersonalInfoHeader
+            // 
+            this.lblPersonalInfoHeader.AutoSize = true;
+            this.lblPersonalInfoHeader.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.lblPersonalInfoHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(102)))), ((int)(((byte)(241)))));
+            this.lblPersonalInfoHeader.Location = new System.Drawing.Point(0, 5);
+            this.lblPersonalInfoHeader.Name = "lblPersonalInfoHeader";
+            this.lblPersonalInfoHeader.Size = new System.Drawing.Size(121, 20);
+            this.lblPersonalInfoHeader.TabIndex = 0;
+            this.lblPersonalInfoHeader.Text = "Personal Details";
+            // 
+            // pnlPhotoSection
+            // 
+            this.pnlPhotoSection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.pnlPhotoSection.Controls.Add(this.pnlPhoto);
+            this.pnlPhotoSection.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlPhotoSection.Location = new System.Drawing.Point(0, 80);
+            this.pnlPhotoSection.Name = "pnlPhotoSection";
+            this.pnlPhotoSection.Padding = new System.Windows.Forms.Padding(25, 25, 15, 25);
+            this.pnlPhotoSection.Size = new System.Drawing.Size(220, 370);
+            this.pnlPhotoSection.TabIndex = 1;
+            // 
+            // pnlPhoto
+            // 
+            this.pnlPhoto.BackColor = System.Drawing.Color.White;
+            this.pnlPhoto.Controls.Add(this.pnlPhotoFrame);
+            this.pnlPhoto.Controls.Add(this.pbSelfiPicture);
+            this.pnlPhoto.Controls.Add(this.lblPhotoPlaceholder);
+            this.pnlPhoto.Location = new System.Drawing.Point(25, 25);
+            this.pnlPhoto.Name = "pnlPhoto";
+            this.pnlPhoto.Size = new System.Drawing.Size(180, 220);
+            this.pnlPhoto.TabIndex = 0;
+            // 
+            // pbSelfiPicture
+            // 
+            this.pbSelfiPicture.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(247)))), ((int)(((byte)(250)))));
+            this.pbSelfiPicture.Location = new System.Drawing.Point(20, 20);
+            this.pbSelfiPicture.Name = "pbSelfiPicture";
+            this.pbSelfiPicture.Size = new System.Drawing.Size(140, 140);
+            this.pbSelfiPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbSelfiPicture.TabIndex = 1;
+            this.pbSelfiPicture.TabStop = false;
+            this.toolTip.SetToolTip(this.pbSelfiPicture, "Person Photo");
+            // 
+            // lblPhotoPlaceholder
+            // 
+            this.lblPhotoPlaceholder.AutoSize = true;
+            this.lblPhotoPlaceholder.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblPhotoPlaceholder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(85)))), ((int)(((byte)(105)))));
+            this.lblPhotoPlaceholder.Location = new System.Drawing.Point(40, 175);
+            this.lblPhotoPlaceholder.Name = "lblPhotoPlaceholder";
+            this.lblPhotoPlaceholder.Size = new System.Drawing.Size(76, 15);
+            this.lblPhotoPlaceholder.TabIndex = 2;
+            this.lblPhotoPlaceholder.Text = "Profile Photo";
+            this.lblPhotoPlaceholder.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pnlHeader
+            // 
+            this.pnlHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(99)))), ((int)(((byte)(102)))), ((int)(((byte)(241)))));
+            this.pnlHeader.Controls.Add(this.lblCardSubtitle);
+            this.pnlHeader.Controls.Add(this.lblCardTitle);
+            this.pnlHeader.Controls.Add(this.pnlHeaderAccent);
+            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeader.Name = "pnlHeader";
+            this.pnlHeader.Size = new System.Drawing.Size(800, 80);
+            this.pnlHeader.TabIndex = 0;
+            // 
+            // lblCardSubtitle
+            // 
+            this.lblCardSubtitle.AutoSize = true;
+            this.lblCardSubtitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblCardSubtitle.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lblCardSubtitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
+            this.lblCardSubtitle.Location = new System.Drawing.Point(28, 52);
+            this.lblCardSubtitle.Name = "lblCardSubtitle";
+            this.lblCardSubtitle.Size = new System.Drawing.Size(173, 15);
+            this.lblCardSubtitle.TabIndex = 2;
+            this.lblCardSubtitle.Text = "Complete personal information";
+            // 
+            // lblCardTitle
+            // 
+            this.lblCardTitle.AutoSize = true;
+            this.lblCardTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblCardTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.lblCardTitle.ForeColor = System.Drawing.Color.White;
+            this.lblCardTitle.Location = new System.Drawing.Point(25, 20);
+            this.lblCardTitle.Name = "lblCardTitle";
+            this.lblCardTitle.Size = new System.Drawing.Size(175, 32);
+            this.lblCardTitle.TabIndex = 1;
+            this.lblCardTitle.Text = "Person Profile";
+            // 
+            // pnlHeaderAccent
+            // 
+            this.pnlHeaderAccent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.pnlHeaderAccent.Location = new System.Drawing.Point(0, 0);
+            this.pnlHeaderAccent.Name = "pnlHeaderAccent";
+            this.pnlHeaderAccent.Size = new System.Drawing.Size(5, 80);
+            this.pnlHeaderAccent.TabIndex = 0;
+            // 
+            // pnlPhotoFrame
+            // 
+            this.pnlPhotoFrame.BackColor = System.Drawing.Color.Transparent;
+            this.pnlPhotoFrame.Location = new System.Drawing.Point(15, 15);
+            this.pnlPhotoFrame.Name = "pnlPhotoFrame";
+            this.pnlPhotoFrame.Size = new System.Drawing.Size(150, 150);
+            this.pnlPhotoFrame.TabIndex = 0;
+            // 
+            // ctrlPersonCard
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
             this.Controls.Add(this.pnlMain);
-            this.Font = new Font("Segoe UI", 9F);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.Name = "ctrlPersonCard";
-            this.Size = new Size(800, 450);
-
-            // Resume layouts
+            this.Size = new System.Drawing.Size(800, 450);
             this.pnlMain.ResumeLayout(false);
-            this.pnlHeader.ResumeLayout(false);
-            this.pnlHeader.PerformLayout();
+            this.pnlFooter.ResumeLayout(false);
+            this.pnlFooter.PerformLayout();
+            this.pnlContent.ResumeLayout(false);
+            this.pnlContactInfo.ResumeLayout(false);
+            this.pnlContactInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbEmailIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAddressIconPersonal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPhoneIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCountryIcon)).EndInit();
+            this.pnlPersonalInfo.ResumeLayout(false);
+            this.pnlPersonalInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbDateOfBirthIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNationalNoIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonIDIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbNameIcon)).EndInit();
             this.pnlPhotoSection.ResumeLayout(false);
             this.pnlPhoto.ResumeLayout(false);
             this.pnlPhoto.PerformLayout();
-            this.pnlContent.ResumeLayout(false);
-            this.pnlPersonalInfo.ResumeLayout(false);
-            this.pnlPersonalInfo.PerformLayout();
-            this.pnlContactInfo.ResumeLayout(false);
-            this.pnlContactInfo.PerformLayout();
-            this.pnlFooter.ResumeLayout(false);
-            this.pnlFooter.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSelfiPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNameIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPersonIDIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbNationalNoIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbDateOfBirthIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAddressIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbGenderIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCountryIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPhoneIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbEmailIcon)).EndInit();
+            this.pnlHeader.ResumeLayout(false);
+            this.pnlHeader.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         #endregion
 
-        #region Helper Methods
+        // Control declarations
+        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Panel pnlHeader;
+        private System.Windows.Forms.Panel pnlHeaderAccent;
+        private System.Windows.Forms.Panel pnlPhotoSection;
+        private System.Windows.Forms.Panel pnlPhoto;
+        private System.Windows.Forms.Panel pnlDivider;
+        private System.Windows.Forms.Panel pnlContent;
+        private System.Windows.Forms.Panel pnlPersonalInfo;
+        private System.Windows.Forms.Panel pnlContactInfo;
+        private System.Windows.Forms.Panel pnlFooter;
+        private System.Windows.Forms.Panel pnlStatusIndicator;
 
-        private Panel CreateInfoRow(PictureBox icon, Label title, Label value, int yPosition)
-        {
-            Panel rowPanel = new Panel
-            {
-                BackColor = Color.Transparent,
-                Location = new Point(0, yPosition),
-                Size = new Size(240, 30),
-                TabIndex = 0
-            };
+        private System.Windows.Forms.Label lblCardTitle;
+        private System.Windows.Forms.Label lblCardSubtitle;
+        private System.Windows.Forms.Label lblPhotoPlaceholder;
+        private System.Windows.Forms.Label lblPersonalInfoHeader;
+        private System.Windows.Forms.Label lblContactInfoHeader;
+        private System.Windows.Forms.Label lblLastUpdated;
+        private System.Windows.Forms.Label lblStatus;
 
-            icon.Location = new Point(0, 5);
-            title.Location = new Point(30, 7);
-            value.Location = new Point(30, 7);
-            value.Left = 130; // Align values
+        // Personal Info Labels
+        private System.Windows.Forms.Label lblNameTitle;
+        private System.Windows.Forms.Label lblPersonIDTitle;
+        private System.Windows.Forms.Label lblNationalNoTitle;
+        private System.Windows.Forms.Label lblDateOfBirthTitle;
+        private System.Windows.Forms.Label lblAddressTitle;
+        private System.Windows.Forms.Label lblFullName;
+        private System.Windows.Forms.Label lblPersonID;
+        private System.Windows.Forms.Label lblNationalNo;
+        private System.Windows.Forms.Label lblDateOfBirth;
+        private System.Windows.Forms.Label lblAddress;
 
-            return rowPanel;
-        }
+        // Contact Info Labels
+        private System.Windows.Forms.Label lblCountryTitle;
+        private System.Windows.Forms.Label lblPhoneTitle;
+        private System.Windows.Forms.Label lblEmailTitle;
+        private System.Windows.Forms.Label lblCountry;
+        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.Label lblEmail;
 
-        private void ConfigureFieldTitle(Label label, string text)
-        {
-            label.AutoSize = true;
-            label.Font = new Font("Segoe UI", 8F, FontStyle.Regular);
-            label.ForeColor = Color.FromArgb(148, 163, 184);
-            label.Text = text.ToUpper();
-        }
+        // PictureBoxes
+        private System.Windows.Forms.PictureBox pbSelfiPicture;
+        private System.Windows.Forms.PictureBox pbNameIcon;
+        private System.Windows.Forms.PictureBox pbPersonIDIcon;
+        private System.Windows.Forms.PictureBox pbNationalNoIcon;
+        private System.Windows.Forms.PictureBox pbDateOfBirthIcon;
+        private System.Windows.Forms.PictureBox pbAddressIconPersonal;
+        private System.Windows.Forms.PictureBox pbCountryIcon;
+        private System.Windows.Forms.PictureBox pbPhoneIcon;
+        private System.Windows.Forms.PictureBox pbEmailIcon;
 
-        private void ConfigureFieldValue(Label label, string text, Color color, FontStyle style = FontStyle.Regular)
-        {
-            label.AutoSize = true;
-            label.Font = new Font("Segoe UI", 9.5F, style);
-            label.ForeColor = color;
-            label.Text = text;
-        }
-
-        private void ConfigureIcon(PictureBox pictureBox, int size)
-        {
-            pictureBox.Size = new Size(size, size);
-            pictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox.BackColor = Color.Transparent;
-            pictureBox.TabIndex = 0;
-            pictureBox.TabStop = false;
-        }
-
-        #endregion
-
-        #region Control Declarations
-
-        // Panels
-        private Panel pnlMain;
-        private Panel pnlHeader;
-        private Panel pnlHeaderAccent;
-        private Panel pnlPhotoSection;
-        private Panel pnlPhoto;
-        private Panel pnlPhotoFrame;
-        private Panel pnlDivider;
-        private Panel pnlContent;
-        private Panel pnlPersonalInfo;
-        private Panel pnlContactInfo;
-        private Panel pnlFooter;
-        private Panel pnlStatusIndicator;
-
-        // Header
-        private Label lblCardTitle;
-        private Label lblCardSubtitle;
-
-        // Photo
-        private PictureBox pbSelfiPicture;
-        private Label lblPhotoPlaceholder;
-
-        // Headers
-        private Label lblPersonalInfoHeader;
-        private Label lblContactInfoHeader;
-
-        // Personal Info - Titles
-        private Label lblNameTitle;
-        private Label lblPersonIDTitle;
-        private Label lblNationalNoTitle;
-        private Label lblGenderTitle;
-        private Label lblDateOfBirthTitle;
-        private Label lblAddressTitle;
-
-        // Personal Info - Values
-        private Label lblFullName;
-        private Label lblPersonID;
-        private Label lblNationalNo;
-        private Label lblGender;
-        private Label lblDateOfBirth;
-        private Label lblAddress;
-
-        // Contact Info - Titles
-        private Label lblCountryTitle;
-        private Label lblPhoneTitle;
-        private Label lblEmailTitle;
-
-        // Contact Info - Values
-        private Label lblCountry;
-        private Label lblPhone;
-        private Label lblEmail;
-
-        // Icons
-        private PictureBox pbNameIcon;
-        private PictureBox pbPersonIDIcon;
-        private PictureBox pbNationalNoIcon;
-        private PictureBox pbGenderIcon;
-        private PictureBox pbDateOfBirthIcon;
-        private PictureBox pbAddressIcon;
-        private PictureBox pbCountryIcon;
-        private PictureBox pbPhoneIcon;
-        private PictureBox pbEmailIcon;
-
-        // Footer
-        private Label lblLastUpdated;
-        private Label lblStatus;
-
-        // Components
-        private ToolTip toolTip;
-
-        #endregion
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.Panel pnlPhotoFrame;
     }
 }

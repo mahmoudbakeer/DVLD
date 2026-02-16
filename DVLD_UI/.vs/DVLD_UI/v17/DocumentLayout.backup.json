@@ -3,15 +3,51 @@
   "WorkspaceRootPath": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|solutionrelative:frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|c:\\users\\mahmo\\dir\\dvld\\dvld_ui\\ctrladdupdatepersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|solutionrelative:ctrladdupdatepersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|c:\\users\\mahmo\\dir\\dvld\\dvld_ui\\ctrladdupdatepersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|solutionrelative:ctrladdupdatepersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|c:\\users\\mahmo\\dir\\dvld\\dvld_ui\\people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|solutionrelative:people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|c:\\users\\mahmo\\dir\\dvld\\dvld_ui\\people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|solutionrelative:people\\frmaddupdateperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|c:\\users\\mahmo\\dir\\dvld\\dvld_ui\\people\\frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|solutionrelative:people\\frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1640776E-CC66-4399-ADD7-38467A0C575A}|..\\DVLD_BusinessLogic\\DVLD_BusinessLogic.csproj|c:\\users\\mahmo\\dir\\dvld\\dvld_businesslogic\\clsperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\frmmainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|solutionrelative:frmmainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|c:\\users\\mahmo\\dir\\dvld\\dvld_ui\\people\\frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|solutionrelative:people\\frmmanagepeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|c:\\users\\mahmo\\dir\\dvld\\dvld_ui\\people\\frmupdatepersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|solutionrelative:people\\frmupdatepersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|c:\\users\\mahmo\\dir\\dvld\\dvld_ui\\people\\frmupdatepersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|solutionrelative:people\\frmupdatepersoninfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|c:\\users\\mahmo\\dir\\dvld\\dvld_ui\\ctrlshowpersoncard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|solutionrelative:ctrlshowpersoncard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|c:\\users\\mahmo\\dir\\dvld\\dvld_ui\\people\\ctrlpersoncard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|solutionrelative:people\\ctrlpersoncard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|c:\\users\\mahmo\\dir\\dvld\\dvld_ui\\people\\ctrladdnewperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E12C84C5-1B2A-49D2-97A8-80DA10191E72}|DVLD_UI.csproj|solutionrelative:people\\ctrladdnewperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,43 +57,155 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmManagePeople.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\frmManagePeople.cs",
-              "RelativeDocumentMoniker": "frmManagePeople.cs",
-              "ToolTip": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\frmManagePeople.cs [Design]*",
-              "RelativeToolTip": "frmManagePeople.cs [Design]*",
+              "DocumentIndex": 3,
+              "Title": "frmAddUpdatePerson.cs",
+              "DocumentMoniker": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\People\\frmAddUpdatePerson.cs",
+              "RelativeDocumentMoniker": "People\\frmAddUpdatePerson.cs",
+              "ToolTip": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\People\\frmAddUpdatePerson.cs",
+              "RelativeToolTip": "People\\frmAddUpdatePerson.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAYwDAAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T12:58:19.243Z",
+              "WhenOpened": "2026-02-16T15:18:43.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmAddUpdatePerson.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\People\\frmAddUpdatePerson.cs",
+              "RelativeDocumentMoniker": "People\\frmAddUpdatePerson.cs",
+              "ToolTip": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\People\\frmAddUpdatePerson.cs [Design]",
+              "RelativeToolTip": "People\\frmAddUpdatePerson.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T13:52:18.886Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ctrlAddUpdatePersonInfo.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\ctrlAddUpdatePersonInfo.cs",
+              "RelativeDocumentMoniker": "ctrlAddUpdatePersonInfo.cs",
+              "ToolTip": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\ctrlAddUpdatePersonInfo.cs [Design]*",
+              "RelativeToolTip": "ctrlAddUpdatePersonInfo.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T12:48:46.795Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ctrlAddUpdatePersonInfo.cs",
+              "DocumentMoniker": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\ctrlAddUpdatePersonInfo.cs",
+              "RelativeDocumentMoniker": "ctrlAddUpdatePersonInfo.cs",
+              "ToolTip": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\ctrlAddUpdatePersonInfo.cs*",
+              "RelativeToolTip": "ctrlAddUpdatePersonInfo.cs*",
+              "ViewState": "AgIAALMAAAAAAAAAAADwv8gAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T13:19:07.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmManagePeople.cs",
+              "DocumentMoniker": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\People\\frmManagePeople.cs",
+              "RelativeDocumentMoniker": "People\\frmManagePeople.cs",
+              "ToolTip": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\People\\frmManagePeople.cs",
+              "RelativeToolTip": "People\\frmManagePeople.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAmwEQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T15:31:54.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "clsPerson.cs",
               "DocumentMoniker": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_BusinessLogic\\clsPerson.cs",
               "RelativeDocumentMoniker": "..\\DVLD_BusinessLogic\\clsPerson.cs",
               "ToolTip": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_BusinessLogic\\clsPerson.cs",
               "RelativeToolTip": "..\\DVLD_BusinessLogic\\clsPerson.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAcwL4AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAwwLQAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-14T17:01:53.331Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmMainForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\frmMainForm.cs",
-              "RelativeDocumentMoniker": "frmMainForm.cs",
-              "ToolTip": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\frmMainForm.cs [Design]",
-              "RelativeToolTip": "frmMainForm.cs [Design]",
+              "DocumentIndex": 6,
+              "Title": "frmManagePeople.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\People\\frmManagePeople.cs",
+              "RelativeDocumentMoniker": "People\\frmManagePeople.cs",
+              "ToolTip": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\People\\frmManagePeople.cs [Design]",
+              "RelativeToolTip": "People\\frmManagePeople.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-14T12:17:56.544Z",
+              "WhenOpened": "2026-02-16T15:37:11.55Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmUpdatePersonInfo.cs",
+              "DocumentMoniker": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\People\\frmUpdatePersonInfo.cs",
+              "RelativeDocumentMoniker": "People\\frmUpdatePersonInfo.cs",
+              "ToolTip": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\People\\frmUpdatePersonInfo.cs",
+              "RelativeToolTip": "People\\frmUpdatePersonInfo.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T13:19:40.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmUpdatePersonInfo.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\People\\frmUpdatePersonInfo.cs",
+              "RelativeDocumentMoniker": "People\\frmUpdatePersonInfo.cs",
+              "ToolTip": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\People\\frmUpdatePersonInfo.cs [Design]",
+              "RelativeToolTip": "People\\frmUpdatePersonInfo.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T13:19:34.902Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ctrlShowPersonCard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\ctrlShowPersonCard.cs",
+              "RelativeDocumentMoniker": "ctrlShowPersonCard.cs",
+              "ToolTip": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\ctrlShowPersonCard.cs [Design]",
+              "RelativeToolTip": "ctrlShowPersonCard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T12:49:22.681Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ctrlAddNewPerson.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\People\\ctrlAddNewPerson.cs",
+              "RelativeDocumentMoniker": "People\\ctrlAddNewPerson.cs",
+              "ToolTip": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\People\\ctrlAddNewPerson.cs [Design]",
+              "RelativeToolTip": "People\\ctrlAddNewPerson.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T12:47:21.646Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ctrlPersonCard.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\People\\ctrlPersonCard.cs",
+              "RelativeDocumentMoniker": "People\\ctrlPersonCard.cs",
+              "ToolTip": "C:\\Users\\mahmo\\dir\\DVLD\\DVLD_UI\\People\\ctrlPersonCard.cs [Design]",
+              "RelativeToolTip": "People\\ctrlPersonCard.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-16T12:47:20.423Z",
               "EditorCaption": " [Design]"
             }
           ]

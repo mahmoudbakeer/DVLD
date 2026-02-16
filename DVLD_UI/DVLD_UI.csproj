@@ -46,29 +46,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ctrlAddNewPerson.cs">
+    <Compile Include="ctrlAddUpdatePersonInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlAddNewPerson.Designer.cs">
+    <Compile Include="ctrlAddUpdatePersonInfo.Designer.cs">
+      <DependentUpon>ctrlAddUpdatePersonInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ctrlShowPersonCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlShowPersonCard.Designer.cs">
+      <DependentUpon>ctrlShowPersonCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="People\ctrlAddNewPerson.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="People\ctrlAddNewPerson.Designer.cs">
       <DependentUpon>ctrlAddNewPerson.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrlPersonCard.cs">
+    <Compile Include="People\ctrlPersonCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlPersonCard.Designer.cs">
+    <Compile Include="People\ctrlPersonCard.Designer.cs">
       <DependentUpon>ctrlPersonCard.cs</DependentUpon>
     </Compile>
-    <Compile Include="ctrlUpdatePersonInfo.cs">
+    <Compile Include="People\ctrlUpdatePersonInfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ctrlUpdatePersonInfo.Designer.cs">
+    <Compile Include="People\ctrlUpdatePersonInfo.Designer.cs">
       <DependentUpon>ctrlUpdatePersonInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddNewPerson.cs">
+    <Compile Include="People\frmAddUpdatePerson.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddNewPerson.Designer.cs">
-      <DependentUpon>frmAddNewPerson.cs</DependentUpon>
+    <Compile Include="People\frmAddUpdatePerson.Designer.cs">
+      <DependentUpon>frmAddUpdatePerson.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMainForm.cs">
       <SubType>Form</SubType>
@@ -76,48 +88,54 @@
     <Compile Include="frmMainForm.Designer.cs">
       <DependentUpon>frmMainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmManagePeople.cs">
+    <Compile Include="People\frmManagePeople.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmManagePeople.Designer.cs">
+    <Compile Include="People\frmManagePeople.Designer.cs">
       <DependentUpon>frmManagePeople.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmShowPersonInfo.cs">
+    <Compile Include="People\frmShowPersonInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmShowPersonInfo.Designer.cs">
+    <Compile Include="People\frmShowPersonInfo.Designer.cs">
       <DependentUpon>frmShowPersonInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUpdatePersonInfo.cs">
+    <Compile Include="People\frmUpdatePersonInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUpdatePersonInfo.Designer.cs">
+    <Compile Include="People\frmUpdatePersonInfo.Designer.cs">
       <DependentUpon>frmUpdatePersonInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ctrlAddNewPerson.resx">
+    <EmbeddedResource Include="ctrlAddUpdatePersonInfo.resx">
+      <DependentUpon>ctrlAddUpdatePersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlShowPersonCard.resx">
+      <DependentUpon>ctrlShowPersonCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="People\ctrlAddNewPerson.resx">
       <DependentUpon>ctrlAddNewPerson.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlPersonCard.resx">
+    <EmbeddedResource Include="People\ctrlPersonCard.resx">
       <DependentUpon>ctrlPersonCard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ctrlUpdatePersonInfo.resx">
+    <EmbeddedResource Include="People\ctrlUpdatePersonInfo.resx">
       <DependentUpon>ctrlUpdatePersonInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddNewPerson.resx">
-      <DependentUpon>frmAddNewPerson.cs</DependentUpon>
+    <EmbeddedResource Include="People\frmAddUpdatePerson.resx">
+      <DependentUpon>frmAddUpdatePerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainForm.resx">
       <DependentUpon>frmMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmManagePeople.resx">
+    <EmbeddedResource Include="People\frmManagePeople.resx">
       <DependentUpon>frmManagePeople.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmShowPersonInfo.resx">
+    <EmbeddedResource Include="People\frmShowPersonInfo.resx">
       <DependentUpon>frmShowPersonInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUpdatePersonInfo.resx">
+    <EmbeddedResource Include="People\frmUpdatePersonInfo.resx">
       <DependentUpon>frmUpdatePersonInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -214,6 +232,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\id-card %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gender-fluid.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -25,6 +25,7 @@ namespace DVLD_BusinessLogic
         public DateTime DateOfBirth { set; get; }
         public int NationalityCountryID { set; get; }
         public string ImagePath { set; get; }
+        public string Gendor {  set; get; }
         public string NationalNo { set; get; }
 
        
@@ -44,7 +45,7 @@ namespace DVLD_BusinessLogic
             this.NationalityCountryID = -1;
             this.NationalNo = "";
             this.ImagePath = "";
-
+            this.Gendor = "";
             Mode = enMode.AddNew;
 
         }
@@ -94,7 +95,8 @@ namespace DVLD_BusinessLogic
              DateOfBirth,
              NationalityCountryID,
              NationalNo,
-             ImagePath);
+             ImagePath,
+             Gendor);
 
             return (this.ID != -1);
         }
@@ -114,19 +116,19 @@ namespace DVLD_BusinessLogic
              DateOfBirth,
              NationalityCountryID,
              NationalNo,
-             ImagePath);
+             ImagePath,Gendor);
 
         }
 
         public static clsPerson Find(int ID)
         {
 
-            string FirstName = "",SecondName = "" , ThirdName = "" , LastName = "", Email = "", Phone = "", Address = "", ImagePath = "" , NationalNo = "";
+            string FirstName = "",SecondName = "" , ThirdName = "" , LastName = "", Email = "", Phone = "", Address = "", ImagePath = "" , NationalNo = "",Gendor = "";
             DateTime DateOfBirth = DateTime.Now;
             int NationalityCountryID = -1;
 
             if (clsPeopleDataAccess.GetPersonByID(ID, ref FirstName, ref SecondName, ref ThirdName, ref LastName,
-                          ref Email, ref Phone, ref Address, ref DateOfBirth, ref NationalityCountryID,ref NationalNo, ref ImagePath))
+                          ref Email, ref Phone, ref Address, ref DateOfBirth, ref NationalityCountryID,ref NationalNo, ref ImagePath,ref Gendor))
 
                 return new clsPerson(ID,
              FirstName,

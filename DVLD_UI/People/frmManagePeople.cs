@@ -29,7 +29,7 @@ namespace DVLD_UI
 
         private void btnAddNewPerson_Click(object sender, EventArgs e)
         {
-            Form form = new frmAddNewPerson();
+            Form form = new frmAddUpdatePerson();
             form.ShowDialog();
             _RefreshAllPeople();
         }
@@ -66,14 +66,14 @@ namespace DVLD_UI
 
         private void tsmEditPerson_Click(object sender, EventArgs e)
         {
-            Form form = new frmUpdatePersonInfo((int)dgvAllPeople.CurrentRow.Cells[0].Value);
+            Form form = new frmAddUpdatePerson((int)dgvAllPeople.CurrentRow.Cells[0].Value);
             form.ShowDialog();
             _RefreshAllPeople();
         }
 
         private void tsmAddNewPerson_Click(object sender, EventArgs e)
         {
-            Form form = new frmAddNewPerson();
+            Form form = new frmAddUpdatePerson();
             form.ShowDialog();
             _RefreshAllPeople();
         }

@@ -23,11 +23,20 @@ namespace DVLD_DataAccess
     ref DateTime DateOfBirth,
     ref int NationalityCountryID,
     ref string NationalNo,
-    ref string ImagePath)
+    ref string ImagePath,
+    ref string Gendor)
         {
             bool isFound = false;
 
-            string query = "SELECT * FROM People WHERE PersonID = @PersonID";
+            string query =
+            "SELECT FirstName, SecondName, ThirdName, LastName, Email, Phone, Address, NationalNo, " +
+            "CASE " +
+            "WHEN Gendor = 1 THEN 'Male' " +
+            "ELSE 'Female' " +
+            "END AS Gendor, NationalityCountryID, DateOfBirth, ImagePath " +
+            "FROM People WHERE PersonID = @PersonID";
+
+
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
@@ -52,7 +61,7 @@ namespace DVLD_DataAccess
                                 Phone = reader["Phone"] as string ?? "";
                                 Address = reader["Address"] as string ?? "";
                                 NationalNo = reader["NationalNo"] as string ?? "";
-
+                                Gendor = (string)reader["Gendor"];
                                 DateOfBirth = reader["DateOfBirth"] != DBNull.Value
                                     ? (DateTime)reader["DateOfBirth"]
                                     : DateTime.MinValue;
@@ -85,15 +94,16 @@ namespace DVLD_DataAccess
             DateTime DateOfBirth, 
             int NationalityCountryID,
             string NationalNo, 
-            string ImagePath)
+            string ImagePath,
+            string Gendor)
         {
             //this function will return the new contact id if succeeded and -1 if not.
             int PersonID = -1;
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString)) {
 
-                string query = @"INSERT INTO People (FirstName,SecondName,ThirdName, LastName, Email, Phone, Address,DateOfBirth, NationalityCountryID,NationalNo,ImagePath)
-                             VALUES (@FirstName,@SecondName,@ThirdName, @LastName, @Email, @Phone, @Address,@DateOfBirth, @NationalityCountryID,@NationalNo,@ImagePath);
+                string query = @"INSERT INTO People (FirstName,SecondName,ThirdName, LastName, Email, Phone, Address,DateOfBirth, NationalityCountryID,NationalNo,ImagePath,Gendor)
+                             VALUES (@FirstName,@SecondName,@ThirdName, @LastName, @Email, @Phone, @Address,@DateOfBirth, @NationalityCountryID,@NationalNo,@ImagePath,@Gendor);
                              SELECT SCOPE_IDENTITY();";
 
                 using (SqlCommand command = new SqlCommand(query, connection)) {
@@ -108,6 +118,7 @@ namespace DVLD_DataAccess
                     command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
                     command.Parameters.AddWithValue("@NationalityCountryID", NationalityCountryID);
                     command.Parameters.AddWithValue("@NationalNo", NationalNo);
+                    command.Parameters.AddWithValue("@Gendor", (Gendor == "Male"));
 
                     if (ImagePath != "" && ImagePath != null)
                         command.Parameters.AddWithValue("@ImagePath", ImagePath);
@@ -147,7 +158,8 @@ namespace DVLD_DataAccess
             DateTime DateOfBirth, 
             int NationalityCountryID, 
             string NationalNo,
-            string ImagePath)
+            string ImagePath,
+            string Gendor)
         {
 
             int rowsAffected = 0;
@@ -164,7 +176,8 @@ namespace DVLD_DataAccess
                             DateOfBirth = @DateOfBirth,
                             NationalityCountryID = @NationalityCountryID,
                             NationalNo = @NationalNo,
-                            ImagePath =@ImagePath
+                            ImagePath =@ImagePath,
+                            Gendor = @Gendor
                             where PersonID = @PersonID";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -183,6 +196,7 @@ namespace DVLD_DataAccess
                         command.Parameters.AddWithValue("@DateOfBirth", DateOfBirth);
                         command.Parameters.AddWithValue("@NationalityCountryID", NationalityCountryID);
                         command.Parameters.AddWithValue("@NationalNo", NationalNo);
+                        command.Parameters.AddWithValue("@Gendor", (Gendor == "Male"));
 
                         if (ImagePath != "" && ImagePath != null)
                             command.Parameters.AddWithValue("@ImagePath", ImagePath);
@@ -208,7 +222,12 @@ namespace DVLD_DataAccess
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
 
-                string query = "SELECT * FROM People";
+                string query = "SELECT PersonID, FirstName, SecondName, ThirdName, LastName, Email, Phone, Address, NationalNo, " +
+                                "CASE " +
+                                "WHEN Gendor = 1 THEN 'Male' " +
+                                "ELSE 'Female' " +
+                                "END AS Gendor, NationalityCountryID, DateOfBirth, ImagePath " +
+                                "FROM People";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {

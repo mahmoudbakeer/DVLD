@@ -77,5 +77,16 @@ namespace DVLD_UI
             form.ShowDialog();
             _RefreshAllPeople();
         }
+
+        private void cbSortBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //string val = cbSortBy.SelectedItem.ToString();
+            //switch (val)
+            //{
+            //    case "FirstName":
+            //        dgvAllPeople.DataSource = clsPerson.GetAllPeople().DefaultView.RowFilter = "FirstName";
+            //        break;
+            //}
+        }
     }
 }

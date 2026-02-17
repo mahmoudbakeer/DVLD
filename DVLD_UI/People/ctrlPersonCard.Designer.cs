@@ -55,6 +55,7 @@
             this.lblPersonalInfoHeader = new System.Windows.Forms.Label();
             this.pnlPhotoSection = new System.Windows.Forms.Panel();
             this.pnlPhoto = new System.Windows.Forms.Panel();
+            this.pnlPhotoFrame = new System.Windows.Forms.Panel();
             this.pbSelfiPicture = new System.Windows.Forms.PictureBox();
             this.lblPhotoPlaceholder = new System.Windows.Forms.Label();
             this.pnlHeader = new System.Windows.Forms.Panel();
@@ -62,7 +63,7 @@
             this.lblCardTitle = new System.Windows.Forms.Label();
             this.pnlHeaderAccent = new System.Windows.Forms.Panel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.pnlPhotoFrame = new System.Windows.Forms.Panel();
+            this.btnEditInfo = new System.Windows.Forms.Button();
             this.pnlMain.SuspendLayout();
             this.pnlFooter.SuspendLayout();
             this.pnlContent.SuspendLayout();
@@ -488,6 +489,7 @@
             // pnlPhotoSection
             // 
             this.pnlPhotoSection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(250)))), ((int)(((byte)(252)))));
+            this.pnlPhotoSection.Controls.Add(this.btnEditInfo);
             this.pnlPhotoSection.Controls.Add(this.pnlPhoto);
             this.pnlPhotoSection.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlPhotoSection.Location = new System.Drawing.Point(0, 80);
@@ -506,6 +508,14 @@
             this.pnlPhoto.Name = "pnlPhoto";
             this.pnlPhoto.Size = new System.Drawing.Size(180, 220);
             this.pnlPhoto.TabIndex = 0;
+            // 
+            // pnlPhotoFrame
+            // 
+            this.pnlPhotoFrame.BackColor = System.Drawing.Color.Transparent;
+            this.pnlPhotoFrame.Location = new System.Drawing.Point(15, 15);
+            this.pnlPhotoFrame.Name = "pnlPhotoFrame";
+            this.pnlPhotoFrame.Size = new System.Drawing.Size(150, 150);
+            this.pnlPhotoFrame.TabIndex = 0;
             // 
             // pbSelfiPicture
             // 
@@ -574,13 +584,18 @@
             this.pnlHeaderAccent.Size = new System.Drawing.Size(5, 80);
             this.pnlHeaderAccent.TabIndex = 0;
             // 
-            // pnlPhotoFrame
+            // btnEditInfo
             // 
-            this.pnlPhotoFrame.BackColor = System.Drawing.Color.Transparent;
-            this.pnlPhotoFrame.Location = new System.Drawing.Point(15, 15);
-            this.pnlPhotoFrame.Name = "pnlPhotoFrame";
-            this.pnlPhotoFrame.Size = new System.Drawing.Size(150, 150);
-            this.pnlPhotoFrame.TabIndex = 0;
+            this.btnEditInfo.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnEditInfo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditInfo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnEditInfo.Location = new System.Drawing.Point(66, 295);
+            this.btnEditInfo.Name = "btnEditInfo";
+            this.btnEditInfo.Size = new System.Drawing.Size(75, 33);
+            this.btnEditInfo.TabIndex = 0;
+            this.btnEditInfo.Text = "Edit Info";
+            this.btnEditInfo.UseVisualStyleBackColor = false;
+            this.btnEditInfo.Click += new System.EventHandler(this.btnEditInfo_Click);
             // 
             // ctrlPersonCard
             // 
@@ -673,5 +688,6 @@
 
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.Panel pnlPhotoFrame;
+        private System.Windows.Forms.Button btnEditInfo;
     }
 }

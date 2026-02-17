@@ -145,7 +145,31 @@ namespace DVLD_BusinessLogic
             else
                 return null;
         }
+        public static clsPerson Find(string NationalNo)
+        {
+            int ID = -1;
+            string FirstName = "", SecondName = "", ThirdName = "", LastName = "", Email = "", Phone = "", Address = "", ImagePath = "",  Gendor = "";
+            DateTime DateOfBirth = DateTime.Now;
+            int NationalityCountryID = -1;
 
+            if (clsPeopleDataAccess.GetPersonByNationalNo(ref ID, ref FirstName, ref SecondName, ref ThirdName, ref LastName,
+                          ref Email, ref Phone, ref Address, ref DateOfBirth, ref NationalityCountryID,  NationalNo, ref ImagePath, ref Gendor))
+
+                return new clsPerson(ID,
+             FirstName,
+             SecondName,
+             ThirdName,
+             LastName,
+             Email,
+             Phone,
+             Address,
+             DateOfBirth,
+             NationalityCountryID,
+             NationalNo,
+             ImagePath);
+            else
+                return null;
+        }
         public bool Save()
         {
 

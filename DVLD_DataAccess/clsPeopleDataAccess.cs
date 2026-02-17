@@ -83,6 +83,77 @@ namespace DVLD_DataAccess
 
             return isFound;
         }
+        public static bool GetPersonByNationalNo(
+    ref int PersonID,
+    ref string FirstName,
+    ref string SecondName,
+    ref string ThirdName,
+    ref string LastName,
+    ref string Email,
+    ref string Phone,
+    ref string Address,
+    ref DateTime DateOfBirth,
+    ref int NationalityCountryID,
+    string NationalNo,
+    ref string ImagePath,
+    ref string Gendor)
+        {
+            bool isFound = false;
+
+            string query =
+            "SELECT PersonID,FirstName, SecondName, ThirdName, LastName, Email, Phone, Address " +
+            "CASE " +
+            "WHEN Gendor = 1 THEN 'Male' " +
+            "ELSE 'Female' " +
+            "END AS Gendor, NationalityCountryID, DateOfBirth, ImagePath " +
+            "FROM People WHERE NationalNo = @NationalNo";
+
+
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@NationalNo", NationalNo);
+                    try
+                    {
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                isFound = true;
+                                PersonID = (int)reader["ID"];
+                                FirstName = reader["FirstName"] as string ?? "";
+                                SecondName = reader["SecondName"] as string ?? "";
+                                ThirdName = reader["ThirdName"] as string ?? "";
+                                LastName = reader["LastName"] as string ?? "";
+                                Email = reader["Email"] as string ?? "";
+                                Phone = reader["Phone"] as string ?? "";
+                                Address = reader["Address"] as string ?? "";
+                                Gendor = (string)reader["Gendor"];
+                                DateOfBirth = reader["DateOfBirth"] != DBNull.Value
+                                    ? (DateTime)reader["DateOfBirth"]
+                                    : DateTime.MinValue;
+
+                                NationalityCountryID = reader["NationalityCountryID"] != DBNull.Value
+                                    ? (int)reader["NationalityCountryID"]
+                                    : -1;
+
+                                ImagePath = reader["ImagePath"] as string ?? "";
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error :" + ex.Message);
+                    }
+                }
+            }
+
+            return isFound;
+        }
         public static int AddNewPerson(
             string FirstName,
             string SecondName,

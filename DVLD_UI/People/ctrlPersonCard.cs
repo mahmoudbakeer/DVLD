@@ -148,11 +148,25 @@ namespace DVLD_UI
                 UpdateStatus("NOT FOUND", Color.FromArgb(239, 68, 68));
             }
         }
+        public void LoadPersonData(string NationalNo)
+        {
+            _Person = clsPerson.Find(NationalNo);
 
+            if (_Person != null)
+            {
+                DisplayPersonInfo();
+                UpdateStatus("ACTIVE", secondaryColor);
+            }
+            else
+            {
+                ClearPersonInfo();
+                UpdateStatus("NOT FOUND", Color.FromArgb(239, 68, 68));
+            }
+        }
         private void DisplayPersonInfo()
         {
             // Personal Info
-            lblFullName.Text = $"{_Person.FirstName} {_Person.SecondName} {_Person.ThirdName} {_Person.LastName}";
+            lblFullName.Text = $"{_Person.FirstName} {_Person.LastName}";
             lblPersonID.Text = _Person.ID.ToString();
             lblNationalNo.Text = _Person.NationalNo;
             lblDateOfBirth.Text = _Person.DateOfBirth.ToShortDateString();
@@ -217,6 +231,20 @@ namespace DVLD_UI
         public clsPerson Person
         {
             get { return _Person; }
+        }
+
+        private void btnEditInfo_Click(object sender, EventArgs e)
+        {
+            if (_Person != null)
+            {
+                Form frm = new frmAddUpdatePerson(Person.ID);
+                frm.ShowDialog();
+                LoadPersonData(_Person.ID);
+            }
+            else
+            {
+                MessageBox.Show("Error", "No such Person", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

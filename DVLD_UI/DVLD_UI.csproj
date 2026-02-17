@@ -52,6 +52,12 @@
     <Compile Include="ctrlAddUpdatePersonInfo.Designer.cs">
       <DependentUpon>ctrlAddUpdatePersonInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="ctrlPersonCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ctrlPersonCardWithFilter.Designer.cs">
+      <DependentUpon>ctrlPersonCardWithFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="ctrlShowPersonCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -108,8 +114,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\clsUtil.cs" />
     <EmbeddedResource Include="ctrlAddUpdatePersonInfo.resx">
       <DependentUpon>ctrlAddUpdatePersonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ctrlPersonCardWithFilter.resx">
+      <DependentUpon>ctrlPersonCardWithFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ctrlShowPersonCard.resx">
       <DependentUpon>ctrlShowPersonCard.cs</DependentUpon>

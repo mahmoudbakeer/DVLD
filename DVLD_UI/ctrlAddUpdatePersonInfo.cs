@@ -1,5 +1,6 @@
 ﻿using DVLD_BusinessLogic;
 using DVLD_UI.Properties;
+using DVLD_UI.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,7 +54,7 @@ namespace DVLD_UI
             }
             else
             {
-                pbProfilePicture.Load(Person.ImagePath);
+                pbProfilePicture.ImageLocation = (Person.ImagePath);
                 btnRemovePicture.Enabled = true;
             }
         }
@@ -114,17 +115,29 @@ namespace DVLD_UI
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                Person.ImagePath = openFileDialog1.FileName;
-                pbProfilePicture.Load(Person.ImagePath);
+                if (Person.ImagePath != "" )
+                {
+                    clsUtil.DeleteFile(Person.ImagePath);
+                    Person.ImagePath = "";
+                }
+                Person.ImagePath = clsUtil.CopyWithGuidName(openFileDialog1.FileName, "D:\\Pictures"); ;
+                pbProfilePicture.ImageLocation = Person.ImagePath;
                 btnRemovePicture.Enabled=true;
             }
         }
 
         private void btnRemovePicture_Click(object sender, EventArgs e)
         {
-            Person.ImagePath = "";
-            pbProfilePicture.ImageLocation = null;
-            btnRemovePicture.Enabled = false;
+            if (Person.ImagePath != "" && clsUtil.DeleteFile(Person.ImagePath))
+            {
+                Person.ImagePath = "";
+                pbProfilePicture.ImageLocation = null;
+                btnRemovePicture.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Failed", "Can't Delete the Image");
+            }
         }
         private void _ValidateTextBox(TextBox txt)
         {
@@ -171,9 +184,14 @@ namespace DVLD_UI
                 epValidation.SetError(txtThirdName, "Required");
                 isValid = false;
             }
-            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+            if (string.IsNullOrWhiteSpace(txtEmail.Text) )
             {
                 epValidation.SetError(txtEmail, "Required");
+                isValid = false;
+            }
+            if (!clsUtil.IsValidEmail(txtEmail.Text))
+            {
+                epValidation.SetError(txtEmail, "Email Address should be valid");
                 isValid = false;
             }
             if (string.IsNullOrWhiteSpace(txtAddress.Text))
@@ -213,8 +231,10 @@ namespace DVLD_UI
                 _FillPersonFromUI();
                 if (Person.Save())
                 {
-                    MessageBox.Show("Successed!", "Informations Added Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
+                    if (MessageBox.Show("Successed!", "Informations Added Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                    {
+                        return;
+                    }
                 }
                 else
                 {

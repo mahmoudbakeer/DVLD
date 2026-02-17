@@ -20,6 +20,7 @@ namespace DVLD_UI
             _PersonID = PersonID;
             this.Load += _LoadPersonInfo;
         }
+
         private void _LoadPersonInfo(object sender, EventArgs e) {
             ctrlPersonCard1.LoadPersonData(_PersonID);
         }

@@ -33,7 +33,8 @@ namespace DVLD_UI
         {
             if (cbFilter.SelectedItem == null)
             {
-                MessageBox.Show("Please select a filter first.");
+                cbFilter.Focus();
+                errorProvider1.SetError(cbFilter, "Please Choose a Filter Item.");
                 return;
             }
 
@@ -43,9 +44,8 @@ namespace DVLD_UI
             {
                 case "Person ID":
                     if (!clsUtil.IsOnlyNumbers(txtFilter.Text))
-                        MessageBox.Show("Invalid ID format.");
+                        errorProvider1.SetError(txtFilter, "Only Numbers Are Allowed");
                     break;
-
                 default:
                     break;
             }
@@ -55,7 +55,8 @@ namespace DVLD_UI
         {
             if (cbFilter.SelectedItem == null)
             {
-                MessageBox.Show("Please select a filter first.");
+                cbFilter.Focus();
+                errorProvider1.SetError(cbFilter, "Please Choose a Filter Item.");
                 return;
             }
 
@@ -64,7 +65,8 @@ namespace DVLD_UI
 
             if (string.IsNullOrWhiteSpace(value))
             {
-                MessageBox.Show("Enter a value to search.");
+                txtFilter.Focus();
+                errorProvider1.SetError(txtFilter, "ENter value To Search");
                 return;
             }
 
@@ -78,14 +80,20 @@ namespace DVLD_UI
                     if (int.TryParse(value, out int id))
                         ctrlPersonCard1.LoadPersonData(id);
                     else
-                        MessageBox.Show("Invalid ID format.");
+                        errorProvider1.SetError(txtFilter, "Only Numbers Are Allowed");
                     break;
 
                 default:
-                    MessageBox.Show("Unsupported filter.");
+                    cbFilter.Focus();
+                    errorProvider1.SetError(cbFilter, "Please Choose a Filter Item.");
                     break;
             }
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmAddUpdatePerson();
+            frm.ShowDialog();
 
+        }
     }
 }

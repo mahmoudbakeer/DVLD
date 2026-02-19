@@ -9,14 +9,15 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace DVLD_DataAccess
 {
-    public class clsUsersDataAccess
+    public static class clsUsersDataAccess
     {
         public static bool GetUserByID(
     int UserID,
     ref int PersonID,
-    ref bool IsActive,
+    
     ref string UserName,
-    ref string Password
+    ref string Password,
+    ref bool IsActive
    )
         {
             bool isFound = false;

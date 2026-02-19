@@ -106,9 +106,6 @@ namespace DVLD_BusinessLogic
 
             }
 
-
-
-
             return false;
         }
 

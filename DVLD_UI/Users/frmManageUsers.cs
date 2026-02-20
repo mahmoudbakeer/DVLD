@@ -30,12 +30,12 @@ namespace DVLD_UI.Users
             _RefreshAllUsers();
         }
 
-        //private void btnAddNewUser_Click(object sender, EventArgs e)
-        //{
-        //    Form form = new frmAddUpdateUser();
-        //    form.ShowDialog();
-        //    _RefreshAllUsers();
-        //}
+        private void btnAddNewUser_Click(object sender, EventArgs e)
+        {
+            Form form = new frmAddUpdateUser();
+            form.ShowDialog();
+            _RefreshAllUsers();
+        }
 
         //private void tsmShowDetails_Click(object sender, EventArgs e)
         //{

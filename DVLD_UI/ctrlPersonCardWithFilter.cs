@@ -15,18 +15,20 @@ namespace DVLD_UI
 {
     public partial class ctrlPersonCardWithFilter : UserControl
     {
-        private int _PersonID;
-        
-        public ctrlPersonCardWithFilter(int PersonID)
+        public int PersonID;
+        public ctrlPersonCardWithFilter()
         {
             InitializeComponent();
-            _PersonID = PersonID;
-            this.Load += _LoadPersonInfo;
+            
 
         }
-        private void _LoadPersonInfo(object sender, EventArgs e)
+        
+        public void LoadPersonInfo(int PersonID)
+
         {
-            ctrlPersonCard1.LoadPersonData(_PersonID);
+            this.PersonID = PersonID;
+            txtFilter.Text = PersonID.ToString().Trim();
+            FindNow();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -45,6 +47,8 @@ namespace DVLD_UI
                 case "Person ID":
                     if (!clsUtil.IsOnlyNumbers(txtFilter.Text))
                         errorProvider1.SetError(txtFilter, "Only Numbers Are Allowed");
+                         txtFilter.Clear();
+                         txtFilter.Focus();
                     break;
                 default:
                     break;
@@ -52,6 +56,11 @@ namespace DVLD_UI
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
+        {
+            
+            FindNow();  
+        }
+        public void FindNow()
         {
             if (cbFilter.SelectedItem == null)
             {
@@ -69,7 +78,6 @@ namespace DVLD_UI
                 errorProvider1.SetError(txtFilter, "ENter value To Search");
                 return;
             }
-
             switch (filter)
             {
                 case "National NO":
@@ -93,6 +101,14 @@ namespace DVLD_UI
         {
             Form frm = new frmAddUpdatePerson();
             frm.ShowDialog();
+
+        }
+        public void FilterFocus()
+        {
+            txtFilter.Focus();
+        }
+        private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

@@ -14,6 +14,12 @@ namespace DVLD_UI
     public partial class frmShowPersonInfo : Form
     {
         private int _PersonID;
+        public frmShowPersonInfo()
+        {
+            InitializeComponent();
+           
+            this.Load += _LoadPersonInfo;
+        }
         public frmShowPersonInfo(int PersonID)
         {
             InitializeComponent();

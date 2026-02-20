@@ -251,6 +251,72 @@ namespace DVLD_DataAccess
 
             return isFound;
         }
+        public static bool IsUserExist(string UserName)
+        {
+            bool isFound = false;
 
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                string query = "SELECT Found=1 FROM Users WHERE UserName = @UserName";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@UserName", UserName);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            isFound = reader.HasRows;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //Console.WriteLine("Error: " + ex.Message);
+                        isFound = false;
+                    }
+                }
+            }
+
+            return isFound;
+        }
+        public static bool IsPersonExistForAnotherUser(int PersonID)
+        {
+            bool isFound = false;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                string query = "SELECT Found=1 FROM Users WHERE PersonID = @PersonID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@PersonID", PersonID);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            isFound = reader.HasRows;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //Console.WriteLine("Error: " + ex.Message);
+                        isFound = false;
+                    }
+                }
+            }
+            return isFound;
+        }
     }
 }

@@ -44,10 +44,11 @@
             this.cbFilter.Items.AddRange(new object[] {
             "Person ID",
             "National No"});
-            this.cbFilter.Location = new System.Drawing.Point(78, 28);
+            this.cbFilter.Location = new System.Drawing.Point(82, 21);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(133, 21);
             this.cbFilter.TabIndex = 1;
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.cbFilter_SelectedIndexChanged);
             // 
             // txtFilter
             // 

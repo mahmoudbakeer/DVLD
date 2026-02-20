@@ -18,11 +18,11 @@ namespace DVLD_BusinessLogic
         public int PersonID { set; get; }
         public string UserName { set; get; }
         public string Password { set; get; }
-        bool IsActive { set; get; }
+        public bool IsActive { set; get; }
 
 
 
-        public clsUser(int PersonID)
+        public clsUser()
 
         {
             this.ID = -1;
@@ -108,7 +108,10 @@ namespace DVLD_BusinessLogic
 
             return false;
         }
-
+        public static bool IsPersonExistForAnotherUser(int PersonID)
+        {
+            return clsUsersDataAccess.IsPersonExistForAnotherUser(PersonID);
+        }
         public static DataTable GetAllUsers()
         {
             return clsUsersDataAccess.GetAllUsers();
@@ -123,6 +126,10 @@ namespace DVLD_BusinessLogic
         public static bool isUserExist(int ID)
         {
             return clsUsersDataAccess.IsUserExist(ID);
+        }
+        public static bool isUserExist(string UserName)
+        {
+            return clsUsersDataAccess.IsUserExist(UserName);
         }
     }
 }

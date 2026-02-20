@@ -13,7 +13,7 @@ namespace DVLD_UI
 {
     public partial class frmAddUpdatePerson : Form
     {
-        clsPerson Person { get; set; }
+        clsPerson Person { get;  }
         public frmAddUpdatePerson()
         {
             InitializeComponent();

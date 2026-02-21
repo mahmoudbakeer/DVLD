@@ -1,4 +1,5 @@
 ﻿using DVLD_BusinessLogic;
+using DVLD_UI.People;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,13 +14,26 @@ namespace DVLD_UI
 {
     public partial class frmManagePeople : Form
     {
+        private static DataTable _dtAllPeople = clsPerson.GetAllPeople();
+
+        //only select the columns that you want to show in the grid
+        private DataTable _dtPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "NationalNo",
+                                                         "FirstName", "SecondName", "ThirdName", "LastName",
+                                                         "Gendor", "DateOfBirth", 
+                                                         "Phone", "Email");
+
+        private void _RefreshAllPeople()
+        {
+            _dtAllPeople = clsPerson.GetAllPeople();
+            _dtPeople = _dtAllPeople.DefaultView.ToTable(false, "PersonID", "NationalNo",
+                                                       "FirstName", "SecondName", "ThirdName", "LastName",
+                                                       "Gendor", "DateOfBirth", 
+                                                       "Phone", "Email");
+            dgvAllPeople.DataSource = _dtPeople;
+        }
         public frmManagePeople()
         {
             InitializeComponent();
-        }
-        private void _RefreshAllPeople()
-        {
-            dgvAllPeople.DataSource = clsPerson.GetAllPeople();
         }
 
         private void frmManagePeople_Load(object sender, EventArgs e)
@@ -36,7 +50,7 @@ namespace DVLD_UI
 
         private void tsmShowDetails_Click(object sender, EventArgs e)
         {
-            Form form = new frmShowPersonInfo((int)dgvAllPeople.CurrentRow.Cells[0].Value);
+            frmShowPersonInfo form = new frmShowPersonInfo((int)dgvAllPeople.CurrentRow.Cells[0].Value);
             form.ShowDialog();
             _RefreshAllPeople();
         }
@@ -66,6 +80,12 @@ namespace DVLD_UI
 
         private void tsmEditPerson_Click(object sender, EventArgs e)
         {
+            if (dgvAllPeople.CurrentRow == null)
+            {
+                MessageBox.Show("Please select a person first");
+                return;
+            }
+
             Form form = new frmAddUpdatePerson((int)dgvAllPeople.CurrentRow.Cells[0].Value);
             form.ShowDialog();
             _RefreshAllPeople();
@@ -88,5 +108,61 @@ namespace DVLD_UI
             //        break;
             //}
         }
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+            string FilterColumn = string.Empty;
+
+            switch (cbSortBy.SelectedItem)
+            {
+                case "First Name":
+                    FilterColumn = "FirstName";
+                    break;
+                case "Person ID":
+                    FilterColumn = "PersonID";
+                    break;
+                case "Second Name":
+                    FilterColumn = "SecondName";
+                    break;
+                case "Third Name":
+                    FilterColumn = "ThirdName";
+                    break;
+                case "Last Name":
+                    FilterColumn = "LastName";
+                    break;
+                case "National No":
+                    FilterColumn = "NationalNo";
+                    break;
+                case "Email":
+                    FilterColumn = "Email";
+                    break;
+                case "Phone":
+                    FilterColumn = "Phone";
+                    break;
+                case "None":
+                    FilterColumn = "None";
+                    break;
+                default:
+                    FilterColumn = string.Empty;
+                    break;
+            }
+            if(FilterColumn == "" || FilterColumn == "None")
+            {
+                MessageBox.Show("Please Select Filter","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                cbSortBy.Focus();
+            }
+            else if(FilterColumn == "PersonID" && !string.IsNullOrEmpty(txtFilter.Text))
+
+            {
+                _dtPeople.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtFilter.Text.Trim());
+
+            }
+            else if(!string.IsNullOrEmpty(txtFilter.Text))
+            {
+                _dtPeople.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColumn, txtFilter.Text.Trim());
+            }
+        }
+
+        
     }
 }

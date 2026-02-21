@@ -1,5 +1,4 @@
-﻿using DVLD_BusinessLogic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,26 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DVLD_UI
+namespace DVLD_UI.People
 {
     public partial class frmShowPersonInfo : Form
     {
         private int _PersonID;
-        public frmShowPersonInfo()
+        public int PersonID
         {
-            InitializeComponent();
-           
-            this.Load += _LoadPersonInfo;
+            get { return _PersonID; }
+            set {
+                ctrlPersonCard1.LoadPersonInfo(value);
+                _PersonID = value; }
         }
         public frmShowPersonInfo(int PersonID)
         {
+            
             InitializeComponent();
-            _PersonID = PersonID;
-            this.Load += _LoadPersonInfo;
-        }
-
-        private void _LoadPersonInfo(object sender, EventArgs e) {
-            ctrlPersonCard1.LoadPersonData(_PersonID);
+            this.PersonID = PersonID;
+            ctrlPersonCard1.LoadPersonInfo(PersonID);
         }
     }
 }

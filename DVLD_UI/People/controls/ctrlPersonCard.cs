@@ -42,6 +42,21 @@ namespace DVLD_UI.People.controls
                 return;
             }
         }
+        public void LoadPersonInfo(string NationalNo)
+        {
+            
+            _Person = clsPerson.Find(NationalNo);
+            _PersonID = _Person.ID;
+            if (_Person != null)
+            {
+                _FillPersonInfo();
+            }
+            else
+            {
+                MessageBox.Show("This Person is Not Exist", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
         private void _FillPersonInfo()
         {
             lblFullName.Text = $"{_Person.FirstName} {_Person.LastName}";

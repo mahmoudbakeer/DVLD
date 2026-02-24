@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLD_UI.Users;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,12 @@ namespace DVLD_UI
         private void peopleToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frm = new frmManagePeople();
+            frm.ShowDialog();
+        }
+
+        private void usersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageUsers frm = new frmManageUsers();
             frm.ShowDialog();
         }
     }

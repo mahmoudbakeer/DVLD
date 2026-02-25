@@ -100,7 +100,7 @@ namespace DVLD_UI.People.controls
             _Person = clsPerson.Find(id);
             ctrlPersonCard1.LoadPersonInfo(id);
 
-            FilterEnabled = !clsPerson.isPersonExist(id) ? true : false;
+            
         }
         private void btnSearch_Click(object sender, EventArgs e)
         {

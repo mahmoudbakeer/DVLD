@@ -34,25 +34,26 @@
             this.cbSortBy = new System.Windows.Forms.ComboBox();
             this.btnAddNewUser = new System.Windows.Forms.Button();
             this.dgvAllUsers = new System.Windows.Forms.DataGridView();
-            this.ManageUsersTitle = new System.Windows.Forms.Label();
-            this.pbManagePeopleForm = new System.Windows.Forms.PictureBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.cmsOptionsMenue = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.ManageUsersTitle = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbIsActive = new System.Windows.Forms.CheckBox();
             this.addNewUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editUserInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showUserInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pbManagePeopleForm = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllUsers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbManagePeopleForm)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.cmsOptionsMenue.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbManagePeopleForm)).BeginInit();
             this.SuspendLayout();
             // 
             // txtFilter
             // 
-            this.txtFilter.Location = new System.Drawing.Point(334, 232);
+            this.txtFilter.Location = new System.Drawing.Point(337, 230);
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(185, 20);
             this.txtFilter.TabIndex = 13;
@@ -83,6 +84,7 @@
             this.cbSortBy.Name = "cbSortBy";
             this.cbSortBy.Size = new System.Drawing.Size(204, 21);
             this.cbSortBy.TabIndex = 11;
+            this.cbSortBy.SelectedIndexChanged += new System.EventHandler(this.cbSortBy_SelectedIndexChanged);
             // 
             // btnAddNewUser
             // 
@@ -111,6 +113,23 @@
             this.dgvAllUsers.Size = new System.Drawing.Size(901, 295);
             this.dgvAllUsers.TabIndex = 9;
             // 
+            // cmsOptionsMenue
+            // 
+            this.cmsOptionsMenue.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addNewUserToolStripMenuItem,
+            this.editUserInfoToolStripMenuItem,
+            this.deleteUserToolStripMenuItem,
+            this.showUserInfoToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.changePasswordToolStripMenuItem});
+            this.cmsOptionsMenue.Name = "cmsOptionsMenue";
+            this.cmsOptionsMenue.Size = new System.Drawing.Size(181, 142);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            // 
             // ManageUsersTitle
             // 
             this.ManageUsersTitle.AutoSize = true;
@@ -122,6 +141,62 @@
             this.ManageUsersTitle.TabIndex = 8;
             this.ManageUsersTitle.Text = "ManageUsers";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // cbIsActive
+            // 
+            this.cbIsActive.AutoSize = true;
+            this.cbIsActive.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbIsActive.Location = new System.Drawing.Point(337, 227);
+            this.cbIsActive.Name = "cbIsActive";
+            this.cbIsActive.Size = new System.Drawing.Size(110, 32);
+            this.cbIsActive.TabIndex = 14;
+            this.cbIsActive.Text = "IsActive";
+            this.cbIsActive.UseVisualStyleBackColor = true;
+            this.cbIsActive.CheckedChanged += new System.EventHandler(this.cbIsActive_CheckedChanged);
+            // 
+            // addNewUserToolStripMenuItem
+            // 
+            this.addNewUserToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.add_user_6025683;
+            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
+            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addNewUserToolStripMenuItem.Text = "Add New User";
+            this.addNewUserToolStripMenuItem.Click += new System.EventHandler(this.addNewUserToolStripMenuItem_Click);
+            // 
+            // editUserInfoToolStripMenuItem
+            // 
+            this.editUserInfoToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.update;
+            this.editUserInfoToolStripMenuItem.Name = "editUserInfoToolStripMenuItem";
+            this.editUserInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editUserInfoToolStripMenuItem.Text = "Edit User Info";
+            this.editUserInfoToolStripMenuItem.Click += new System.EventHandler(this.editUserInfoToolStripMenuItem_Click);
+            // 
+            // deleteUserToolStripMenuItem
+            // 
+            this.deleteUserToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.delete;
+            this.deleteUserToolStripMenuItem.Name = "deleteUserToolStripMenuItem";
+            this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteUserToolStripMenuItem.Text = "Delete User";
+            this.deleteUserToolStripMenuItem.Click += new System.EventHandler(this.deleteUserToolStripMenuItem_Click);
+            // 
+            // showUserInfoToolStripMenuItem
+            // 
+            this.showUserInfoToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.show_details;
+            this.showUserInfoToolStripMenuItem.Name = "showUserInfoToolStripMenuItem";
+            this.showUserInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showUserInfoToolStripMenuItem.Text = "Show User Info";
+            this.showUserInfoToolStripMenuItem.Click += new System.EventHandler(this.showUserInfoToolStripMenuItem_Click);
+            // 
+            // changePasswordToolStripMenuItem
+            // 
+            this.changePasswordToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.setting;
+            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.changePasswordToolStripMenuItem.Text = "Change Password";
+            this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
+            // 
             // pbManagePeopleForm
             // 
             this.pbManagePeopleForm.Image = global::DVLD_UI.Properties.Resources.management;
@@ -132,71 +207,13 @@
             this.pbManagePeopleForm.TabIndex = 7;
             this.pbManagePeopleForm.TabStop = false;
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // cmsOptionsMenue
-            // 
-            this.cmsOptionsMenue.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addNewUserToolStripMenuItem,
-            this.editUserInfoToolStripMenuItem,
-            this.deleteUserToolStripMenuItem,
-            this.showUserInfoToolStripMenuItem,
-            this.toolStripMenuItem1,
-            this.changePasswordToolStripMenuItem});
-            this.cmsOptionsMenue.Name = "cmsOptionsMenue";
-            this.cmsOptionsMenue.Size = new System.Drawing.Size(169, 120);
-            // 
-            // addNewUserToolStripMenuItem
-            // 
-            this.addNewUserToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.add_user_6025683;
-            this.addNewUserToolStripMenuItem.Name = "addNewUserToolStripMenuItem";
-            this.addNewUserToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.addNewUserToolStripMenuItem.Text = "Add New User";
-            this.addNewUserToolStripMenuItem.Click += new System.EventHandler(this.addNewUserToolStripMenuItem_Click);
-            // 
-            // editUserInfoToolStripMenuItem
-            // 
-            this.editUserInfoToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.update;
-            this.editUserInfoToolStripMenuItem.Name = "editUserInfoToolStripMenuItem";
-            this.editUserInfoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.editUserInfoToolStripMenuItem.Text = "Edit User Info";
-            this.editUserInfoToolStripMenuItem.Click += new System.EventHandler(this.editUserInfoToolStripMenuItem_Click);
-            // 
-            // deleteUserToolStripMenuItem
-            // 
-            this.deleteUserToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.delete;
-            this.deleteUserToolStripMenuItem.Name = "deleteUserToolStripMenuItem";
-            this.deleteUserToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.deleteUserToolStripMenuItem.Text = "Delete User";
-            this.deleteUserToolStripMenuItem.Click += new System.EventHandler(this.deleteUserToolStripMenuItem_Click);
-            // 
-            // showUserInfoToolStripMenuItem
-            // 
-            this.showUserInfoToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.show_details;
-            this.showUserInfoToolStripMenuItem.Name = "showUserInfoToolStripMenuItem";
-            this.showUserInfoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.showUserInfoToolStripMenuItem.Text = "Show User Info";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(165, 6);
-            // 
-            // changePasswordToolStripMenuItem
-            // 
-            this.changePasswordToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.setting;
-            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.changePasswordToolStripMenuItem.Text = "Change Password";
-            // 
             // frmManageUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.NavajoWhite;
             this.ClientSize = new System.Drawing.Size(934, 578);
+            this.Controls.Add(this.cbIsActive);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.SortTitle);
             this.Controls.Add(this.cbSortBy);
@@ -208,9 +225,9 @@
             this.Text = "frmManageUsers";
             this.Load += new System.EventHandler(this.frmManageUsers_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllUsers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbManagePeopleForm)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.cmsOptionsMenue.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbManagePeopleForm)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,5 +250,6 @@
         private System.Windows.Forms.ToolStripMenuItem showUserInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
+        private System.Windows.Forms.CheckBox cbIsActive;
     }
 }

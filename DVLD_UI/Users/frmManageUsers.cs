@@ -1,9 +1,11 @@
 ﻿using DVLD_BusinessLogic;
 using DVLD_UI.People;
+using DVLD_UI.Users.Controllers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,6 +22,7 @@ namespace DVLD_UI.Users
 
         private void _RefreshAllUsers()
         {
+            _LoadUsers();
             dgvAllUsers.DataSource = _dtAllUsers;
         }
         public frmManageUsers()
@@ -27,20 +30,7 @@ namespace DVLD_UI.Users
             InitializeComponent();
            
         }
-
-
-        private void cbSortBy_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //string val = cbSortBy.SelectedItem.ToString();
-            //switch (val)
-            //{
-            //    case "FirstName":
-            //        dgvAllPeople.DataSource = clsPerson.GetAllPeople().DefaultView.RowFilter = "FirstName";
-            //        break;
-            //}
-        }
-
-        private void txtFilter_TextChanged(object sender, EventArgs e)
+        private void _FilterNow()
         {
             string FilterColumn = string.Empty;
 
@@ -58,6 +48,9 @@ namespace DVLD_UI.Users
                 case "Person ID":
                     FilterColumn = "PersonID";
                     break;
+                case "Is Active":
+                    FilterColumn = "IsActive";
+                    break;
                 case "None":
                     FilterColumn = "None";
                     break;
@@ -70,6 +63,10 @@ namespace DVLD_UI.Users
                 MessageBox.Show("Please Select Filter", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cbSortBy.Focus();
             }
+            else if(FilterColumn == "IsActive")
+            {
+                _dtAllUsers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, cbIsActive.Checked);
+            }
             else if (FilterColumn == "PersonID" && !string.IsNullOrEmpty(txtFilter.Text) || FilterColumn == "UserID" && !string.IsNullOrEmpty(txtFilter.Text))
 
             {
@@ -80,6 +77,10 @@ namespace DVLD_UI.Users
             {
                 _dtAllUsers.DefaultView.RowFilter = string.Format("[{0}] LIKE '{1}%'", FilterColumn, txtFilter.Text.Trim());
             }
+        }
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+            _FilterNow();
         }
 
         private void btnAddNewUser_Click(object sender, EventArgs e)
@@ -133,13 +134,12 @@ namespace DVLD_UI.Users
                     MessageBoxIcon.Error);
             }
         }
-
-        private void frmManageUsers_Load(object sender, EventArgs e)
+        private void _LoadUsers()
         {
             _dtAllUsers = clsUser.GetAllUsers();
             dgvAllUsers.DataSource = _dtAllUsers;
             cbSortBy.SelectedIndex = 0;
-
+            cbIsActive.Visible = false;
 
             dgvAllUsers.Columns[0].HeaderText = "UserID";
             dgvAllUsers.Columns[0].Width = 110;
@@ -147,14 +147,53 @@ namespace DVLD_UI.Users
             dgvAllUsers.Columns[1].HeaderText = "PersonID";
             dgvAllUsers.Columns[1].Width = 120;
 
-            dgvAllUsers.Columns[3].HeaderText = "UserName";
+            dgvAllUsers.Columns[3].HeaderText = "FullName";
             dgvAllUsers.Columns[3].Width = 120;
 
-            dgvAllUsers.Columns[2].HeaderText = "FullName";
+            dgvAllUsers.Columns[2].HeaderText = "UserName";
             dgvAllUsers.Columns[2].Width = 350;
 
             dgvAllUsers.Columns[4].HeaderText = "IsActive";
             dgvAllUsers.Columns[4].Width = 120;
+        }
+        private void frmManageUsers_Load(object sender, EventArgs e)
+        {
+           _LoadUsers();
+        }
+
+        private void cbSortBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbSortBy.SelectedItem.ToString() == "Is Active")
+            {
+                cbIsActive.Visible = true;
+                txtFilter.Visible = false;
+            }
+            else
+            {
+                cbIsActive.Visible = false;
+                txtFilter.Visible = true;
+            }
+        }
+
+        private void cbIsActive_CheckedChanged(object sender, EventArgs e)
+        {
+            _FilterNow();
+        }
+
+        private void showUserInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+          
+            Form frm = new frmShowUserInfo((int)dgvAllUsers.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+            return;
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new frmChangePassword((int)dgvAllUsers.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+            _RefreshAllUsers();
+            return;
         }
     }
 }

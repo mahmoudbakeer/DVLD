@@ -62,7 +62,23 @@ namespace DVLD_UI.Util
         {
             return int.TryParse(input, out _);
         }
-
+        public static bool SaveInfoInFile(string UserName,string Password,string filepath)
+        {
+            try
+            {
+                if (File.Exists(filepath))
+                {
+                    string value = string.Join("##", UserName, Password); 
+                    File.WriteAllText(filepath, value);
+                    return true; // deleted successfully
+                }
+                return false; // file wasn't there
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 
 }

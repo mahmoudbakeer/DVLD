@@ -34,5 +34,10 @@ namespace DVLD_UI
             frmManageUsers frm = new frmManageUsers();
             frm.ShowDialog();
         }
+
+        private void currentUserInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -58,7 +58,51 @@ namespace DVLD_DataAccess
 
             return isFound;
         }
+        public static bool GetUserByUserNameAndPassword(
+        ref int UserID,
+        ref int PersonID,
+         string UserName,
+         string Password,
+        ref bool IsActive
+   )
+        {
+            bool isFound = false;
 
+            string query =
+            "SELECT PersonID, UserName, Password ,IsActive " +
+            "FROM Users WHERE UserName = @UserName and Password = @Password";
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@UserName", UserName);
+                    command.Parameters.AddWithValue("@Password", Password);
+                    try
+                    {
+                        connection.Open();
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                isFound = true;
+
+                                PersonID = (int)reader["PersonID"];
+                                IsActive = (bool)reader["IsActive"];
+
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error :" + ex.Message);
+                    }
+                }
+            }
+
+            return isFound;
+        }
         public static int AddNewUser(
             int PersonID,
             string UserName,
@@ -251,19 +295,21 @@ namespace DVLD_DataAccess
 
             return isFound;
         }
-        public static bool IsUserExist(string UserName)
+
+        public static bool IsUserNameExistForAnotherUser(string UserName,int UserID)
         {
             bool isFound = false;
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
 
-                string query = "SELECT Found=1 FROM Users WHERE UserName = @UserName";
+                string query = "SELECT Found=1 FROM Users WHERE UserName = @UserName and UserID <>= @UserID";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
 
                     command.Parameters.AddWithValue("@UserName", UserName);
+                    command.Parameters.AddWithValue("@UserID", UserID);
 
                     try
                     {

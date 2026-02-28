@@ -101,7 +101,7 @@ namespace DVLD_DataAccess
             bool isFound = false;
 
             string query =
-            "SELECT PersonID,FirstName, SecondName, ThirdName, LastName, Email, Phone, Address " +
+            "SELECT PersonID,FirstName, SecondName, ThirdName, LastName, Email, Phone, Address ," +
             "CASE " +
             "WHEN Gendor = 1 THEN 'Male' " +
             "ELSE 'Female' " +
@@ -124,7 +124,7 @@ namespace DVLD_DataAccess
                             if (reader.Read())
                             {
                                 isFound = true;
-                                PersonID = (int)reader["ID"];
+                                PersonID = (int)reader["PersonID"];
                                 FirstName = reader["FirstName"] as string ?? "";
                                 SecondName = reader["SecondName"] as string ?? "";
                                 ThirdName = reader["ThirdName"] as string ?? "";

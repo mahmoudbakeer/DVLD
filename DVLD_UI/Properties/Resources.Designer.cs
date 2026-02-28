@@ -103,6 +103,16 @@ namespace DVLD_UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_Feb_28__2026__10_42_40_PM {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image Feb 28, 2026, 10_42_40 PM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap coronavirus {
             get {
                 object obj = ResourceManager.GetObject("coronavirus", resourceCulture);

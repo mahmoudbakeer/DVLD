@@ -111,7 +111,7 @@ namespace DVLD_UI.Users
                 txtUserName.Focus();
                 return false;
             }
-            else if(clsUser.isUserExist(txtUserName.Text))
+            else if(_Mode == enMode.Update && clsUser.IsUserNameExistForAnotherUser(txtUserName.Text,UserID))
             {
                 errorProvider1.SetError(txtUserName, "UserName is taken, choose another!");
                 txtUserName.Clear();

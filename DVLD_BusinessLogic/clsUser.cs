@@ -81,7 +81,18 @@ namespace DVLD_BusinessLogic
             else
                 return null;
         }
+        public static clsUser GetUserByUserNameAndPassword(string UserName,string Password)
+        {
+            int ID = -1;
+            int PersonID = -1;
+            bool IsActive = false;
 
+            if (clsUsersDataAccess.GetUserByUserNameAndPassword(ref ID, ref PersonID, UserName,  Password, ref IsActive))
+
+                return new clsUser( ID, PersonID, UserName, Password, IsActive);
+            else
+                return null;
+        }
         public bool Save()
         {
 
@@ -127,9 +138,9 @@ namespace DVLD_BusinessLogic
         {
             return clsUsersDataAccess.IsUserExist(ID);
         }
-        public static bool isUserExist(string UserName)
+        public static bool IsUserNameExistForAnotherUser(string UserName,int UserID)
         {
-            return clsUsersDataAccess.IsUserExist(UserName);
+            return clsUsersDataAccess.IsUserNameExistForAnotherUser(UserName,UserID);
         }
     }
 }

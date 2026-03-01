@@ -35,6 +35,7 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.cbRememberMe = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,11 +105,22 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(536, 202);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(0, 13);
+            this.lblError.TabIndex = 7;
+            // 
             // frmLoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Chocolate;
             this.ClientSize = new System.Drawing.Size(800, 398);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.cbRememberMe);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUserName);
@@ -118,6 +130,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmLoginScreen";
             this.Text = "frmLoginScreen";
+            this.Load += new System.EventHandler(this.frmLoginScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -133,5 +146,6 @@
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.CheckBox cbRememberMe;
+        private System.Windows.Forms.Label lblError;
     }
 }

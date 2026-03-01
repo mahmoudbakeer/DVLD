@@ -9,6 +9,6 @@ namespace DVLD_UI
 {
     public static class clsGlobalUser
     {
-        public static clsUser gUser = new clsUser();
+        public static clsUser gUser;
     }
 }

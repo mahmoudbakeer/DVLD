@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace DVLD_UI.Util
 {
@@ -62,19 +63,71 @@ namespace DVLD_UI.Util
         {
             return int.TryParse(input, out _);
         }
-        public static bool SaveInfoInFile(string UserName,string Password,string filepath)
+        public static bool SaveInfoInFile(string userName, string password, string filePath)
         {
             try
             {
-                if (File.Exists(filepath))
-                {
-                    string value = string.Join("##", UserName, Password); 
-                    File.WriteAllText(filepath, value);
-                    return true; // deleted successfully
-                }
-                return false; // file wasn't there
+                if (!File.Exists(filePath))
+                    return false;
+
+                string value = $"{userName},{password}";
+                File.WriteAllText(filePath, value);
+                return true;
             }
-            catch (Exception ex)
+            catch (IOException)
+            {
+                return false;
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return false;
+            }
+        }
+        public static void ClearFile(string filePath)
+        {
+            try
+            {
+                if (!File.Exists(filePath))
+                    return;
+
+                File.WriteAllText(filePath, string.Empty);
+                return;
+            }
+            catch (IOException)
+            {
+                return;
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return;
+            }
+        }
+        public static bool GetInfoFromFile(ref string userName, ref string password, string filePath)
+        {
+            try
+            {
+                if (!File.Exists(filePath))
+                    return false;
+
+                string value = File.ReadAllText(filePath);
+
+                if (string.IsNullOrWhiteSpace(value))
+                    return false;
+
+                string[] cred = value.Split(',');
+
+                if (cred.Length < 2)
+                    return false;
+
+                userName = cred[0];
+                password = cred[1];
+                return true;
+            }
+            catch (IOException)
+            {
+                return false;
+            }
+            catch (UnauthorizedAccessException)
             {
                 return false;
             }

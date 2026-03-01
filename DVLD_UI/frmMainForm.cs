@@ -1,4 +1,6 @@
-﻿using DVLD_UI.Users;
+﻿using DVLD_BusinessLogic;
+using DVLD_UI.Users;
+using DVLD_UI.Users.Controllers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,8 +15,10 @@ namespace DVLD_UI
 {
     public partial class frmMainForm : Form
     {
-        public frmMainForm()
+        public frmLoginScreen _frmLogin;
+        public frmMainForm(frmLoginScreen frmLogin)
         {
+            _frmLogin = frmLogin;
             InitializeComponent();
         }
 
@@ -37,7 +41,27 @@ namespace DVLD_UI
 
         private void currentUserInformationToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+            frmShowUserInfo frm = new frmShowUserInfo(DVLD_UI.clsGlobalUser.gUser.ID);
+            frm.ShowDialog();
+        }
 
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            clsGlobalUser.gUser = null;
+            this.Hide();
+            _frmLogin.Show();
+            this.Close();
+        }
+
+        private void frmMainForm_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frm = new frmChangePassword(clsGlobalUser.gUser.ID);
+            frm.ShowDialog();
         }
     }
 }

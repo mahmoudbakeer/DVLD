@@ -69,7 +69,7 @@ namespace DVLD_DataAccess
             bool isFound = false;
 
             string query =
-            "SELECT PersonID, UserName, Password ,IsActive " +
+            "SELECT UserID, PersonID, UserName, Password ,IsActive " +
             "FROM Users WHERE UserName = @UserName and Password = @Password";
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
@@ -87,7 +87,7 @@ namespace DVLD_DataAccess
                             if (reader.Read())
                             {
                                 isFound = true;
-
+                                UserID = (int)reader["UserID"];
                                 PersonID = (int)reader["PersonID"];
                                 IsActive = (bool)reader["IsActive"];
 

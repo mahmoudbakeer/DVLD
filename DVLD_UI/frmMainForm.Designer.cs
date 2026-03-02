@@ -30,6 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.applicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageApplicationTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.peopleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,6 +60,8 @@
             // 
             // applicaToolStripMenuItem
             // 
+            this.applicaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.manageApplicationTypesToolStripMenuItem});
             this.applicaToolStripMenuItem.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.applicaToolStripMenuItem.ForeColor = System.Drawing.Color.Blue;
             this.applicaToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.application;
@@ -66,6 +69,14 @@
             this.applicaToolStripMenuItem.Size = new System.Drawing.Size(178, 46);
             this.applicaToolStripMenuItem.Text = "Applications";
             this.applicaToolStripMenuItem.Click += new System.EventHandler(this.applicaToolStripMenuItem_Click);
+            // 
+            // manageApplicationTypesToolStripMenuItem
+            // 
+            this.manageApplicationTypesToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.ManageApllications;
+            this.manageApplicationTypesToolStripMenuItem.Name = "manageApplicationTypesToolStripMenuItem";
+            this.manageApplicationTypesToolStripMenuItem.Size = new System.Drawing.Size(319, 70);
+            this.manageApplicationTypesToolStripMenuItem.Text = "Manage Application Types";
+            this.manageApplicationTypesToolStripMenuItem.Click += new System.EventHandler(this.manageApplicationTypesToolStripMenuItem_Click);
             // 
             // peopleToolStripMenuItem
             // 
@@ -119,7 +130,7 @@
             // 
             this.currentUserInformationToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.show_details;
             this.currentUserInformationToolStripMenuItem.Name = "currentUserInformationToolStripMenuItem";
-            this.currentUserInformationToolStripMenuItem.Size = new System.Drawing.Size(308, 70);
+            this.currentUserInformationToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
             this.currentUserInformationToolStripMenuItem.Text = "Current User Information";
             this.currentUserInformationToolStripMenuItem.Click += new System.EventHandler(this.currentUserInformationToolStripMenuItem_Click);
             // 
@@ -127,7 +138,7 @@
             // 
             this.changePasswordToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.padlock;
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(308, 70);
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
@@ -135,7 +146,7 @@
             // 
             this.logOutToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.logout_4400828;
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(308, 70);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
@@ -167,5 +178,6 @@
         private System.Windows.Forms.ToolStripMenuItem currentUserInformationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageApplicationTypesToolStripMenuItem;
     }
 }

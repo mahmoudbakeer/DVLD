@@ -35,7 +35,9 @@ namespace DVLD_UI.Applications
 
         private void editApplicationDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmUpdateApplicationType frm = new frmUpdateApplicationType((int)dgvApplicationTypes.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+            _RefreshAllData();
         }
     }
 }

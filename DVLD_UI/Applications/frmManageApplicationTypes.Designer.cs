@@ -44,6 +44,7 @@
             this.dgvApplicationTypes.AllowUserToAddRows = false;
             this.dgvApplicationTypes.AllowUserToDeleteRows = false;
             this.dgvApplicationTypes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvApplicationTypes.ContextMenuStrip = this.cmsManageApplictionTypes;
             this.dgvApplicationTypes.Location = new System.Drawing.Point(1, 254);
             this.dgvApplicationTypes.Name = "dgvApplicationTypes";
             this.dgvApplicationTypes.ReadOnly = true;
@@ -76,7 +77,7 @@
             this.cmsManageApplictionTypes.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editApplicationDetailsToolStripMenuItem});
             this.cmsManageApplictionTypes.Name = "cmsManageApplictionTypes";
-            this.cmsManageApplictionTypes.Size = new System.Drawing.Size(197, 48);
+            this.cmsManageApplictionTypes.Size = new System.Drawing.Size(197, 26);
             // 
             // editApplicationDetailsToolStripMenuItem
             // 

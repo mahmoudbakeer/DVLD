@@ -47,6 +47,7 @@ namespace DVLD_UI.Users
             {
                 lblMainTitle.Text = "ADD NEW USER";
                 _setDefaultInfo();
+                TabEnabled = false;
             }
             else
             {
@@ -89,7 +90,7 @@ namespace DVLD_UI.Users
         {
             if (!_validatePerosn()) return;
             else if (tabControl1.SelectedIndex == 1) return;
-            tabControl1.SelectedIndex = 1;
+            else tabControl1.SelectedIndex = 1;
 
         }
         private bool GetInfo()
@@ -141,7 +142,7 @@ namespace DVLD_UI.Users
         private bool _validatePerosn()
         {
             _PersonID = ctrlPersonCardWithFilter1.PersonID;
-            if (PersonID == -1)
+            if (!clsPerson.isPersonExist(PersonID))
             {
                 MessageBox.Show("Error Please select a person", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ctrlPersonCardWithFilter1.Focus();
@@ -152,7 +153,6 @@ namespace DVLD_UI.Users
                 MessageBox.Show("Error This person is taken, please select another", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ctrlPersonCardWithFilter1.Focus();
                 return false;
-
             }
             else
             {

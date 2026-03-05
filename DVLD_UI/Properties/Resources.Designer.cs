@@ -203,6 +203,16 @@ namespace DVLD_UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap licensing {
+            get {
+                object obj = ResourceManager.GetObject("licensing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logout_4400828 {
             get {
                 object obj = ResourceManager.GetObject("logout_4400828", resourceCulture);
@@ -246,6 +256,16 @@ namespace DVLD_UI.Properties {
         internal static System.Drawing.Bitmap management {
             get {
                 object obj = ResourceManager.GetObject("management", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap money {
+            get {
+                object obj = ResourceManager.GetObject("money", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -316,6 +336,26 @@ namespace DVLD_UI.Properties {
         internal static System.Drawing.Bitmap show_details {
             get {
                 object obj = ResourceManager.GetObject("show details", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap software_testing {
+            get {
+                object obj = ResourceManager.GetObject("software-testing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap software_testing1 {
+            get {
+                object obj = ResourceManager.GetObject("software-testing1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

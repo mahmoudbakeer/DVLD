@@ -74,7 +74,7 @@ namespace DVLD_DataAccess
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@ApplicationType", ID);
+            command.Parameters.AddWithValue("@ApplicationTypeID", ID);
             command.Parameters.AddWithValue("@ApplicationTypeFees", ApplicationTypeFees);
             command.Parameters.AddWithValue("@ApplicationTypeTitle", ApplicationTypeTitle);
 

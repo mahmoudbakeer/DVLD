@@ -11,15 +11,16 @@ namespace DVLD_DataAccess
 {
     public class clsLocalDrivingLicenseApplicationDataAccess
     {
-        public static bool GetLocalDrivingLicenseApplicationByID(int ID , ref int ApplicationID, ref int LicenseClassID)
+        public static bool GetLocalDrivingLicenseApplicationByID(int LocalDrivingLicenseApplicationID , ref int ApplicationID, ref int LicenseClassID)
         {
             bool isFound = false;
             string query = "SELECT * FROM LocalDrivingLicenseApplications WHERE LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID";
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString)) {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", ID);
+                    connection.Open();
 
+                    command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())
@@ -32,6 +33,27 @@ namespace DVLD_DataAccess
                 }
             }
             return isFound;
+        }
+        public static bool UpdateLocalDrivingLicenseApplicationByID(int LocalDrivingLicenseApplicationID,  int ApplicationID,  int LicenseClassID)
+        {
+            int rowsAffected = -1;
+            string query = "Update LocalDrivingLicenseApplications set ApplicationID = @ApplicationID , LicenseClassID = @LicenseClassID where LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID; ";
+            
+
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    connection.Open();
+                    command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+                    command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+                    command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+                    rowsAffected = command.ExecuteNonQuery();
+                    
+                }
+            }
+            return (rowsAffected > 0);
         }
         public static int AddNewLocalDrivingLicenseApplication( int ApplicationID , int LicenseClassID) {
             int LDLID = -1;
@@ -69,7 +91,6 @@ namespace DVLD_DataAccess
 
 
             return LDLID;
-            return 0;
         }
         public static DataTable GetAllLocalDrivingApplications()
         {
@@ -87,10 +108,12 @@ namespace DVLD_DataAccess
 
                         A.ApplicationDate,
 
-                        COUNT(DISTINCT CASE 
-                            WHEN T.TestResult = 1 
-                            THEN TA.TestAppointmentID 
-                        END) AS [Passed Tests],
+                        COUNT(DISTINCT 
+                                       CASE 
+                                            WHEN T.TestResult = 1 
+                                            THEN TA.TestAppointmentID 
+                                       END
+                                                ) AS [Passed Tests],
 
                         CASE 
                             WHEN A.ApplicationStatus = 1 THEN 'New'
@@ -141,6 +164,74 @@ namespace DVLD_DataAccess
             }
 
             return dt;
+        }
+        public static bool DeleteLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID)
+        {
+           int rowsAffected = -1;
+
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                string query = @"DELETE From LocalDrivingLicenseApplications WHERE LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID;";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+
+                    try
+                    {
+                        connection.Open();
+
+                        rowsAffected = command.ExecuteNonQuery();
+
+                    }
+                    catch (SqlException ex) when (ex.Number == 547)
+                    {
+                        // Foreign key violation
+                        return false;
+                    }
+                    catch (SqlException)
+                    {
+                        throw; // preserve stack trace
+                    }
+
+                }
+            }
+            return (rowsAffected > 0);
+        }
+        public static bool isLocalDrivingLiCenseApplicationExist(int LocalDrivingLicenseApplicationID)
+        {
+            int rowsAffected = -1;
+
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                string query = @"Select Fount = 1 from LocalDrivingLicenseApplications WHERE LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID;";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+
+                    try
+                    {
+                        connection.Open();
+
+                        rowsAffected = command.ExecuteNonQuery();
+
+                    }
+                    catch (SqlException ex) when (ex.Number == 547)
+                    {
+                        // Foreign key violation
+                        return false;
+                    }
+                    catch (SqlException)
+                    {
+                        throw; // preserve stack trace
+                    }
+
+                }
+            }
+            return (rowsAffected > 0);
         }
     }
 }

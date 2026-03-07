@@ -1,5 +1,6 @@
 ﻿using DVLD_BusinessLogic;
 using DVLD_UI.Applications;
+using DVLD_UI.Tests;
 using DVLD_UI.Users;
 using DVLD_UI.Users.Controllers;
 using System;
@@ -68,6 +69,12 @@ namespace DVLD_UI
         private void manageApplicationTypesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmManageApplicationTypes frm = new frmManageApplicationTypes();
+            frm.ShowDialog();
+        }
+
+        private void manageTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTestManagment frm = new frmTestManagment();
             frm.ShowDialog();
         }
     }

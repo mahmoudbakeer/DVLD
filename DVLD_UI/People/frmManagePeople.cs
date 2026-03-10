@@ -1,5 +1,6 @@
 ﻿using DVLD_BusinessLogic;
 using DVLD_UI.People;
+using DVLD_UI.Util;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -154,7 +155,13 @@ namespace DVLD_UI
             else if(FilterColumn == "PersonID" && !string.IsNullOrEmpty(txtFilter.Text))
 
             {
-                _dtPeople.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtFilter.Text.Trim());
+                if (!clsUtil.IsOnlyNumbers(txtFilter.Text))
+                {
+                    MessageBox.Show("Error", "Only numbers are allowed in Filtering By the PersonID", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtFilter.Focus();
+                    txtFilter.Clear();
+                }
+                else _dtPeople.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtFilter.Text.Trim());
 
             }
             else if(!string.IsNullOrEmpty(txtFilter.Text))

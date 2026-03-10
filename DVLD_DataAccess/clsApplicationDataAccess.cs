@@ -60,60 +60,55 @@ namespace DVLD_DataAccess
 
                 return isFound;
             }
-           
-            public static int AddNewApplication(
-         DateTime ApplicationDate,
-         int ApplicationStatus,
-         int ApplicantPersonID,
-         int CreatedByUserID,
-         int ApplicationTypeID,
-         decimal PaidFees,
-         DateTime lastStatusDate)
+
+        public static int AddNewApplication(
+            DateTime ApplicationDate,
+            int ApplicationStatus,
+            int ApplicantPersonID,
+            int CreatedByUserID,
+            int ApplicationTypeID,
+            decimal PaidFees,
+            DateTime lastStatusDate)
+        {
+            int ApplicationID = -1;
+
+            string query = @"INSERT INTO Applications 
+                     (ApplicationDate, ApplicationStatus, ApplicantPersonID, CreatedByUserID, ApplicationTypeID, PaidFees, LastStatusDate)
+                     VALUES 
+                     (@ApplicationDate, @ApplicationStatus, @ApplicantPersonID, @CreatedByUserID, @ApplicationTypeID, @PaidFees, @LastStatusDate);
+                     SELECT SCOPE_IDENTITY();";
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-                //this function will return the new contact id if succeeded and -1 if not.
-                int ApplicationID = -1;
-                using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+                command.Parameters.Add("@ApplicationDate", SqlDbType.DateTime).Value = ApplicationDate;
+                command.Parameters.Add("@ApplicationStatus", SqlDbType.Int).Value = ApplicationStatus;
+                command.Parameters.Add("@ApplicantPersonID", SqlDbType.Int).Value = ApplicantPersonID;
+                command.Parameters.Add("@CreatedByUserID", SqlDbType.Int).Value = CreatedByUserID;
+                command.Parameters.Add("@ApplicationTypeID", SqlDbType.Int).Value = ApplicationTypeID;
+                command.Parameters.Add("@PaidFees", SqlDbType.Decimal).Value = PaidFees;
+                command.Parameters.Add("@LastStatusDate", SqlDbType.DateTime).Value = lastStatusDate;
+
+                try
                 {
-
-                    string query = @"INSERT INTO Applications (ApplicationDate,ApplicationStatus,ApplicantPersonID, CreatedByUserID, ApplicationTypeID, PaidFees, LastStatusDate)
-                             VALUES (@ApplicationDate,@ApplicationStatus,@ApplicantPersonID, @CreatedByUserID, @ApplicationTypeID, @PaidFees, @LastStatusDate);
-                             SELECT SCOPE_IDENTITY();";
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
+                    connection.Open();
+                    object result = command.ExecuteScalar();
+                    if (result != null)
                     {
-
-                        command.Parameters.AddWithValue("@ApplicationDate", ApplicationDate);
-                        command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
-                        command.Parameters.AddWithValue("@ApplicantPersonID", ApplicantPersonID);
-                        command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
-                        command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
-                        command.Parameters.AddWithValue("@PaidFees", PaidFees);
-                        command.Parameters.AddWithValue("@LastStatusDate", lastStatusDate);
-
-                        try
-                        {
-                            connection.Open();
-                            object result = command.ExecuteScalar();
-
-                            if (result != null && int.TryParse(result.ToString(), out int insertedID))
-                            {
-                                ApplicationID = insertedID;
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine("Error : " + ex.ToString());
-                        }
-
+                        ApplicationID = Convert.ToInt32(result);
                     }
-
                 }
-
-
-                return ApplicationID;
+                catch (Exception ex)
+                {
+                    // Use a proper logging framework in production
+                    Console.WriteLine("Error : " + ex.ToString());
+                }
             }
 
-            public static bool UpdateApplications(
+            return ApplicationID;
+        }
+
+        public static bool UpdateApplications(
                 int ApplicationID,
         DateTime ApplicationDate,
         int ApplicationStatus,

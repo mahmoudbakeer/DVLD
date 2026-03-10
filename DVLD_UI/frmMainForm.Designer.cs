@@ -32,6 +32,7 @@
             this.applicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageApplicationTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageTestTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageApplicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.peopleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,6 +40,7 @@
             this.currentUserInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageLocalDrivingApplicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +65,8 @@
             // 
             this.applicaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.manageApplicationTypesToolStripMenuItem,
-            this.manageTestTypesToolStripMenuItem});
+            this.manageTestTypesToolStripMenuItem,
+            this.manageApplicationsToolStripMenuItem});
             this.applicaToolStripMenuItem.Font = new System.Drawing.Font("Palatino Linotype", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.applicaToolStripMenuItem.ForeColor = System.Drawing.Color.Blue;
             this.applicaToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.application;
@@ -87,6 +90,15 @@
             this.manageTestTypesToolStripMenuItem.Size = new System.Drawing.Size(319, 70);
             this.manageTestTypesToolStripMenuItem.Text = "Manage Test Types";
             this.manageTestTypesToolStripMenuItem.Click += new System.EventHandler(this.manageTestTypesToolStripMenuItem_Click);
+            // 
+            // manageApplicationsToolStripMenuItem
+            // 
+            this.manageApplicationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.manageLocalDrivingApplicationsToolStripMenuItem});
+            this.manageApplicationsToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.Manage_Applications;
+            this.manageApplicationsToolStripMenuItem.Name = "manageApplicationsToolStripMenuItem";
+            this.manageApplicationsToolStripMenuItem.Size = new System.Drawing.Size(319, 70);
+            this.manageApplicationsToolStripMenuItem.Text = "Manage Applications";
             // 
             // peopleToolStripMenuItem
             // 
@@ -160,6 +172,15 @@
             this.logOutToolStripMenuItem.Text = "Log Out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
+            // manageLocalDrivingApplicationsToolStripMenuItem
+            // 
+            this.manageLocalDrivingApplicationsToolStripMenuItem.Font = new System.Drawing.Font("Palatino Linotype", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manageLocalDrivingApplicationsToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.application;
+            this.manageLocalDrivingApplicationsToolStripMenuItem.Name = "manageLocalDrivingApplicationsToolStripMenuItem";
+            this.manageLocalDrivingApplicationsToolStripMenuItem.Size = new System.Drawing.Size(330, 70);
+            this.manageLocalDrivingApplicationsToolStripMenuItem.Text = "Manage Local Driving Applications";
+            this.manageLocalDrivingApplicationsToolStripMenuItem.Click += new System.EventHandler(this.manageLocalDrivingApplicationsToolStripMenuItem_Click);
+            // 
             // frmMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -190,5 +211,7 @@
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageApplicationTypesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageTestTypesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageApplicationsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manageLocalDrivingApplicationsToolStripMenuItem;
     }
 }

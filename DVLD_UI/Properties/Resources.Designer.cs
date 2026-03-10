@@ -73,6 +73,16 @@ namespace DVLD_UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddApplication {
+            get {
+                object obj = ResourceManager.GetObject("AddApplication", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Addnew {
             get {
                 object obj = ResourceManager.GetObject("Addnew", resourceCulture);
@@ -146,6 +156,16 @@ namespace DVLD_UI.Properties {
         internal static System.Drawing.Bitmap driver {
             get {
                 object obj = ResourceManager.GetObject("driver", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Editapplication {
+            get {
+                object obj = ResourceManager.GetObject("Editapplication", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,6 +253,16 @@ namespace DVLD_UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Manage_Applications {
+            get {
+                object obj = ResourceManager.GetObject("Manage Applications", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ManageApllications {
             get {
                 object obj = ResourceManager.GetObject("ManageApllications", resourceCulture);
@@ -246,6 +276,16 @@ namespace DVLD_UI.Properties {
         internal static System.Drawing.Bitmap ManageApllications1 {
             get {
                 object obj = ResourceManager.GetObject("ManageApllications1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ManageApllications2 {
+            get {
+                object obj = ResourceManager.GetObject("ManageApllications2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

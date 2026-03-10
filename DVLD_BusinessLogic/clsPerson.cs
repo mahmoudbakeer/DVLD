@@ -27,7 +27,11 @@ namespace DVLD_BusinessLogic
         public string ImagePath { set; get; }
         public string Gendor {  set; get; }
         public string NationalNo { set; get; }
-
+        public int Age
+        {
+            get;
+            set;
+        }
        
 
         public clsPerson()
@@ -46,6 +50,7 @@ namespace DVLD_BusinessLogic
             this.NationalNo = "";
             this.ImagePath = "";
             this.Gendor = "";
+            this.Age = -1;
             Mode = enMode.AddNew;
 
         }
@@ -76,7 +81,8 @@ namespace DVLD_BusinessLogic
             this.NationalityCountryID = NationalityCountryID;
             this.NationalNo = NationalNo;
             this.ImagePath = ImagePath;
-
+            this.Age = DateTime.Now.Year - DateOfBirth.Year;
+            if (DateOfBirth > DateTime.Today.AddYears(-Age)) Age--;
             Mode = enMode.Update;
 
         }

@@ -11,6 +11,7 @@ namespace DVLD_BusinessLogic
         public eMode Mode { get; set; }
         public int LocalDrivingLicenseApplicationID { get; set; }
         public int LicenseClassID { get; set; }
+        public clsLicenseClass LicenseClassInfo { get; set; }
 
         private clsLocalDrivingLicenseApplication(
             int LocalDrivingLicenseApplicationID,
@@ -30,6 +31,7 @@ namespace DVLD_BusinessLogic
         {
             this.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;
             this.LicenseClassID = LicenseClassID;
+            this.LicenseClassInfo = clsLicenseClass.GetLicenseClass(LicenseClassID);
             this.Mode = eMode.Update;
         }
         public clsLocalDrivingLicenseApplication() : base()
@@ -42,18 +44,8 @@ namespace DVLD_BusinessLogic
         private bool _AddNewLocalDrivingLicenseApplication()
         {
             //call DataAccess Layer 
-
-            this.LocalDrivingLicenseApplicationID = clsApplicationDataAccess.AddNewApplication(
-                this.ApplicationDate,
-                (int)this.ApplicationStatus,
-                this.ApplicantPersonID,
-                this.CreatedByUserID,
-                this.ApplicationTypeID,
-                this.PaidFees,
-                this.LastStatusDate
-                );
-
-            return (this.ApplicationID != -1);
+            this.LocalDrivingLicenseApplicationID = clsLocalDrivingLicenseApplicationDataAccess.AddNewLocalDrivingLicenseApplication(ApplicationID, this.LicenseClassID);
+            return (this.LocalDrivingLicenseApplicationID != -1);
         }
         private bool _UpdateLocalDrivingLicenseApplication()
         {

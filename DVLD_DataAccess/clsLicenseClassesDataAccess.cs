@@ -116,47 +116,39 @@ namespace DVLD_DataAccess
         }
 
 
-        public static bool UpdateLicenseClass(int ID,  string ClassName,  string ClassDescription,  int MinimumAllowedAge,  int DefaultValidityLength,  decimal ClassFees)
+        public static bool UpdateLicenseClass(int ID, string ClassName, string ClassDescription, int MinimumAllowedAge, int DefaultValidityLength, decimal ClassFees)
         {
-
             int rowsAffected = 0;
-            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+            string query = @"UPDATE LicenseClasses
+                     SET ClassName = @ClassName,
+                         ClassDescription = @ClassDescription,
+                         MinimumAllowedAge = @MinimumAllowedAge,
+                         DefaultValidityLength = @DefaultValidityLength,
+                         ClassFees = @ClassFees
+                     WHERE LicenseClassID = @LicenseClassID";
 
-            string query = @"Update  LicenseClass  
-                            set ClassName =@ClassName , 
-                                ClassDescription =  @ClassDescription,        
-                                MinimumAllowedAge =  @MinimumAllowedAge,   
-                                DefaultValidityLength =  @DefaultValidityLength, 
-                                ClassFees =  @ClassFees,
-                                where LicenseClassID = @LicenseClassID";
-
-            SqlCommand command = new SqlCommand(query, connection);
-
-            command.Parameters.AddWithValue("@LicenseClassID", ID);
-            command.Parameters.AddWithValue("@ClassName", ClassName);
-            command.Parameters.AddWithValue("@ClassFees", ClassFees);
-            command.Parameters.AddWithValue("@ClassDescription", ClassDescription);
-            command.Parameters.AddWithValue("@MinimumAllowedAge", MinimumAllowedAge);
-            command.Parameters.AddWithValue("@DefaultValidityLength", DefaultValidityLength);
-
-            try
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
             {
-                connection.Open();
-                rowsAffected = command.ExecuteNonQuery();
+                command.Parameters.AddWithValue("@LicenseClassID", ID);
+                command.Parameters.AddWithValue("@ClassName", ClassName);
+                command.Parameters.AddWithValue("@ClassDescription", ClassDescription);
+                command.Parameters.AddWithValue("@MinimumAllowedAge", MinimumAllowedAge);
+                command.Parameters.AddWithValue("@DefaultValidityLength", DefaultValidityLength);
+                command.Parameters.AddWithValue("@ClassFees", ClassFees);
 
-            }
-            catch (Exception ex)
-            {
-                //Console.WriteLine("Error: " + ex.Message);
-                return false;
+                try
+                {
+                    connection.Open();
+                    rowsAffected = command.ExecuteNonQuery();
+                }
+                catch
+                {
+                    return false;
+                }
             }
 
-            finally
-            {
-                connection.Close();
-            }
-
-            return (rowsAffected > 0);
+            return rowsAffected > 0;
         }
 
         public static DataTable GetAllLicenseClasses()
@@ -198,5 +190,6 @@ namespace DVLD_DataAccess
             return dt;
 
         }
+
     }
 }

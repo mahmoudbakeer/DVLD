@@ -46,23 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Applications\frmAddNewAppliction.cs">
+    <Compile Include="Applications\LocalDrivingApplications\frmAddUpdateLocalDrivingLicenseAppliction.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\frmAddNewAppliction.Designer.cs">
-      <DependentUpon>frmAddNewAppliction.cs</DependentUpon>
+    <Compile Include="Applications\LocalDrivingApplications\frmAddUpdateLocalDrivingLicenseAppliction.Designer.cs">
+      <DependentUpon>frmAddUpdateLocalDrivingLicenseAppliction.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\frmManageApplicationTypes.cs">
+    <Compile Include="Applications\ApplicationTypes\frmManageApplicationTypes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\frmManageApplicationTypes.Designer.cs">
+    <Compile Include="Applications\ApplicationTypes\frmManageApplicationTypes.Designer.cs">
       <DependentUpon>frmManageApplicationTypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\frmUpdateApplicationType.cs">
+    <Compile Include="Applications\ApplicationTypes\frmUpdateApplicationType.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\frmUpdateApplicationType.Designer.cs">
+    <Compile Include="Applications\ApplicationTypes\frmUpdateApplicationType.Designer.cs">
       <DependentUpon>frmUpdateApplicationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\LocalDrivingApplications\frmManageLocalDrivingLicenseApplications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\LocalDrivingApplications\frmManageLocalDrivingLicenseApplications.Designer.cs">
+      <DependentUpon>frmManageLocalDrivingLicenseApplications.cs</DependentUpon>
     </Compile>
     <Compile Include="clsGlobalUser.cs" />
     <Compile Include="frmLoginScreen.cs">
@@ -152,14 +158,17 @@
       <DependentUpon>frmManageUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\clsUtil.cs" />
-    <EmbeddedResource Include="Applications\frmAddNewAppliction.resx">
-      <DependentUpon>frmAddNewAppliction.cs</DependentUpon>
+    <EmbeddedResource Include="Applications\LocalDrivingApplications\frmAddUpdateLocalDrivingLicenseAppliction.resx">
+      <DependentUpon>frmAddUpdateLocalDrivingLicenseAppliction.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\frmManageApplicationTypes.resx">
+    <EmbeddedResource Include="Applications\ApplicationTypes\frmManageApplicationTypes.resx">
       <DependentUpon>frmManageApplicationTypes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\frmUpdateApplicationType.resx">
+    <EmbeddedResource Include="Applications\ApplicationTypes\frmUpdateApplicationType.resx">
       <DependentUpon>frmUpdateApplicationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\LocalDrivingApplications\frmManageLocalDrivingLicenseApplications.resx">
+      <DependentUpon>frmManageLocalDrivingLicenseApplications.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoginScreen.resx">
       <DependentUpon>frmLoginScreen.cs</DependentUpon>
@@ -330,6 +339,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\money.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ManageApllications2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddApplication.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Editapplication.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Manage Applications.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

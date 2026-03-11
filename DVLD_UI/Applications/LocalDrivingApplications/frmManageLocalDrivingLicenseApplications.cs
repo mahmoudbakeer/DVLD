@@ -15,7 +15,7 @@ namespace DVLD_UI.Applications.LocalDrivingApplications
 {
     public partial class frmManageLocalDrivingLicenseApplications : Form
     {
-        private DataTable _dtApplications;
+        private DataTable _dtApplications = clsLocalDrivingLicenseApplication.GetAllLocalDrivingLicenseApplication();
         public frmManageLocalDrivingLicenseApplications()
         {
             InitializeComponent();
@@ -26,6 +26,14 @@ namespace DVLD_UI.Applications.LocalDrivingApplications
             _dtApplications = clsLocalDrivingLicenseApplication.GetAllLocalDrivingLicenseApplication();
 
             dgvAllLDLAs.DataSource = _dtApplications;
+            dgvAllLDLAs.Columns[0].Width = 100;
+            dgvAllLDLAs.Columns[1].Width = 200;
+            dgvAllLDLAs.Columns[2].Width = 150;
+            dgvAllLDLAs.Columns[3].Width = 250;
+            dgvAllLDLAs.Columns[4].Width = 200;
+            dgvAllLDLAs.Columns[5].Width = 70;
+            dgvAllLDLAs.Columns[5].Width = 150;
+
         }
         private void frmManagePeople_Load(object sender, EventArgs e)
         {
@@ -41,9 +49,9 @@ namespace DVLD_UI.Applications.LocalDrivingApplications
 
         private void tsmShowDetails_Click(object sender, EventArgs e)
         {
-            //frmAddUpdateLocalDrivingLicenseAppliction form = new frmAddUpdateLocalDrivingLicenseAppliction((int)dgvAllLDLAs.CurrentRow.Cells[0].Value);
-            //form.ShowDialog();
-            //_RefreshAllApplications();
+            frmShowLocalDrivingLicenseApplicationDetails form = new frmShowLocalDrivingLicenseApplicationDetails((int)dgvAllLDLAs.CurrentRow.Cells[0].Value);
+            form.ShowDialog();
+            _RefreshAllApplications();
         }
 
         private void tsmDeleteApplication_Click(object sender, EventArgs e)
@@ -55,7 +63,7 @@ namespace DVLD_UI.Applications.LocalDrivingApplications
 
             try
             {
-                clsLocalDrivingLicenseApplication.DeleteApplication(id);
+                clsLocalDrivingLicenseApplication.DeleteLocalDrivingLicenseApplication(id);
                 _RefreshAllApplications();
             }
             catch (Exception)
@@ -90,16 +98,23 @@ namespace DVLD_UI.Applications.LocalDrivingApplications
 
         private void cbSortBy_SelectedIndexChanged(object sender, EventArgs e)
         {
+            _RefreshAllApplications();
+            txtFilter.Clear();
             if(cbSortBy.SelectedItem.ToString() == "Status")
             {
                 txtFilter.Enabled = false;
+                txtFilter.Visible = false;
                 cbStatus.Enabled = true;
+                cbStatus.Visible = true;
+
                 return;
             }
             else
             {
+                txtFilter.Visible = true;
                 txtFilter.Enabled = true;
                 cbStatus.Enabled = false;
+                cbStatus.Visible = false;
                 return;
             }
         }
@@ -110,10 +125,10 @@ namespace DVLD_UI.Applications.LocalDrivingApplications
             switch (cbSortBy.SelectedItem)
             {
                 case "L.D.L.AppID":
-                    FilterColumn = "L.D.L.AppID";
+                    FilterColumn = "L.D.LAppID";
                     break;
-                case "National No":
-                    FilterColumn = "National No";
+                case "National No.":
+                    FilterColumn = "NationalNo";
                     break;
                 case "Full Name":
                     FilterColumn = "Full Name";
@@ -133,7 +148,7 @@ namespace DVLD_UI.Applications.LocalDrivingApplications
                 MessageBox.Show("Please Select Filter", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 cbSortBy.Focus();
             }
-            else if (FilterColumn == "L.D.L.AppID" && !string.IsNullOrEmpty(txtFilter.Text))
+            else if (FilterColumn == "L.D.LAppID" && !string.IsNullOrEmpty(txtFilter.Text))
 
             {
                 if (!clsUtil.IsOnlyNumbers(txtFilter.Text))
@@ -155,6 +170,13 @@ namespace DVLD_UI.Applications.LocalDrivingApplications
             }
         }
 
-        
+        private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbStatus.SelectedItem == null)
+                return;
+
+            _dtApplications.DefaultView.RowFilter =
+                string.Format("[Status] LIKE '{0}%'", cbStatus.SelectedItem.ToString().Trim());
+        }
     }
 }

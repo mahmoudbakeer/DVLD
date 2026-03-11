@@ -109,5 +109,9 @@ namespace DVLD_BusinessLogic
         {
             return clsLocalDrivingLicenseApplicationDataAccess.isLocalDrivingLiCenseApplicationExist(LocalDrivingLicenseApplicationID);
         }
+        public static bool DoesPersonHaveUnCompletedApplicationFromSameLicenseClass(int PersonID,int LicenseClassID)
+        {
+            return clsLocalDrivingLicenseApplicationDataAccess.DoesPersonHaveUncompletedApplicationForSameLicenseClass(PersonID,LicenseClassID);
+        }
     }
 }

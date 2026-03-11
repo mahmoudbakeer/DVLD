@@ -233,5 +233,30 @@ namespace DVLD_DataAccess
             }
             return (rowsAffected > 0);
         }
+        public static bool DoesPersonHaveUncompletedApplicationForSameLicenseClass(int PersonID, int LicenseClassID)
+        {
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                string query = @"SELECT 1
+                         FROM LocalDrivingLicenseApplications L
+                         INNER JOIN Applications A 
+                         ON A.ApplicationID = L.ApplicationID
+                         WHERE A.ApplicantPersonID = @PersonID 
+                         AND L.LicenseClassID = @LicenseClassID 
+                         AND A.ApplicationStatus = 1;";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PersonID", PersonID);
+                    command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+
+                    connection.Open();
+
+                    object result = command.ExecuteScalar();
+
+                    return result != null;
+                }
+            }
+        }
     }
 }

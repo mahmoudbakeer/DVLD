@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.llEditPersonInfo = new System.Windows.Forms.LinkLabel();
             this.lblCountry = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblDateOfBirth = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pbPersonImage = new System.Windows.Forms.PictureBox();
+            this.btnEditPersonInfo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGendor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -66,18 +66,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonImage)).BeginInit();
             this.SuspendLayout();
-            // 
-            // llEditPersonInfo
-            // 
-            this.llEditPersonInfo.AutoSize = true;
-            this.llEditPersonInfo.Enabled = false;
-            this.llEditPersonInfo.Location = new System.Drawing.Point(704, 45);
-            this.llEditPersonInfo.Name = "llEditPersonInfo";
-            this.llEditPersonInfo.Size = new System.Drawing.Size(82, 13);
-            this.llEditPersonInfo.TabIndex = 167;
-            this.llEditPersonInfo.TabStop = true;
-            this.llEditPersonInfo.Text = "Edit Person Info";
-            this.llEditPersonInfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llEditPersonInfo_LinkClicked);
             // 
             // lblCountry
             // 
@@ -371,12 +359,25 @@
             this.pbPersonImage.TabIndex = 140;
             this.pbPersonImage.TabStop = false;
             // 
+            // btnEditPersonInfo
+            // 
+            this.btnEditPersonInfo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnEditPersonInfo.Font = new System.Drawing.Font("Palatino Linotype", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditPersonInfo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEditPersonInfo.Location = new System.Drawing.Point(690, 26);
+            this.btnEditPersonInfo.Name = "btnEditPersonInfo";
+            this.btnEditPersonInfo.Size = new System.Drawing.Size(122, 23);
+            this.btnEditPersonInfo.TabIndex = 167;
+            this.btnEditPersonInfo.Text = "Edit Person Info";
+            this.btnEditPersonInfo.UseVisualStyleBackColor = false;
+            this.btnEditPersonInfo.Click += new System.EventHandler(this.btnEditPersonInfo_Click);
+            // 
             // ctrlPersonCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSalmon;
-            this.Controls.Add(this.llEditPersonInfo);
+            this.Controls.Add(this.btnEditPersonInfo);
             this.Controls.Add(this.lblCountry);
             this.Controls.Add(this.lblPhone);
             this.Controls.Add(this.lblDateOfBirth);
@@ -421,8 +422,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.LinkLabel llEditPersonInfo;
         private System.Windows.Forms.Label lblCountry;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblDateOfBirth;
@@ -450,5 +449,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbPersonImage;
+        private System.Windows.Forms.Button btnEditPersonInfo;
     }
 }

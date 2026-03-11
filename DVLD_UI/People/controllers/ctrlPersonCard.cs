@@ -82,10 +82,12 @@ namespace DVLD_UI.People.controls
             }
         }
 
-        private void llEditPersonInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+       
+
+        private void btnEditPersonInfo_Click(object sender, EventArgs e)
         {
             Form frm = new frmAddUpdatePerson(_PersonID);
-           
+
             frm.ShowDialog();
             LoadPersonInfo(_PersonID);
         }

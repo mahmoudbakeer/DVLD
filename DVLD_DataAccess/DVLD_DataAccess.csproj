@@ -50,6 +50,7 @@
     <Compile Include="clsLicenseClassesDataAccess.cs" />
     <Compile Include="clsLocalDrivingLicenseApplicationDataAccess.cs" />
     <Compile Include="clsPeopleDataAccess.cs" />
+    <Compile Include="clsTestAppointmentsDataAccess.cs" />
     <Compile Include="clsTestTypesDataAccess.cs" />
     <Compile Include="clsUsersDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

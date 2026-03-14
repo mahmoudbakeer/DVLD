@@ -75,7 +75,7 @@ namespace DVLD_UI
 
         private void manageTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmTestManagment frm = new frmTestManagment();
+            frmTestTypeManagment frm = new frmTestTypeManagment();
             frm.ShowDialog();
         }
 

@@ -56,23 +56,26 @@ namespace DVLD_UI.Applications.LocalDrivingApplications
 
         private void tsmDeleteApplication_Click(object sender, EventArgs e)
         {
-            if (dgvAllLDLAs.CurrentRow == null)
-                return;
-
-            int id = (int)dgvAllLDLAs.CurrentRow.Cells[0].Value;
-
-            try
+            if (MessageBox.Show("Are you sure you want to delete this Applicarion ?", "Attention!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                clsLocalDrivingLicenseApplication.DeleteLocalDrivingLicenseApplication(id);
-                _RefreshAllApplications();
-            }
-            catch (Exception)
-            {
-                MessageBox.Show(
-                    "You can't delete this Application because it is linked to other records.",
-                    "Delete Failed",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                if (dgvAllLDLAs.CurrentRow == null)
+                    return;
+
+                int id = (int)dgvAllLDLAs.CurrentRow.Cells[0].Value;
+
+                try
+                {
+                    clsLocalDrivingLicenseApplication.DeleteLocalDrivingLicenseApplication(id);
+                    _RefreshAllApplications();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show(
+                        "You can't delete this Application because it is linked to other records.",
+                        "Delete Failed",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -177,6 +180,30 @@ namespace DVLD_UI.Applications.LocalDrivingApplications
 
             _dtApplications.DefaultView.RowFilter =
                 string.Format("[Status] LIKE '{0}%'", cbStatus.SelectedItem.ToString().Trim());
+        }
+
+        private void cancelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to Cancel this Applicarion ?", "Attention!", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                if (dgvAllLDLAs.CurrentRow == null)
+                    return;
+
+                int id = (int)dgvAllLDLAs.CurrentRow.Cells[0].Value;
+                try
+                {
+                    clsLocalDrivingLicenseApplication.UpdateStatus(id, (int)clsApplication.eApplicationStatus.Cancelled);
+                    _RefreshAllApplications();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show(
+                        "You can't Cancel this Application .",
+                        "Cancelation Failed",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

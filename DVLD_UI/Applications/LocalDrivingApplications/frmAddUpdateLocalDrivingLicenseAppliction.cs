@@ -126,7 +126,7 @@ namespace DVLD_UI.Applications
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (!ValidateChildren()) return;
+            if (!_validatePerosn()) return;
             CollectInformations();
             //if(clsLocalDrivingLicenseApplication.DoesPersonHaveActiveApplication(LDLA.ApplicantPersonID,LDLA.ApplicationTypeID))
             //{

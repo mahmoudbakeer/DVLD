@@ -67,7 +67,12 @@ namespace DVLD_BusinessLogic
             }
             else return null;
         }
-
+        public static bool UpdateStatus(int LDVLDID , int NewStatus)
+        {
+            clsLocalDrivingLicenseApplication ap = clsLocalDrivingLicenseApplication.Find(LDVLDID);
+            if (ap == null) return false;
+            return clsApplication.UpdateStatus(ap.ApplicationID, NewStatus);
+        }
         public bool Save()
         {
             if (!base.Save())

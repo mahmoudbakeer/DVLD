@@ -350,6 +350,7 @@
             // 
             this.pbPersonImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbPersonImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbPersonImage.Image = global::DVLD_UI.Properties.Resources.Addnew;
             this.pbPersonImage.InitialImage = null;
             this.pbPersonImage.Location = new System.Drawing.Point(676, 81);
             this.pbPersonImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -376,7 +377,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSalmon;
+            this.BackColor = System.Drawing.Color.Snow;
             this.Controls.Add(this.btnEditPersonInfo);
             this.Controls.Add(this.lblCountry);
             this.Controls.Add(this.lblPhone);
@@ -407,6 +408,7 @@
             this.Controls.Add(this.pbPersonImage);
             this.Name = "ctrlPersonCard";
             this.Size = new System.Drawing.Size(853, 296);
+            this.Load += new System.EventHandler(this.ctrlPersonCard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbGendor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();

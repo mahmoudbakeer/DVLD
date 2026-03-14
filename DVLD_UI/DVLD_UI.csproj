@@ -133,11 +133,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tests\frmTestManagment.cs">
+    <Compile Include="Tests\Controllers\ctrlScheduleTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tests\Controllers\ctrlScheduleTest.Designer.cs">
+      <DependentUpon>ctrlScheduleTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\frmTestTypeManagment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tests\frmTestManagment.Designer.cs">
-      <DependentUpon>frmTestManagment.cs</DependentUpon>
+    <Compile Include="Tests\frmTestTypeManagment.Designer.cs">
+      <DependentUpon>frmTestTypeManagment.cs</DependentUpon>
     </Compile>
     <Compile Include="Tests\frmUpdateTestType.cs">
       <SubType>Form</SubType>
@@ -228,8 +234,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Tests\frmTestManagment.resx">
-      <DependentUpon>frmTestManagment.cs</DependentUpon>
+    <EmbeddedResource Include="Tests\Controllers\ctrlScheduleTest.resx">
+      <DependentUpon>ctrlScheduleTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\frmTestTypeManagment.resx">
+      <DependentUpon>frmTestTypeManagment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tests\frmUpdateTestType.resx">
       <DependentUpon>frmUpdateTestType.cs</DependentUpon>
@@ -378,6 +387,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Manage Applications.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DVLD_PROJECT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tests\TestAppointments\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StreetExam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\VisionTest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WrittenTest.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

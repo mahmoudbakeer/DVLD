@@ -158,8 +158,39 @@ namespace DVLD_DataAccess
 
                 return (rowsAffected > 0);
             }
+        public static bool UpdateStatus(
+            int ApplicationID,
+            int ApplicationStatus)
+        {
 
-            public static DataTable GetAllApplicaions()
+            int rowsAffected = 0;
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                string query = @"Update  Applications  
+                            set ApplicationStatus = @ApplicationStatus
+                             where ApplicationID = @ApplicationID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+                        command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
+                        rowsAffected = command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error :" + ex.ToString());
+                    }
+
+                }
+            }
+
+            return (rowsAffected > 0);
+        }
+        public static DataTable GetAllApplicaions()
             {
 
                 DataTable dt = new DataTable();
@@ -294,7 +325,5 @@ namespace DVLD_DataAccess
                 }
                 return ApplicationID;
             }
-
-        
     }
 }

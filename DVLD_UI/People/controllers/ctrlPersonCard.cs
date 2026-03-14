@@ -27,6 +27,8 @@ namespace DVLD_UI.People.controls
         public ctrlPersonCard()
         {
             InitializeComponent();
+            btnEditPersonInfo.Enabled = false;
+
         }
         public void LoadPersonInfo(int PersonID)
         {
@@ -35,6 +37,8 @@ namespace DVLD_UI.People.controls
             if (_Person != null)
             {
                 _FillPersonInfo();
+                btnEditPersonInfo.Enabled = true;
+
             }
             else
             {
@@ -45,17 +49,7 @@ namespace DVLD_UI.People.controls
         public void LoadPersonInfo(string NationalNo)
         {
             
-            _Person = clsPerson.Find(NationalNo);
-            _PersonID = _Person.ID;
-            if (_Person != null)
-            {
-                _FillPersonInfo();
-            }
-            else
-            {
-                MessageBox.Show("This Person is Not Exist", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+            
         }
         private void _FillPersonInfo()
         {
@@ -86,10 +80,16 @@ namespace DVLD_UI.People.controls
 
         private void btnEditPersonInfo_Click(object sender, EventArgs e)
         {
+
             Form frm = new frmAddUpdatePerson(_PersonID);
 
             frm.ShowDialog();
             LoadPersonInfo(_PersonID);
+        }
+
+        private void ctrlPersonCard_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -117,5 +117,10 @@ namespace DVLD_UI.People.controls
         {
             LoadPerson(PersonID);
         }
+
+        private void ctrlPersonCard1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

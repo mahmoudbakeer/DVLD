@@ -35,13 +35,15 @@
             this.btnAddNewApplication = new System.Windows.Forms.Button();
             this.dgvAllLDLAs = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ManageLDLATitle = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cbStatus = new System.Windows.Forms.ComboBox();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.showApplicationInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewApplictionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editApplicationInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ManageLDLATitle = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cbStatus = new System.Windows.Forms.ComboBox();
+            this.cancelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pbManageLDLA = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllLDLAs)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -118,9 +120,45 @@
             this.showApplicationInfoToolStripMenuItem,
             this.addNewApplictionToolStripMenuItem,
             this.deleteApplicationToolStripMenuItem,
-            this.editApplicationInfoToolStripMenuItem});
+            this.editApplicationInfoToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.cancelToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(192, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(192, 142);
+            // 
+            // ManageLDLATitle
+            // 
+            this.ManageLDLATitle.AutoSize = true;
+            this.ManageLDLATitle.Font = new System.Drawing.Font("Palatino Linotype", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ManageLDLATitle.ForeColor = System.Drawing.Color.Blue;
+            this.ManageLDLATitle.Location = new System.Drawing.Point(209, 176);
+            this.ManageLDLATitle.Name = "ManageLDLATitle";
+            this.ManageLDLATitle.Size = new System.Drawing.Size(640, 43);
+            this.ManageLDLATitle.TabIndex = 8;
+            this.ManageLDLATitle.Text = "Manage Local Driving License Applications";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // cbStatus
+            // 
+            this.cbStatus.FormattingEnabled = true;
+            this.cbStatus.Items.AddRange(new object[] {
+            "New",
+            "Complete",
+            "Cancelled"});
+            this.cbStatus.Location = new System.Drawing.Point(332, 254);
+            this.cbStatus.Name = "cbStatus";
+            this.cbStatus.Size = new System.Drawing.Size(121, 21);
+            this.cbStatus.TabIndex = 15;
+            this.cbStatus.Visible = false;
+            this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(188, 6);
             // 
             // showApplicationInfoToolStripMenuItem
             // 
@@ -154,34 +192,13 @@
             this.editApplicationInfoToolStripMenuItem.Text = "Edit Application Info";
             this.editApplicationInfoToolStripMenuItem.Click += new System.EventHandler(this.tsmEditApplicaion_Click);
             // 
-            // ManageLDLATitle
+            // cancelToolStripMenuItem
             // 
-            this.ManageLDLATitle.AutoSize = true;
-            this.ManageLDLATitle.Font = new System.Drawing.Font("Palatino Linotype", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ManageLDLATitle.ForeColor = System.Drawing.Color.Blue;
-            this.ManageLDLATitle.Location = new System.Drawing.Point(209, 176);
-            this.ManageLDLATitle.Name = "ManageLDLATitle";
-            this.ManageLDLATitle.Size = new System.Drawing.Size(640, 43);
-            this.ManageLDLATitle.TabIndex = 8;
-            this.ManageLDLATitle.Text = "Manage Local Driving License Applications";
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // cbStatus
-            // 
-            this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Items.AddRange(new object[] {
-            "New",
-            "Complete",
-            "Cancelled"});
-            this.cbStatus.Location = new System.Drawing.Point(332, 254);
-            this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(121, 21);
-            this.cbStatus.TabIndex = 15;
-            this.cbStatus.Visible = false;
-            this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
+            this.cancelToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.cancelled;
+            this.cancelToolStripMenuItem.Name = "cancelToolStripMenuItem";
+            this.cancelToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.cancelToolStripMenuItem.Text = "Cancel Application";
+            this.cancelToolStripMenuItem.Click += new System.EventHandler(this.cancelToolStripMenuItem_Click);
             // 
             // pbManageLDLA
             // 
@@ -234,5 +251,7 @@
         private System.Windows.Forms.ToolStripMenuItem addNewApplictionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteApplicationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editApplicationInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem cancelToolStripMenuItem;
     }
 }

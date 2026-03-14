@@ -16,7 +16,7 @@ namespace DVLD_BusinessLogic
         private enum enMode {AddNew =1 ,Update = 2};
         public enum eApplicationType  {NewLocalDrivingLicenseService =1 ,RenewDrivingLicenseService = 2,
                     ReplacementForALostDrivingLicense =3 , ReplacmentForDamagedDrivingLicense = 4,ReleaseDetainedDrivingLicense = 5,
-                    NewInterNationalLicense = 6};
+                    NewInterNationalLicense = 6,RetakeTest =  7};
         public enum eApplicationStatus { New  = 1 , Cancelled = 2 , Completed = 3 };
         public string getStatusText {
             get {
@@ -128,7 +128,12 @@ namespace DVLD_BusinessLogic
             else
                 return null;
         }
-        
+        public static bool UpdateStatus(int ApplicationID,int NewApplicationStatus)
+        {
+            clsApplication ap = clsApplication.Find(ApplicationID);
+            if ( ap == null ) return false;
+            return clsApplicationDataAccess.UpdateStatus(ApplicationID, NewApplicationStatus);
+        }
         public bool Save()
         {
 

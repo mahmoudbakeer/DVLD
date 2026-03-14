@@ -43,14 +43,15 @@
             // ctrlPersonCard1
             // 
             this.ctrlPersonCard1.BackColor = System.Drawing.Color.LightSalmon;
-            this.ctrlPersonCard1.Location = new System.Drawing.Point(3, 78);
+            this.ctrlPersonCard1.Location = new System.Drawing.Point(3, 75);
             this.ctrlPersonCard1.Name = "ctrlPersonCard1";
             this.ctrlPersonCard1.Size = new System.Drawing.Size(853, 296);
             this.ctrlPersonCard1.TabIndex = 0;
+            this.ctrlPersonCard1.Load += new System.EventHandler(this.ctrlPersonCard1_Load);
             // 
             // txtSearchValue
             // 
-            this.txtSearchValue.Location = new System.Drawing.Point(189, 29);
+            this.txtSearchValue.Location = new System.Drawing.Point(190, 29);
             this.txtSearchValue.Name = "txtSearchValue";
             this.txtSearchValue.Size = new System.Drawing.Size(198, 20);
             this.txtSearchValue.TabIndex = 1;

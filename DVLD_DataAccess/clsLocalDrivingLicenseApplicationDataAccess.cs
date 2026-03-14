@@ -89,7 +89,6 @@ namespace DVLD_DataAccess
                 }
             }
 
-
             return LDLID;
         }
         public static DataTable GetAllLocalDrivingApplications()
@@ -117,7 +116,7 @@ namespace DVLD_DataAccess
 
                         CASE 
                             WHEN A.ApplicationStatus = 1 THEN 'New'
-                            WHEN A.ApplicationStatus = 2 THEN 'Canceled'
+                            WHEN A.ApplicationStatus = 2 THEN 'Cancelled'
                             WHEN A.ApplicationStatus = 3 THEN 'Completed'
                         END AS Status
 

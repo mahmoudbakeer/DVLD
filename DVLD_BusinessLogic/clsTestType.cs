@@ -10,6 +10,7 @@ namespace DVLD_BusinessLogic
 {
     public class clsTestType
     {
+        public enum enTestType {Vision = 1 , Written =2,  Street = 3};
         public int TestTypeID
         {
             get; set;

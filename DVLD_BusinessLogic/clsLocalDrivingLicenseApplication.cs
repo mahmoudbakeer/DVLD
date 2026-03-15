@@ -118,5 +118,45 @@ namespace DVLD_BusinessLogic
         {
             return clsLocalDrivingLicenseApplicationDataAccess.DoesPersonHaveUncompletedApplicationForSameLicenseClass(PersonID,LicenseClassID);
         }
+        public static bool DoesThisPersonAttentTheTest(int LocalDrivingLicenseID, int TestClassID)
+        {
+            return clsLocalDrivingLicenseApplicationDataAccess.DoesThisPersonAttendTheTest(LocalDrivingLicenseID, TestClassID);
+        }
+        public  bool DoesThisPersonAttentTheTest(int TestClassID)
+        {
+            return clsLocalDrivingLicenseApplicationDataAccess.DoesThisPersonAttendTheTest(this.LocalDrivingLicenseApplicationID, TestClassID);
+        }
+        public static int HowManyTestsDidHeAttended(int LocalDrivingLicenseID, int TestClassID)
+        {
+            return clsLocalDrivingLicenseApplicationDataAccess.HowManyTestsDidHeAttended(LocalDrivingLicenseID, TestClassID);
+        }
+        public int HowManyTestsDidHeAttended(int TestClassID)
+        {
+            return clsLocalDrivingLicenseApplicationDataAccess.HowManyTestsDidHeAttended(this.LocalDrivingLicenseApplicationID, TestClassID);
+        }
+        public static bool DoesPersonHaveActiveSheduledTest(int LocalDrivingLicenseID, int TestClassID)
+        {
+            return clsLocalDrivingLicenseApplicationDataAccess.DoesApplicationHaveActiveScheduledTest(LocalDrivingLicenseID, TestClassID);
+        }
+        public bool DoesPersonHaveActiveSheduledTest(int TestClassID)
+        {
+            return clsLocalDrivingLicenseApplicationDataAccess.DoesApplicationHaveActiveScheduledTest(this.LocalDrivingLicenseApplicationID, TestClassID);
+        }
+        public static bool DoestPersonPassTheTest(int LocalDrivingLicenseID, int TestClassID)
+        {
+            return clsLocalDrivingLicenseApplicationDataAccess.DoesThisPersonPassTheTest(LocalDrivingLicenseID, TestClassID);
+        }
+        public bool DoestPersonPassTheTest(int TestClassID)
+        {
+            return clsLocalDrivingLicenseApplicationDataAccess.DoesThisPersonPassTheTest(this.LocalDrivingLicenseApplicationID, TestClassID);
+        }
+        public static bool DoestPersonHaveActiveLicense(int PersonID)
+        {
+            return clsLocalDrivingLicenseApplicationDataAccess.DoesThisPersonHaveActiveLicense(PersonID);
+        }
+        public bool DoestPersonHaveActiveLicense()
+        {
+            return DoestPersonHaveActiveLicense(this.ApplicantPersonID);
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -254,6 +255,120 @@ namespace DVLD_DataAccess
                     object result = command.ExecuteScalar();
 
                     return result != null;
+                }
+            }
+        }
+        public static bool DoesThisPersonAttendTheTest(int LocalDrivingLicenseApplicationID, int TestClassID)
+        {
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                string query = @"SELECT COUNT(*) 
+                         FROM TestAppointments TA
+                         JOIN Tests T
+                         ON TA.TestAppointmentID = T.TestAppointmentID
+                         WHERE TA.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID
+                         AND TA.TestClassID = @TestClassID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+                    command.Parameters.AddWithValue("@TestClassID", TestClassID);
+
+                    connection.Open();
+
+                    int count = (int)command.ExecuteScalar();
+
+                    return count > 0;
+                }
+            }
+        }
+        public static int HowManyTestsDidHeAttended(int LocalDrivingLicenseApplicationID, int TestClassID)
+        {
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                string query = @"SELECT COUNT(*) 
+                         FROM TestAppointments TA
+                         JOIN Tests T
+                         ON TA.TestAppointmentID = T.TestAppointmentID
+                         WHERE TA.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID
+                         AND TA.TestClassID = @TestClassID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+                    command.Parameters.AddWithValue("@TestClassID", TestClassID);
+
+                    connection.Open();
+
+                    int count = (int)command.ExecuteScalar();
+
+                    return count;
+                }
+            }
+        }
+        public static bool DoesApplicationHaveActiveScheduledTest(int LocalDrivingLicenseApplicationID, int TestClassID)
+        {
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                string query = @"SELECT COUNT(*) 
+                         FROM TestAppointments
+                         WHERE LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID
+                           AND TestClassID = @TestClassID
+                           AND IsLocked = 0;";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+                    command.Parameters.AddWithValue("@TestClassID", TestClassID);
+
+                    connection.Open();
+
+                    int count = (int)command.ExecuteScalar(); // returns the COUNT(*)
+
+                    return count > 0;
+                }
+            }
+        }
+        
+        public static bool DoesThisPersonPassTheTest(int LocalDrivingLicenseApplicationID, int TestClassID)
+        {
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                string query = @"SELECT COUNT(*) 
+                         FROM TestAppointments TA
+                         JOIN Tests T
+                         ON TA.TestAppointmentID = T.TestAppointmentID
+                         WHERE TA.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID
+                         AND TA.TestClassID = @TestClassID and T.TestResult = 1";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+                    command.Parameters.AddWithValue("@TestClassID", TestClassID);
+
+                    connection.Open();
+
+                    int count = (int)command.ExecuteScalar();
+
+                    return count > 0;
+                }
+            }
+        }
+        public static bool DoesThisPersonHaveActiveLicense(int PersonID)
+        {
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                string query = @"select count(*) from Licenses L join Drivers D on L.DriverID = D.DriverID where D.PersonID = @PersonID and L.IsActive =1;";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PersonID", PersonID);
+
+                    connection.Open();
+
+                    int count = (int)command.ExecuteScalar();
+
+                    return count > 0;
                 }
             }
         }

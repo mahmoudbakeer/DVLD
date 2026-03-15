@@ -79,7 +79,6 @@ namespace DVLD_UI.Applications.LocalDrivingApplications
             }
         }
 
-
         private void tsmEditApplicaion_Click(object sender, EventArgs e)
         {
             if (dgvAllLDLAs.CurrentRow == null)
@@ -204,6 +203,69 @@ namespace DVLD_UI.Applications.LocalDrivingApplications
                         MessageBoxIcon.Error);
                 }
             }
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+            int LDLAID = (int)dgvAllLDLAs.CurrentRow?.Cells[0].Value;
+            clsLocalDrivingLicenseApplication LDLA = clsLocalDrivingLicenseApplication.Find(LDLAID);
+            bool PassVisionTest = LDLA.DoestPersonPassTheTest((int)clsTestType.enTestType.Vision);
+            bool PassWrittenTest = LDLA.DoestPersonPassTheTest((int)clsTestType.enTestType.Written);
+            bool PassStreetTest = LDLA.DoestPersonPassTheTest((int)clsTestType.enTestType.Written);
+            bool HaveLicense = LDLA.DoestPersonHaveActiveLicense();
+            if(dgvAllLDLAs.CurrentRow?.Cells[6].Value.ToString() == "Cancelled")
+            {
+                visionTestToolStripMenuItem.Enabled = false;
+                writtenTestToolStripMenuItem.Enabled = false;
+                streetTestToolStripMenuItem.Enabled = false;
+                issueDrivingLicenseFirsrtTimeToolStripMenuItem.Enabled = false;
+                showLicenseToolStripMenuItem.Enabled = false;
+                showPersonLicenseHistoryToolStripMenuItem.Enabled = false;
+                return;
+            }
+            if(!PassVisionTest)
+            {
+                visionTestToolStripMenuItem.Enabled = true;
+                writtenTestToolStripMenuItem.Enabled = false;
+                streetTestToolStripMenuItem.Enabled = false;
+            }
+            else if(PassVisionTest && !PassWrittenTest)
+            {
+                visionTestToolStripMenuItem.Enabled = false;
+                writtenTestToolStripMenuItem.Enabled = true;
+                streetTestToolStripMenuItem.Enabled = false;
+            }
+            else if(PassVisionTest && PassWrittenTest && !PassStreetTest)
+            {
+                visionTestToolStripMenuItem.Enabled = false;
+                writtenTestToolStripMenuItem.Enabled = false;
+                streetTestToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                visionTestToolStripMenuItem.Enabled = false;
+                writtenTestToolStripMenuItem.Enabled = false;
+                streetTestToolStripMenuItem.Enabled = false;
+            }
+            if (HaveLicense)
+            {
+                visionTestToolStripMenuItem.Enabled = false;
+                writtenTestToolStripMenuItem.Enabled = false;
+                streetTestToolStripMenuItem.Enabled = false;
+                issueDrivingLicenseFirsrtTimeToolStripMenuItem.Enabled = false;
+                showLicenseToolStripMenuItem.Enabled = true;
+                showPersonLicenseHistoryToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                issueDrivingLicenseFirsrtTimeToolStripMenuItem.Enabled = false;
+                showLicenseToolStripMenuItem.Enabled = false;
+                showPersonLicenseHistoryToolStripMenuItem.Enabled = false;
+            }
+        }
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

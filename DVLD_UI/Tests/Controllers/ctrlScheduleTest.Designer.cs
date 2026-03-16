@@ -80,7 +80,7 @@
             this.lblTestTitle.AutoSize = true;
             this.lblTestTitle.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTestTitle.ForeColor = System.Drawing.Color.Red;
-            this.lblTestTitle.Location = new System.Drawing.Point(202, 125);
+            this.lblTestTitle.Location = new System.Drawing.Point(150, 118);
             this.lblTestTitle.Name = "lblTestTitle";
             this.lblTestTitle.Size = new System.Drawing.Size(50, 28);
             this.lblTestTitle.TabIndex = 0;
@@ -101,7 +101,7 @@
             this.lblError.AutoSize = true;
             this.lblError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(208, 165);
+            this.lblError.Location = new System.Drawing.Point(59, 154);
             this.lblError.Name = "lblError";
             this.lblError.Size = new System.Drawing.Size(44, 16);
             this.lblError.TabIndex = 2;
@@ -197,6 +197,7 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Test Type";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // pictureBox6
             // 
@@ -235,11 +236,13 @@
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(200, 20);
             this.dtpDate.TabIndex = 20;
+            this.dtpDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
             // 
             // lblFees
             // 
             this.lblFees.AutoSize = true;
             this.lblFees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFees.ForeColor = System.Drawing.Color.Red;
             this.lblFees.Location = new System.Drawing.Point(155, 446);
             this.lblFees.Name = "lblFees";
             this.lblFees.Size = new System.Drawing.Size(36, 20);
@@ -250,6 +253,7 @@
             // 
             this.lblTrial.AutoSize = true;
             this.lblTrial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrial.ForeColor = System.Drawing.Color.Red;
             this.lblTrial.Location = new System.Drawing.Point(155, 356);
             this.lblTrial.Name = "lblTrial";
             this.lblTrial.Size = new System.Drawing.Size(36, 20);
@@ -260,6 +264,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.Red;
             this.lblName.Location = new System.Drawing.Point(155, 311);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(36, 20);
@@ -270,6 +275,7 @@
             // 
             this.lblDrivingClass.AutoSize = true;
             this.lblDrivingClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDrivingClass.ForeColor = System.Drawing.Color.Red;
             this.lblDrivingClass.Location = new System.Drawing.Point(155, 266);
             this.lblDrivingClass.Name = "lblDrivingClass";
             this.lblDrivingClass.Size = new System.Drawing.Size(36, 20);
@@ -280,6 +286,7 @@
             // 
             this.lblLDLAID.AutoSize = true;
             this.lblLDLAID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLDLAID.ForeColor = System.Drawing.Color.Red;
             this.lblLDLAID.Location = new System.Drawing.Point(155, 221);
             this.lblLDLAID.Name = "lblLDLAID";
             this.lblLDLAID.Size = new System.Drawing.Size(36, 20);
@@ -368,6 +375,7 @@
             // 
             this.lblRTotalFees.AutoSize = true;
             this.lblRTotalFees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRTotalFees.ForeColor = System.Drawing.Color.Red;
             this.lblRTotalFees.Location = new System.Drawing.Point(407, 34);
             this.lblRTotalFees.Name = "lblRTotalFees";
             this.lblRTotalFees.Size = new System.Drawing.Size(36, 20);
@@ -378,6 +386,7 @@
             // 
             this.lblRTestAppID.AutoSize = true;
             this.lblRTestAppID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRTestAppID.ForeColor = System.Drawing.Color.Red;
             this.lblRTestAppID.Location = new System.Drawing.Point(162, 92);
             this.lblRTestAppID.Name = "lblRTestAppID";
             this.lblRTestAppID.Size = new System.Drawing.Size(36, 20);
@@ -388,6 +397,7 @@
             // 
             this.lblRAppFees.AutoSize = true;
             this.lblRAppFees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRAppFees.ForeColor = System.Drawing.Color.Red;
             this.lblRAppFees.Location = new System.Drawing.Point(162, 34);
             this.lblRAppFees.Name = "lblRAppFees";
             this.lblRAppFees.Size = new System.Drawing.Size(36, 20);

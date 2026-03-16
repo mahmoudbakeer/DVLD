@@ -20,7 +20,7 @@ namespace DVLD_DataAccess
             bool isFound = false;
 
             string query =
-            "select * from TestAppointments where TestAppointment = @TestAppointmentID;";
+            "select * from TestAppointments where TestAppointmentID = @TestAppointmentID;";
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
@@ -37,12 +37,12 @@ namespace DVLD_DataAccess
                             {
                                 isFound = true;
 
-                                CreatedaByUserID = (int)reader["CreatedByUser"];
+                                CreatedaByUserID = (int)reader["CreatedByUserID"];
                                 TestClassID = (int)reader["TestClassID"];
                                 AppointmentDate= (DateTime)reader["AppointmentDate"];
                                 PaidFees = (decimal)reader["PaidFees"];
                                 IsLocked= (bool)reader["IsLocked"];
-                                RetakeTestApplicationID = (int)reader["RetakeTestApplicationID"];
+                                RetakeTestApplicationID = reader["RetakeTestApplicationID"] == DBNull.Value ? -1 : (int)reader["RetakeTestApplicationID"];
                                 LocalDrivingLicenseApplicationID = (int)reader["LocalDrivingLicenseApplicationID"];
                                 if (reader["RetakeTestApplicationID"] == DBNull.Value)
                                     RetakeTestApplicationID = -1;
@@ -127,21 +127,24 @@ namespace DVLD_DataAccess
             int ApplicationID = -1;
 
             string query = @"INSERT INTO TestAppointments 
-                     (CreatedaByUserID, LocalDrivingLicenseApplicationID, TestClassID, AppointmentDate, PaidFees, IsLocked, RetakeTestApplicationID)
+                     (CreatedByUserID, LocalDrivingLicenseApplicationID, TestClassID, AppointmentDate, PaidFees, IsLocked, RetakeTestApplicationID)
                      VALUES 
-                     (@CreatedaByUserID, @LocalDrivingLicenseApplicationID, @TestClassID, @AppointmentDate, @PaidFees, @IsLocked, @RetakeTestApplicationID);
+                     (@CreatedByUserID, @LocalDrivingLicenseApplicationID, @TestClassID, @AppointmentDate, @PaidFees, @IsLocked, @RetakeTestApplicationID);
                      SELECT SCOPE_IDENTITY();";
 
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             using (SqlCommand command = new SqlCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@CreatedaByUserID", CreatedaByUserID);
+                command.Parameters.AddWithValue("@CreatedByUserID", CreatedaByUserID);
                 command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
                 command.Parameters.AddWithValue("@TestClassID", TestClassID);
                 command.Parameters.AddWithValue("@AppointmentDate", AppointmentDate);
                 command.Parameters.AddWithValue("@PaidFees", PaidFees);
                 command.Parameters.AddWithValue("@IsLocked", IsLocked);
-                command.Parameters.AddWithValue("@RetakeTestApplicationID", RetakeTestApplicationID);
+                command.Parameters.AddWithValue(
+                "@RetakeTestApplicationID",
+                 RetakeTestApplicationID == -1 ? (object)DBNull.Value : RetakeTestApplicationID
+);
                 try
                 {
                     connection.Open();
@@ -163,7 +166,7 @@ namespace DVLD_DataAccess
 
         public static bool UpdateTestAppointment(
             int TestAppointmentID,
-            int CreatedaByUserID,
+            int CreatedByUserID,
             int LocalDrivingLicenseApplicationID,
             int TestClassID,
             DateTime AppointmentDate,
@@ -177,7 +180,7 @@ namespace DVLD_DataAccess
             {
 
                 string query = @"Update  TestAppointments  
-                            set CreatedaByUserID = @CreatedaByUserID, 
+                            set CreatedByUserID = @CreatedByUserID, 
                             LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID, 
                             TestClassID = @TestClassID, 
                             AppointmentDate = @AppointmentDate, 
@@ -192,7 +195,7 @@ namespace DVLD_DataAccess
                     {
                         connection.Open();
                         command.Parameters.AddWithValue("@TestAppointmentID", TestAppointmentID);
-                        command.Parameters.AddWithValue("@CreatedaByUserID", CreatedaByUserID);
+                        command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
                         command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
                         command.Parameters.AddWithValue("@TestClassID", TestClassID);
                         command.Parameters.AddWithValue("@AppointmentDate", AppointmentDate);
@@ -218,7 +221,7 @@ namespace DVLD_DataAccess
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
 
-                string query = "SELECT TestAppointmentID as 'Appointment ID', AppointmentDate as 'Appointment Date',PaidFees as 'Paid Fees',IsLocked as 'Is Locked' FROM TestAppointments where (TestClassID = @TestClassID) and LocalDrivingLicenseID = @ApplicationID";
+                string query = "SELECT TestAppointmentID as 'Appointment ID', AppointmentDate as 'Appointment Date',PaidFees as 'Paid Fees',IsLocked as 'Is Locked' FROM TestAppointments where (TestClassID = @TestClassID) and LocalDrivingLicenseApplicationID = @ApplicationID";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {

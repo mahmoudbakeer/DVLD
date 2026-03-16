@@ -28,6 +28,8 @@ namespace DVLD_UI.Applications.LocalDrivingApplications.Controllers
             if (_LDLA == null)
             {
                 MessageBox.Show("Application Not Found Make Sure LDLApplication ID is correct", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ctrlBasicApplicationInfo1.Enabled = false;
+                this.Enabled = false;
                 return;
             }
             else
@@ -35,8 +37,14 @@ namespace DVLD_UI.Applications.LocalDrivingApplications.Controllers
                 ctrlBasicApplicationInfo1.LoadApplicationInfo(LDLA.ApplicationID);
                 lblAppliedForLicense.Text = LDLA.LicenseClassInfo.ClassName;
                 lblDLAppID.Text = LDLA.LocalDrivingLicenseApplicationID.ToString();
-                lblPassedTests.Text = 0.ToString();
+                lblPassedTests.Text = LDLA.HowManyTestsDidHePass().ToString();
+                
             }
+        }
+
+        private void ctrlBasicApplicationInfo1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -139,6 +139,24 @@
     <Compile Include="Tests\Controllers\ctrlScheduleTest.Designer.cs">
       <DependentUpon>ctrlScheduleTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tests\Controllers\ctrlTestTypeInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tests\Controllers\ctrlTestTypeInfo.Designer.cs">
+      <DependentUpon>ctrlTestTypeInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\frmScheduledTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\frmScheduledTest.Designer.cs">
+      <DependentUpon>frmScheduledTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\frmScheduleTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\frmScheduleTest.Designer.cs">
+      <DependentUpon>frmScheduleTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tests\frmTestTypeManagment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +168,12 @@
     </Compile>
     <Compile Include="Tests\frmUpdateTestType.Designer.cs">
       <DependentUpon>frmUpdateTestType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\TestAppointments\frmManageTestAppointments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tests\TestAppointments\frmManageTestAppointments.Designer.cs">
+      <DependentUpon>frmManageTestAppointments.cs</DependentUpon>
     </Compile>
     <Compile Include="Users\Controllers\ctrlUserCard.cs">
       <SubType>UserControl</SubType>
@@ -237,11 +261,23 @@
     <EmbeddedResource Include="Tests\Controllers\ctrlScheduleTest.resx">
       <DependentUpon>ctrlScheduleTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tests\Controllers\ctrlTestTypeInfo.resx">
+      <DependentUpon>ctrlTestTypeInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\frmScheduledTest.resx">
+      <DependentUpon>frmScheduledTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\frmScheduleTest.resx">
+      <DependentUpon>frmScheduleTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tests\frmTestTypeManagment.resx">
       <DependentUpon>frmTestTypeManagment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tests\frmUpdateTestType.resx">
       <DependentUpon>frmUpdateTestType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tests\TestAppointments\frmManageTestAppointments.resx">
+      <DependentUpon>frmManageTestAppointments.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\Controllers\ctrlUserCard.resx">
       <DependentUpon>ctrlUserCard.cs</DependentUpon>
@@ -394,9 +430,7 @@
   <ItemGroup>
     <None Include="Resources\cancelled.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tests\TestAppointments\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\StreetExam.png" />
   </ItemGroup>

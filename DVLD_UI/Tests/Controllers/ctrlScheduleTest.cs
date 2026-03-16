@@ -66,6 +66,7 @@ namespace DVLD_UI.Tests.Controllers
         {
             TestType = enTestType;
             _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.Find(LocalDrivingLicenseApplicationID);
+            dtpDate.MinDate = DateTime.Now;
             if (_LocalDrivingLicenseApplication == null)
             {
                 this.Enabled = false;
@@ -75,12 +76,11 @@ namespace DVLD_UI.Tests.Controllers
             if(appointmentID == -1)
             {
                 _Mode = enMode.AddNew;
-                dtpDate.MinDate = DateTime.Now;
             }
             else
             {
                 _AppointmentID = appointmentID;
-                
+                LoadAppointmentData();
                 _Mode = enMode.Update;
             }
             if(LocalDrivingLicenseApplication.DoesThisPersonAttentTheTest((int)TestType))
@@ -118,7 +118,7 @@ namespace DVLD_UI.Tests.Controllers
             }
             else
             {
-                dtpDate.Value = Appointment.AppointmentDate;
+                dtpDate.Value = (DateTime)Appointment.AppointmentDate;
                 if(Appointment.RetakeTestApplicationID != -1)
                 {
                     lblRTestAppID.Text = Appointment.RetakeTestApplicationID.ToString();
@@ -171,12 +171,16 @@ namespace DVLD_UI.Tests.Controllers
                 }
                lblRTestAppID.Text = application.ApplicationID.ToString();
                _Appointment.RetakeTestApplicationID = application.ApplicationID;
-               return false;
+               return true;
             }
             else return true;
         }
         private void _CollectAppoitmentInfo()
         {
+            if(_Appointment == null)
+            {
+                _Appointment = new clsTestAppointment();
+            }
             _Appointment.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID;
             _Appointment.AppointmentDate = dtpDate.Value;
             _Appointment.CreatedByUserID = clsGlobalUser.gUser.ID ;
@@ -194,6 +198,16 @@ namespace DVLD_UI.Tests.Controllers
             }
             else
                 MessageBox.Show("Error: Data Is not Saved Successfully.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpDate_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

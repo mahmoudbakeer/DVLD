@@ -29,24 +29,9 @@
         private void InitializeComponent()
         {
             this.gpApplicationBasicInfo = new System.Windows.Forms.GroupBox();
-            this.lblAppIDTitile = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblApplicationTypeTitle = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblApplicantIDTitle = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblApplicationID = new System.Windows.Forms.Label();
-            this.lblApplicantID = new System.Windows.Forms.Label();
-            this.lblApplicationTypeID = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
-            this.lblFees = new System.Windows.Forms.Label();
-            this.lblStatusDate = new System.Windows.Forms.Label();
-            this.lblCreatedBy = new System.Windows.Forms.Label();
-            this.btnShowPersonInfo = new System.Windows.Forms.Button();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.lblDate = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -54,6 +39,21 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnShowPersonInfo = new System.Windows.Forms.Button();
+            this.lblCreatedBy = new System.Windows.Forms.Label();
+            this.lblStatusDate = new System.Windows.Forms.Label();
+            this.lblFees = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
+            this.lblApplicationTypeID = new System.Windows.Forms.Label();
+            this.lblApplicantID = new System.Windows.Forms.Label();
+            this.lblApplicationID = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblApplicantIDTitle = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblApplicationTypeTitle = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblAppIDTitile = new System.Windows.Forms.Label();
             this.gpApplicationBasicInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -99,173 +99,17 @@
             this.gpApplicationBasicInfo.TabIndex = 0;
             this.gpApplicationBasicInfo.TabStop = false;
             this.gpApplicationBasicInfo.Text = "Application Basic Info";
+            this.gpApplicationBasicInfo.Enter += new System.EventHandler(this.gpApplicationBasicInfo_Enter);
             // 
-            // lblAppIDTitile
+            // pictureBox8
             // 
-            this.lblAppIDTitile.AutoSize = true;
-            this.lblAppIDTitile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppIDTitile.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblAppIDTitile.Location = new System.Drawing.Point(16, 49);
-            this.lblAppIDTitile.Name = "lblAppIDTitile";
-            this.lblAppIDTitile.Size = new System.Drawing.Size(132, 20);
-            this.lblAppIDTitile.TabIndex = 0;
-            this.lblAppIDTitile.Text = "Application ID :";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(16, 197);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Status :";
-            // 
-            // lblApplicationTypeTitle
-            // 
-            this.lblApplicationTypeTitle.AutoSize = true;
-            this.lblApplicationTypeTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApplicationTypeTitle.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblApplicationTypeTitle.Location = new System.Drawing.Point(16, 144);
-            this.lblApplicationTypeTitle.Name = "lblApplicationTypeTitle";
-            this.lblApplicationTypeTitle.Size = new System.Drawing.Size(57, 20);
-            this.lblApplicationTypeTitle.TabIndex = 2;
-            this.lblApplicationTypeTitle.Text = "Type :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label3.Location = new System.Drawing.Point(453, 144);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 20);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Fees :";
-            // 
-            // lblApplicantIDTitle
-            // 
-            this.lblApplicantIDTitle.AutoSize = true;
-            this.lblApplicantIDTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApplicantIDTitle.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblApplicantIDTitle.Location = new System.Drawing.Point(16, 97);
-            this.lblApplicantIDTitle.Name = "lblApplicantIDTitle";
-            this.lblApplicantIDTitle.Size = new System.Drawing.Size(94, 20);
-            this.lblApplicantIDTitle.TabIndex = 4;
-            this.lblApplicantIDTitle.Text = "Applicant :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(453, 49);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 20);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Status Date :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label6.Location = new System.Drawing.Point(453, 97);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(108, 20);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Created By :";
-            // 
-            // lblApplicationID
-            // 
-            this.lblApplicationID.AutoSize = true;
-            this.lblApplicationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApplicationID.ForeColor = System.Drawing.Color.Crimson;
-            this.lblApplicationID.Location = new System.Drawing.Point(217, 40);
-            this.lblApplicationID.Name = "lblApplicationID";
-            this.lblApplicationID.Size = new System.Drawing.Size(36, 20);
-            this.lblApplicationID.TabIndex = 7;
-            this.lblApplicationID.Text = "###";
-            // 
-            // lblApplicantID
-            // 
-            this.lblApplicantID.AutoSize = true;
-            this.lblApplicantID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApplicantID.ForeColor = System.Drawing.Color.Crimson;
-            this.lblApplicantID.Location = new System.Drawing.Point(217, 97);
-            this.lblApplicantID.Name = "lblApplicantID";
-            this.lblApplicantID.Size = new System.Drawing.Size(36, 20);
-            this.lblApplicantID.TabIndex = 8;
-            this.lblApplicantID.Text = "###";
-            // 
-            // lblApplicationTypeID
-            // 
-            this.lblApplicationTypeID.AutoSize = true;
-            this.lblApplicationTypeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApplicationTypeID.ForeColor = System.Drawing.Color.Crimson;
-            this.lblApplicationTypeID.Location = new System.Drawing.Point(217, 144);
-            this.lblApplicationTypeID.Name = "lblApplicationTypeID";
-            this.lblApplicationTypeID.Size = new System.Drawing.Size(36, 20);
-            this.lblApplicationTypeID.TabIndex = 9;
-            this.lblApplicationTypeID.Text = "###";
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.ForeColor = System.Drawing.Color.Crimson;
-            this.lblStatus.Location = new System.Drawing.Point(217, 197);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(36, 20);
-            this.lblStatus.TabIndex = 10;
-            this.lblStatus.Text = "###";
-            // 
-            // lblFees
-            // 
-            this.lblFees.AutoSize = true;
-            this.lblFees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFees.ForeColor = System.Drawing.Color.Crimson;
-            this.lblFees.Location = new System.Drawing.Point(643, 144);
-            this.lblFees.Name = "lblFees";
-            this.lblFees.Size = new System.Drawing.Size(36, 20);
-            this.lblFees.TabIndex = 11;
-            this.lblFees.Text = "###";
-            // 
-            // lblStatusDate
-            // 
-            this.lblStatusDate.AutoSize = true;
-            this.lblStatusDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusDate.ForeColor = System.Drawing.Color.Crimson;
-            this.lblStatusDate.Location = new System.Drawing.Point(643, 49);
-            this.lblStatusDate.Name = "lblStatusDate";
-            this.lblStatusDate.Size = new System.Drawing.Size(36, 20);
-            this.lblStatusDate.TabIndex = 11;
-            this.lblStatusDate.Text = "###";
-            // 
-            // lblCreatedBy
-            // 
-            this.lblCreatedBy.AutoSize = true;
-            this.lblCreatedBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreatedBy.ForeColor = System.Drawing.Color.Crimson;
-            this.lblCreatedBy.Location = new System.Drawing.Point(643, 97);
-            this.lblCreatedBy.Name = "lblCreatedBy";
-            this.lblCreatedBy.Size = new System.Drawing.Size(36, 20);
-            this.lblCreatedBy.TabIndex = 12;
-            this.lblCreatedBy.Text = "###";
-            // 
-            // btnShowPersonInfo
-            // 
-            this.btnShowPersonInfo.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnShowPersonInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowPersonInfo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnShowPersonInfo.Location = new System.Drawing.Point(672, 12);
-            this.btnShowPersonInfo.Name = "btnShowPersonInfo";
-            this.btnShowPersonInfo.Size = new System.Drawing.Size(113, 23);
-            this.btnShowPersonInfo.TabIndex = 13;
-            this.btnShowPersonInfo.Text = "Person Info";
-            this.btnShowPersonInfo.UseVisualStyleBackColor = false;
-            this.btnShowPersonInfo.Click += new System.EventHandler(this.btnShowPersonInfo_Click);
+            this.pictureBox8.Image = global::DVLD_UI.Properties.Resources.date_of_birth;
+            this.pictureBox8.Location = new System.Drawing.Point(584, 188);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(29, 29);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox8.TabIndex = 23;
+            this.pictureBox8.TabStop = false;
             // 
             // lblDate
             // 
@@ -288,16 +132,6 @@
             this.label4.Size = new System.Drawing.Size(58, 20);
             this.label4.TabIndex = 21;
             this.label4.Text = "Date :";
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::DVLD_UI.Properties.Resources.date_of_birth;
-            this.pictureBox8.Location = new System.Drawing.Point(584, 188);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(29, 29);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox8.TabIndex = 23;
-            this.pictureBox8.TabStop = false;
             // 
             // pictureBox7
             // 
@@ -368,6 +202,174 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnShowPersonInfo
+            // 
+            this.btnShowPersonInfo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnShowPersonInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowPersonInfo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnShowPersonInfo.Location = new System.Drawing.Point(672, 12);
+            this.btnShowPersonInfo.Name = "btnShowPersonInfo";
+            this.btnShowPersonInfo.Size = new System.Drawing.Size(113, 23);
+            this.btnShowPersonInfo.TabIndex = 13;
+            this.btnShowPersonInfo.Text = "Person Info";
+            this.btnShowPersonInfo.UseVisualStyleBackColor = false;
+            this.btnShowPersonInfo.Click += new System.EventHandler(this.btnShowPersonInfo_Click);
+            // 
+            // lblCreatedBy
+            // 
+            this.lblCreatedBy.AutoSize = true;
+            this.lblCreatedBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreatedBy.ForeColor = System.Drawing.Color.Crimson;
+            this.lblCreatedBy.Location = new System.Drawing.Point(643, 97);
+            this.lblCreatedBy.Name = "lblCreatedBy";
+            this.lblCreatedBy.Size = new System.Drawing.Size(36, 20);
+            this.lblCreatedBy.TabIndex = 12;
+            this.lblCreatedBy.Text = "###";
+            // 
+            // lblStatusDate
+            // 
+            this.lblStatusDate.AutoSize = true;
+            this.lblStatusDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatusDate.ForeColor = System.Drawing.Color.Crimson;
+            this.lblStatusDate.Location = new System.Drawing.Point(643, 49);
+            this.lblStatusDate.Name = "lblStatusDate";
+            this.lblStatusDate.Size = new System.Drawing.Size(36, 20);
+            this.lblStatusDate.TabIndex = 11;
+            this.lblStatusDate.Text = "###";
+            // 
+            // lblFees
+            // 
+            this.lblFees.AutoSize = true;
+            this.lblFees.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFees.ForeColor = System.Drawing.Color.Crimson;
+            this.lblFees.Location = new System.Drawing.Point(643, 144);
+            this.lblFees.Name = "lblFees";
+            this.lblFees.Size = new System.Drawing.Size(36, 20);
+            this.lblFees.TabIndex = 11;
+            this.lblFees.Text = "###";
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStatus.ForeColor = System.Drawing.Color.Crimson;
+            this.lblStatus.Location = new System.Drawing.Point(217, 197);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(36, 20);
+            this.lblStatus.TabIndex = 10;
+            this.lblStatus.Text = "###";
+            this.lblStatus.Click += new System.EventHandler(this.lblStatus_Click);
+            // 
+            // lblApplicationTypeID
+            // 
+            this.lblApplicationTypeID.AutoSize = true;
+            this.lblApplicationTypeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApplicationTypeID.ForeColor = System.Drawing.Color.Crimson;
+            this.lblApplicationTypeID.Location = new System.Drawing.Point(217, 144);
+            this.lblApplicationTypeID.Name = "lblApplicationTypeID";
+            this.lblApplicationTypeID.Size = new System.Drawing.Size(36, 20);
+            this.lblApplicationTypeID.TabIndex = 9;
+            this.lblApplicationTypeID.Text = "###";
+            // 
+            // lblApplicantID
+            // 
+            this.lblApplicantID.AutoSize = true;
+            this.lblApplicantID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApplicantID.ForeColor = System.Drawing.Color.Crimson;
+            this.lblApplicantID.Location = new System.Drawing.Point(217, 97);
+            this.lblApplicantID.Name = "lblApplicantID";
+            this.lblApplicantID.Size = new System.Drawing.Size(36, 20);
+            this.lblApplicantID.TabIndex = 8;
+            this.lblApplicantID.Text = "###";
+            // 
+            // lblApplicationID
+            // 
+            this.lblApplicationID.AutoSize = true;
+            this.lblApplicationID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApplicationID.ForeColor = System.Drawing.Color.Crimson;
+            this.lblApplicationID.Location = new System.Drawing.Point(217, 40);
+            this.lblApplicationID.Name = "lblApplicationID";
+            this.lblApplicationID.Size = new System.Drawing.Size(36, 20);
+            this.lblApplicationID.TabIndex = 7;
+            this.lblApplicationID.Text = "###";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label6.Location = new System.Drawing.Point(453, 97);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(108, 20);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Created By :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label5.Location = new System.Drawing.Point(453, 49);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(116, 20);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Status Date :";
+            // 
+            // lblApplicantIDTitle
+            // 
+            this.lblApplicantIDTitle.AutoSize = true;
+            this.lblApplicantIDTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApplicantIDTitle.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblApplicantIDTitle.Location = new System.Drawing.Point(16, 97);
+            this.lblApplicantIDTitle.Name = "lblApplicantIDTitle";
+            this.lblApplicantIDTitle.Size = new System.Drawing.Size(94, 20);
+            this.lblApplicantIDTitle.TabIndex = 4;
+            this.lblApplicantIDTitle.Text = "Applicant :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label3.Location = new System.Drawing.Point(453, 144);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 20);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Fees :";
+            // 
+            // lblApplicationTypeTitle
+            // 
+            this.lblApplicationTypeTitle.AutoSize = true;
+            this.lblApplicationTypeTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApplicationTypeTitle.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblApplicationTypeTitle.Location = new System.Drawing.Point(16, 144);
+            this.lblApplicationTypeTitle.Name = "lblApplicationTypeTitle";
+            this.lblApplicationTypeTitle.Size = new System.Drawing.Size(57, 20);
+            this.lblApplicationTypeTitle.TabIndex = 2;
+            this.lblApplicationTypeTitle.Text = "Type :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label1.Location = new System.Drawing.Point(16, 197);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Status :";
+            // 
+            // lblAppIDTitile
+            // 
+            this.lblAppIDTitile.AutoSize = true;
+            this.lblAppIDTitile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppIDTitile.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lblAppIDTitile.Location = new System.Drawing.Point(16, 49);
+            this.lblAppIDTitile.Name = "lblAppIDTitile";
+            this.lblAppIDTitile.Size = new System.Drawing.Size(132, 20);
+            this.lblAppIDTitile.TabIndex = 0;
+            this.lblAppIDTitile.Text = "Application ID :";
             // 
             // ctrlBasicApplicationInfo
             // 

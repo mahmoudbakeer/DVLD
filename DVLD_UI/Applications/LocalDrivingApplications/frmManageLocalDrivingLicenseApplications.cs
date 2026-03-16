@@ -1,5 +1,6 @@
 ﻿using DVLD_BusinessLogic;
 using DVLD_UI.People;
+using DVLD_UI.Tests.TestAppointments;
 using DVLD_UI.Util;
 using System;
 using System.Collections.Generic;
@@ -32,8 +33,7 @@ namespace DVLD_UI.Applications.LocalDrivingApplications
             dgvAllLDLAs.Columns[3].Width = 250;
             dgvAllLDLAs.Columns[4].Width = 200;
             dgvAllLDLAs.Columns[5].Width = 70;
-            dgvAllLDLAs.Columns[5].Width = 150;
-
+            dgvAllLDLAs.Columns[6].Width = 150;
         }
         private void frmManagePeople_Load(object sender, EventArgs e)
         {
@@ -223,6 +223,10 @@ namespace DVLD_UI.Applications.LocalDrivingApplications
                 showPersonLicenseHistoryToolStripMenuItem.Enabled = false;
                 return;
             }
+            if(PassVisionTest && PassWrittenTest && PassStreetTest)
+            {
+                scheduleTestToolStripMenuItem.Enabled = false;
+            }
             if(!PassVisionTest)
             {
                 visionTestToolStripMenuItem.Enabled = true;
@@ -240,12 +244,6 @@ namespace DVLD_UI.Applications.LocalDrivingApplications
                 visionTestToolStripMenuItem.Enabled = false;
                 writtenTestToolStripMenuItem.Enabled = false;
                 streetTestToolStripMenuItem.Enabled = true;
-            }
-            else
-            {
-                visionTestToolStripMenuItem.Enabled = false;
-                writtenTestToolStripMenuItem.Enabled = false;
-                streetTestToolStripMenuItem.Enabled = false;
             }
             if (HaveLicense)
             {
@@ -266,6 +264,24 @@ namespace DVLD_UI.Applications.LocalDrivingApplications
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void visionTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageTestAppointments frm = new frmManageTestAppointments((int)dgvAllLDLAs.CurrentRow?.Cells[0].Value, clsTestType.enTestType.Vision);
+            frm.ShowDialog();
+        }
+
+        private void writtenTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageTestAppointments frm = new frmManageTestAppointments((int)dgvAllLDLAs.CurrentRow?.Cells[0].Value, clsTestType.enTestType.Written);
+            frm.ShowDialog();
+        }
+
+        private void streetTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmManageTestAppointments frm = new frmManageTestAppointments((int)dgvAllLDLAs.CurrentRow?.Cells[0].Value, clsTestType.enTestType.Street);
+            frm.ShowDialog();
         }
     }
 }

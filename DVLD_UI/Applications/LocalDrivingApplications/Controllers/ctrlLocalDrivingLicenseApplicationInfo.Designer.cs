@@ -30,19 +30,19 @@
         {
             this.ctrlBasicApplicationInfo1 = new DVLD_UI.Applications.ctrlBasicApplicationInfo();
             this.gbDrivingLicenseAppInfo = new System.Windows.Forms.GroupBox();
-            this.lbv = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblDLAppID = new System.Windows.Forms.Label();
-            this.lblAppliedForLicense = new System.Windows.Forms.Label();
-            this.lblPassedTests = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblPassedTests = new System.Windows.Forms.Label();
+            this.lblAppliedForLicense = new System.Windows.Forms.Label();
+            this.lblDLAppID = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbv = new System.Windows.Forms.Label();
             this.gbDrivingLicenseAppInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ctrlBasicApplicationInfo1
@@ -51,6 +51,7 @@
             this.ctrlBasicApplicationInfo1.Name = "ctrlBasicApplicationInfo1";
             this.ctrlBasicApplicationInfo1.Size = new System.Drawing.Size(828, 261);
             this.ctrlBasicApplicationInfo1.TabIndex = 0;
+            this.ctrlBasicApplicationInfo1.Load += new System.EventHandler(this.ctrlBasicApplicationInfo1_Load);
             // 
             // gbDrivingLicenseAppInfo
             // 
@@ -70,27 +71,65 @@
             this.gbDrivingLicenseAppInfo.TabStop = false;
             this.gbDrivingLicenseAppInfo.Text = "Driving License Application Info";
             // 
-            // lbv
+            // pictureBox3
             // 
-            this.lbv.AutoSize = true;
-            this.lbv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbv.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lbv.Location = new System.Drawing.Point(25, 38);
-            this.lbv.Name = "lbv";
-            this.lbv.Size = new System.Drawing.Size(108, 20);
-            this.lbv.TabIndex = 0;
-            this.lbv.Text = "D.L.App ID :";
+            this.pictureBox3.Image = global::DVLD_UI.Properties.Resources.schedule;
+            this.pictureBox3.Location = new System.Drawing.Point(493, 38);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(23, 20);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
             // 
-            // label1
+            // pictureBox2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label1.Location = new System.Drawing.Point(25, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Applied For License :";
+            this.pictureBox2.Image = global::DVLD_UI.Properties.Resources.licensing;
+            this.pictureBox2.Location = new System.Drawing.Point(211, 83);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(23, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 7;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DVLD_UI.Properties.Resources.id_card;
+            this.pictureBox1.Location = new System.Drawing.Point(211, 38);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(23, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblPassedTests
+            // 
+            this.lblPassedTests.AutoSize = true;
+            this.lblPassedTests.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassedTests.Location = new System.Drawing.Point(525, 38);
+            this.lblPassedTests.Name = "lblPassedTests";
+            this.lblPassedTests.Size = new System.Drawing.Size(49, 20);
+            this.lblPassedTests.TabIndex = 5;
+            this.lblPassedTests.Text = "####";
+            // 
+            // lblAppliedForLicense
+            // 
+            this.lblAppliedForLicense.AutoSize = true;
+            this.lblAppliedForLicense.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppliedForLicense.Location = new System.Drawing.Point(240, 83);
+            this.lblAppliedForLicense.Name = "lblAppliedForLicense";
+            this.lblAppliedForLicense.Size = new System.Drawing.Size(49, 20);
+            this.lblAppliedForLicense.TabIndex = 4;
+            this.lblAppliedForLicense.Text = "####";
+            // 
+            // lblDLAppID
+            // 
+            this.lblDLAppID.AutoSize = true;
+            this.lblDLAppID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDLAppID.Location = new System.Drawing.Point(240, 38);
+            this.lblDLAppID.Name = "lblDLAppID";
+            this.lblDLAppID.Size = new System.Drawing.Size(49, 20);
+            this.lblDLAppID.TabIndex = 3;
+            this.lblDLAppID.Text = "####";
             // 
             // label2
             // 
@@ -103,65 +142,27 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Passed Tests :";
             // 
-            // lblDLAppID
+            // label1
             // 
-            this.lblDLAppID.AutoSize = true;
-            this.lblDLAppID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDLAppID.Location = new System.Drawing.Point(240, 38);
-            this.lblDLAppID.Name = "lblDLAppID";
-            this.lblDLAppID.Size = new System.Drawing.Size(49, 20);
-            this.lblDLAppID.TabIndex = 3;
-            this.lblDLAppID.Text = "####";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label1.Location = new System.Drawing.Point(25, 83);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(178, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Applied For License :";
             // 
-            // lblAppliedForLicense
+            // lbv
             // 
-            this.lblAppliedForLicense.AutoSize = true;
-            this.lblAppliedForLicense.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAppliedForLicense.Location = new System.Drawing.Point(240, 83);
-            this.lblAppliedForLicense.Name = "lblAppliedForLicense";
-            this.lblAppliedForLicense.Size = new System.Drawing.Size(49, 20);
-            this.lblAppliedForLicense.TabIndex = 4;
-            this.lblAppliedForLicense.Text = "####";
-            // 
-            // lblPassedTests
-            // 
-            this.lblPassedTests.AutoSize = true;
-            this.lblPassedTests.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassedTests.Location = new System.Drawing.Point(525, 38);
-            this.lblPassedTests.Name = "lblPassedTests";
-            this.lblPassedTests.Size = new System.Drawing.Size(49, 20);
-            this.lblPassedTests.TabIndex = 5;
-            this.lblPassedTests.Text = "####";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DVLD_UI.Properties.Resources.id_card;
-            this.pictureBox1.Location = new System.Drawing.Point(211, 38);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(23, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::DVLD_UI.Properties.Resources.licensing;
-            this.pictureBox2.Location = new System.Drawing.Point(211, 83);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(23, 20);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 7;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::DVLD_UI.Properties.Resources.schedule;
-            this.pictureBox3.Location = new System.Drawing.Point(493, 38);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(23, 20);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
+            this.lbv.AutoSize = true;
+            this.lbv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbv.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lbv.Location = new System.Drawing.Point(25, 38);
+            this.lbv.Name = "lbv";
+            this.lbv.Size = new System.Drawing.Size(108, 20);
+            this.lbv.TabIndex = 0;
+            this.lbv.Text = "D.L.App ID :";
             // 
             // ctrlLocalDrivingLicenseApplicationInfo
             // 
@@ -174,9 +175,9 @@
             this.Load += new System.EventHandler(this.ctrlLocalDrivingLicenseApplicationInfo_Load);
             this.gbDrivingLicenseAppInfo.ResumeLayout(false);
             this.gbDrivingLicenseAppInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

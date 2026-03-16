@@ -41,22 +41,27 @@ namespace DVLD_BusinessLogic
         public int CreatedByUserID { get; set; }
         public decimal PaidFees { get; set; }
         public DateTime LastStatusDate { get; set; }
-        protected clsApplication (int ApplicationID, DateTime ApplicationDate 
-            , eApplicationStatus ApplicationStatus , int ApplicantPersonID
-            , int CreatedByUserID ,int ApplicationTypeID, decimal PaidFees
-            , DateTime LastStatusDate)
+        protected clsApplication(int ApplicationID, DateTime ApplicationDate,
+            eApplicationStatus ApplicationStatus, int ApplicantPersonID,
+            int CreatedByUserID, int ApplicationTypeID, decimal PaidFees,
+            DateTime LastStatusDate)
         {
-            this.ApplicationID      = ApplicationID;
-            this.ApplicationDate    = this.ApplicationDate;
-            this.ApplicationStatus  = ApplicationStatus;
-            this.ApplicantPersonID  = ApplicantPersonID;
+            this.ApplicationID = ApplicationID;
+            this.ApplicationDate = ApplicationDate;
+            this.ApplicationStatus = ApplicationStatus;
+
+            this.ApplicantPersonID = ApplicantPersonID;
             this.PersonInfo = clsPerson.Find(ApplicantPersonID);
-            this.CreatedByUserID    = CreatedByUserID;
+
+            this.CreatedByUserID = CreatedByUserID;
             this.UserInfo = clsUser.Find(CreatedByUserID);
-            this.ApplicationTypeInfo = clsApplicationType.GetApplicationType(ApplicationTypeID);
+
             this.ApplicationTypeID = ApplicationTypeID;
-            this.PaidFees           = PaidFees;
-            this.LastStatusDate     = LastStatusDate;
+            this.ApplicationTypeInfo = clsApplicationType.GetApplicationType(ApplicationTypeID);
+
+            this.PaidFees = PaidFees;
+            this.LastStatusDate = LastStatusDate;
+
             this.Mode = enMode.Update;
         }
         public clsApplication()

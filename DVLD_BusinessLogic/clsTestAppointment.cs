@@ -39,7 +39,7 @@ namespace DVLD_BusinessLogic
             RetakeTestApplicationID = retakeTestApplicationID;
             RetakeTestAppInfo = clsApplication.Find(retakeTestApplicationID);
         }
-        clsTestAppointment()
+        public clsTestAppointment()
         {
             Mode = enMode.AddNew;
             TestAppointmentID = -1;

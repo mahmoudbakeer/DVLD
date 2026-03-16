@@ -39,6 +39,7 @@ namespace DVLD_UI.Applications
                 lblStatusDate.Text = _Application.LastStatusDate.ToString();
                 lblDate.Text = _Application.ApplicationDate.ToString();
                 lblCreatedBy.Text = _Application.UserInfo.UserName.ToString();
+                lblStatus.Text = _Application.getStatusText;
             }
 
         }
@@ -47,6 +48,16 @@ namespace DVLD_UI.Applications
         {
             frmShowPersonInfo frm = new frmShowPersonInfo(Application.ApplicantPersonID);
             frm.ShowDialog();
+        }
+
+        private void lblStatus_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gpApplicationBasicInfo_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

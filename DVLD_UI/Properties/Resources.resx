@@ -121,6 +121,9 @@
   <data name="ManageApllications1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ManageApllications1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="WrittenTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WrittenTest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AddApplication" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AddApplication.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -141,6 +144,9 @@
   </data>
   <data name="update" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\update.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="question-mark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\question-mark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phone-call" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phone-call.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,11 +187,20 @@
   <data name="address" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\address.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="VisionTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VisionTest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="StreetExam" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StreetExam.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Manage Applications" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Manage Applications.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gender-fluid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gender-fluid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sticky-notes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sticky-notes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="schedule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\schedule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -195,6 +210,9 @@
   </data>
   <data name="delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="expired" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\expired.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ManageApllications" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ManageApllications.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -235,13 +253,7 @@
   <data name="add-user_6025683" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add-user_6025683.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="StreetExam" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\StreetExam.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="VisionTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\VisionTest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="WrittenTest" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WrittenTest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="driving-license" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\driving-license.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

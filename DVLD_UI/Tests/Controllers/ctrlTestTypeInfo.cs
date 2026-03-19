@@ -46,6 +46,7 @@ namespace DVLD_UI.Tests.Controllers
                         }
                     default: { break; }
                 }
+                lblTestTitle.TextAlign = ContentAlignment.MiddleCenter;
             }
         }
         public ctrlTestTypeInfo()
@@ -60,9 +61,9 @@ namespace DVLD_UI.Tests.Controllers
         public void LoadTestTypeInfo(int LocalDrivingLicenseApplicationID ,clsTestType.enTestType TestType)
         {
             clsLocalDrivingLicenseApplication LDLA = clsLocalDrivingLicenseApplication.Find(LocalDrivingLicenseApplicationID);
+            dtpDate.Enabled = false;
             if (LDLA == null)
             {
-                this.Enabled = false;
                 lblError.Text = "Application Not found check the Application information";
                 return;
             }

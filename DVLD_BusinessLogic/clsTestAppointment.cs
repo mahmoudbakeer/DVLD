@@ -139,14 +139,20 @@ namespace DVLD_BusinessLogic
         public static DataTable GetAllTestAppointmentsPerTestType(int LocalDrinvingLicenseApplicationID , clsTestType.enTestType Type)
         {
             return  clsTestAppointmentsDataAccess.GetAllTestAppointmentsPerTestType(LocalDrinvingLicenseApplicationID,(int)Type);
-
         }
 
         public static bool DeleteTestAppointment(int TestAppointmentID)
         {
             return clsTestAppointmentsDataAccess.DeleteTestAppointment(TestAppointmentID);
         }
-
+        public static bool IsAppointmentsLocked(int TestAppointmentID)
+        {
+            return clsTestAppointmentsDataAccess.IsAppointmentLocked(TestAppointmentID);
+        }
+        public bool IsAppointmentsLocked()
+        {
+            return clsTestAppointmentsDataAccess.IsAppointmentLocked(TestAppointmentID);
+        }
         private  int _GetTestID()
         {
             return clsTestAppointmentsDataAccess.GetTestID(this.TestAppointmentID);

@@ -18,7 +18,8 @@ namespace DVLD_BusinessLogic
         public bool TestResult { get; set; }
         public int CreatedByUserID { get; set; }
         public int TestAppointmentID { get; set; }
-
+        enum enMode { AddNew  = 1 , Update = 2};
+         enMode Mode { get; set; }
         private clsTest(int TestID, string Notes, bool TestResult, int CreatedByUserID , int TestAppointmentID)
         {
             this.TestID = TestID;
@@ -26,6 +27,7 @@ namespace DVLD_BusinessLogic
             this.TestResult = TestResult;
             this.CreatedByUserID = CreatedByUserID;
             this.TestAppointmentID = TestAppointmentID;
+            Mode = enMode.Update;
         }
         public clsTest()
         {
@@ -34,10 +36,16 @@ namespace DVLD_BusinessLogic
             this.TestResult = false;
             this.CreatedByUserID = -1;
             this.TestAppointmentID = -1;
+            Mode = enMode.AddNew;
+
         }
 
 
-
+        public bool _AddNewTest()
+        {
+            this.TestID = clsTestDataAccess.AddNewTest(CreatedByUserID, Notes, TestAppointmentID,TestResult);
+            return TestID != -1;
+        }
         public static clsTest Find(int TestID)
         {
             int CreatedByUser = -1, TestAppointmentID = -1;
@@ -48,13 +56,30 @@ namespace DVLD_BusinessLogic
                 return new clsTest(TestID, Notes, TestResult, CreatedByUser, TestAppointmentID);
             else return null;
         }
-        public bool UpdateTestType()
+        public bool _UpdateTest()
         {
-            return clsTestTypesDataAccess.UpdateTestType(TestTypeID, TestTypeTitle, TestTypeDescribtion, TestTypeFees);
+            return clsTestDataAccess.UpdateTest(TestID, CreatedByUserID, Notes, TestAppointmentID,TestResult);
         }
-        public static DataTable GetAllTestTypes()
+        public bool Save()
         {
-            return clsTestTypesDataAccess.GetAllTestTypes();
+            switch (Mode)
+            {
+                case enMode.AddNew:
+                    if (_AddNewTest())
+                    {
+
+                        Mode = enMode.Update;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                case enMode.Update:
+                    return _UpdateTest();
+            }
+            return false;
         }
+
     }
 }

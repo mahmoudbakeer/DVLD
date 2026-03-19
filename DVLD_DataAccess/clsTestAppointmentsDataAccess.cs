@@ -214,34 +214,36 @@ namespace DVLD_DataAccess
 
             return (rowsAffected > 0);
         }
-        public static DataTable GetAllTestAppointmentsPerTestType(int ApplicationID,int TestType)
+        public static DataTable GetAllTestAppointmentsPerTestType(int ApplicationID, int TestType)
         {
-
             DataTable dt = new DataTable();
+
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
             {
-
-                string query = "SELECT TestAppointmentID as 'Appointment ID', AppointmentDate as 'Appointment Date',PaidFees as 'Paid Fees',IsLocked as 'Is Locked' FROM TestAppointments where (TestClassID = @TestClassID) and LocalDrivingLicenseApplicationID = @ApplicationID";
+                string query = @"SELECT 
+                            TestAppointmentID AS [Appointment ID], 
+                            AppointmentDate AS [Appointment Date],
+                            PaidFees AS [Paid Fees],
+                            IsLocked AS [Is Locked]
+                         FROM TestAppointments
+                         WHERE TestClassID = @TestClassID 
+                         AND LocalDrivingLicenseApplicationID = @ApplicationID";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
+                    command.Parameters.Add("@ApplicationID", SqlDbType.Int).Value = ApplicationID;
+                    command.Parameters.Add("@TestClassID", SqlDbType.Int).Value = TestType;
 
                     connection.Open();
-                    command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
-                    command.Parameters.AddWithValue("@TestClassID", TestType);
 
-                    SqlDataReader reader = command.ExecuteReader();
-
-                    if (reader.HasRows)
-
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        dt.Load(reader);
+                        dt.Load(reader); // no condition
                     }
                 }
-
             }
-            return dt;
 
+            return dt;
         }
 
         public static bool DeleteTestAppointment(int TestAppointmentID)
@@ -356,6 +358,24 @@ namespace DVLD_DataAccess
 
             return TestID;
 
+        }
+        public static bool IsAppointmentLocked(int TestAppointmentID)
+        {
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                string query = @"SELECT COUNT(*) 
+                         FROM TestAppointments where IsLocked = 1 and TestAppointmentID = @TestAppointmentID;";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@TestAppointmentID", TestAppointmentID);
+
+                    connection.Open();
+
+                    int count = (int)command.ExecuteScalar();
+
+                    return count > 0;
+                }
+            }
         }
     }
 }

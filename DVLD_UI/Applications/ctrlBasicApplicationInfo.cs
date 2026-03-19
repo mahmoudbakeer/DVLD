@@ -33,8 +33,7 @@ namespace DVLD_UI.Applications
             {
                 lblApplicationID.Text = _Application.ApplicationID.ToString();
                 lblApplicantID.Text = _Application.PersonInfo.FirstName.ToString();
-                lblApplicationTypeID.Text = _Application.ApplicationTypeID.ToString();
-                lblCreatedBy.Text = _Application.ApplicationTypeInfo.ApplicationTypeTitle.ToString();
+                lblApplicationType.Text = _Application.ApplicationTypeInfo.ApplicationTypeTitle.ToString(); ;
                 lblFees.Text = _Application.PaidFees.ToString();
                 lblStatusDate.Text = _Application.LastStatusDate.ToString();
                 lblDate.Text = _Application.ApplicationDate.ToString();
@@ -56,6 +55,11 @@ namespace DVLD_UI.Applications
         }
 
         private void gpApplicationBasicInfo_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ctrlBasicApplicationInfo_Load(object sender, EventArgs e)
         {
 
         }

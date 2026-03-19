@@ -158,6 +158,14 @@ namespace DVLD_BusinessLogic
         {
             return DoestPersonHaveActiveLicense(this.ApplicantPersonID);
         }
+        public static bool DoestPersonHaveActiveLicensForSameLicenseClass(int PersonID , int LicenseClassID)
+        {
+            return clsLocalDrivingLicenseApplicationDataAccess.DoesThisPersonHaveLicenseOfSameClass(PersonID,LicenseClassID);
+        }
+        public bool DoestPersonHaveActiveLicensForSameLicenseClass()
+        {
+            return DoestPersonHaveActiveLicensForSameLicenseClass( this.ApplicantPersonID,  this.LicenseClassID);
+        }
         public static int HowManyTestsDidHePass(int LocalDrivingLicenseID)
         {
             return clsLocalDrivingLicenseApplicationDataAccess.HowManyTestsDidHePass(LocalDrivingLicenseID);

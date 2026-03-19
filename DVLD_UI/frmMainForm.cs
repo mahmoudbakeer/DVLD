@@ -1,6 +1,7 @@
 ﻿using DVLD_BusinessLogic;
 using DVLD_UI.Applications;
 using DVLD_UI.Applications.LocalDrivingApplications;
+using DVLD_UI.Drivers;
 using DVLD_UI.Tests;
 using DVLD_UI.Users;
 using DVLD_UI.Users.Controllers;
@@ -82,6 +83,12 @@ namespace DVLD_UI
         private void manageLocalDrivingApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmManageLocalDrivingLicenseApplications frm = new frmManageLocalDrivingLicenseApplications();
+            frm.ShowDialog();
+        }
+
+        private void driversToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListDrivers frm = new frmListDrivers();
             frm.ShowDialog();
         }
     }

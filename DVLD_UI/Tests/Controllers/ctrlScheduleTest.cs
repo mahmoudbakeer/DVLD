@@ -20,7 +20,7 @@ namespace DVLD_UI.Tests.Controllers
         private clsLocalDrivingLicenseApplication _LocalDrivingLicenseApplication = null;
         public clsLocalDrivingLicenseApplication LocalDrivingLicenseApplication { get { return _LocalDrivingLicenseApplication; } }
         private clsTestType.enTestType _TestType = clsTestType.enTestType.Vision;
-        clsTestAppointment _Appointment;
+        clsTestAppointment _Appointment = new clsTestAppointment();
         private int _RetakeTestAppID = -1;
         public clsTestAppointment Appointment { get { return _Appointment; } }
         enum enCreation { FirstTime =1 , RetakeTest = 2};
@@ -55,6 +55,7 @@ namespace DVLD_UI.Tests.Controllers
                         }
                     default: { break; }
                 }
+                lblTestTitle.TextAlign = ContentAlignment.MiddleCenter;
             }
         }
 
@@ -66,15 +67,17 @@ namespace DVLD_UI.Tests.Controllers
         {
             TestType = enTestType;
             _LocalDrivingLicenseApplication = clsLocalDrivingLicenseApplication.Find(LocalDrivingLicenseApplicationID);
-            dtpDate.MinDate = DateTime.Now;
+            //dtpDate.MinDate = DateTime.Now;
             if (_LocalDrivingLicenseApplication == null)
             {
+                
                 this.Enabled = false;
                 lblError.Text = "Application Not found check the Application information";
                 return;
             }
             if(appointmentID == -1)
             {
+                dtpDate.MinDate = DateTime.Now;
                 _Mode = enMode.AddNew;
             }
             else
@@ -169,6 +172,7 @@ namespace DVLD_UI.Tests.Controllers
                     this.Enabled=false;
                     return false;
                 }
+                application = clsApplication.Find(application.ApplicationID);
                lblRTestAppID.Text = application.ApplicationID.ToString();
                _Appointment.RetakeTestApplicationID = application.ApplicationID;
                return true;
@@ -184,6 +188,7 @@ namespace DVLD_UI.Tests.Controllers
             _Appointment.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID;
             _Appointment.AppointmentDate = dtpDate.Value;
             _Appointment.CreatedByUserID = clsGlobalUser.gUser.ID ;
+            _Appointment.TestClassID = TestType;
             _Appointment.PaidFees = Convert.ToDecimal(lblFees.Text);
         }
         private void btnSave_Click(object sender, EventArgs e)

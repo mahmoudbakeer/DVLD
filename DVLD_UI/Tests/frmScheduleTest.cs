@@ -37,5 +37,10 @@ namespace DVLD_UI.Tests
         {
             this.Close();
         }
+
+        private void ctrlScheduleTest1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

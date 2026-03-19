@@ -354,6 +354,7 @@ namespace DVLD_DataAccess
                 }
             }
         }
+        
         public static bool DoesThisPersonHaveActiveLicense(int PersonID)
         {
             using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
@@ -366,6 +367,23 @@ namespace DVLD_DataAccess
 
                     connection.Open();
 
+                    int count = (int)command.ExecuteScalar();
+
+                    return count > 0;
+                }
+            }
+        }
+        public static bool DoesThisPersonHaveLicenseOfSameClass(int PersonID,int LicenseClassID)
+        {
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+                string query = @"select count(*) from Licenses L join Drivers D on L.DriverID = D.DriverID where D.PersonID = @PersonID and L.LicenseClassID = @LicenseClassID and L.IsActive =1;";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@PersonID", PersonID);
+                    command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+                    connection.Open();
                     int count = (int)command.ExecuteScalar();
 
                     return count > 0;

@@ -297,7 +297,7 @@ namespace DVLD_DataAccess
                 using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
                 {
 
-                    string query = @"SELECT ActiveApplicationID = Applications.ApplicationID FROM Applications WHERE ApplicantPersonID = @ApplicantPersonID and ApplicationTypeID = @ApplicationTypeID;";
+                    string query = @"SELECT ActiveApplicationID = Applications.ApplicationID FROM Applications WHERE ApplicantPersonID = @ApplicantPersonID and ApplicationTypeID = @ApplicationTypeID and ApplicationStatus = 1;";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {

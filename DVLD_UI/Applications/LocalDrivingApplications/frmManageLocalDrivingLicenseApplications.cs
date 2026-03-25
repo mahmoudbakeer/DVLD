@@ -146,6 +146,7 @@ namespace DVLD_UI.Applications.LocalDrivingApplications
                     FilterColumn = string.Empty;
                     break;
             }
+            if (string.IsNullOrEmpty(txtFilter.Text)) return;
             if (FilterColumn == "" || FilterColumn == "None")
             {
                 MessageBox.Show("Please Select Filter", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -322,6 +323,11 @@ namespace DVLD_UI.Applications.LocalDrivingApplications
             clsLocalDrivingLicenseApplication LDLA = clsLocalDrivingLicenseApplication.Find(LDLAID);
             frmShowLicensesHistory frm = new frmShowLicensesHistory(LDLA.ApplicantPersonID);
             frm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

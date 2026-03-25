@@ -58,7 +58,7 @@ namespace DVLD_UI.Tests.Controllers
         {
 
         }
-        public void LoadTestTypeInfo(int LocalDrivingLicenseApplicationID ,clsTestType.enTestType TestType)
+        public void LoadTestTypeInfo(int LocalDrivingLicenseApplicationID ,clsTestType.enTestType TestType,int TestID = -1)
         {
             clsLocalDrivingLicenseApplication LDLA = clsLocalDrivingLicenseApplication.Find(LocalDrivingLicenseApplicationID);
             dtpDate.Enabled = false;
@@ -69,10 +69,11 @@ namespace DVLD_UI.Tests.Controllers
             }
             this.TestType = TestType;
             lblDrivingClass.Text = LDLA.LicenseClassInfo.ClassName;
-            lblFees.Text = LDLA.LicenseClassInfo.ClassFees.ToString();
+            lblFees.Text = clsTestType.GetTestType((int)TestType).TestTypeFees.ToString(); ;
             lblLDLAID.Text = LDLA.LocalDrivingLicenseApplicationID.ToString();
             lblName.Text = LDLA.PersonInfo.FirstName.ToString() + " " + LDLA.PersonInfo.SecondName.ToString();
             lblTrial.Text = LDLA.HowManyTestsDidHeAttended((int)TestType).ToString();
+            lblTestID.Text = (TestID == -1) ? "Not Taken Yet" : TestID.ToString(); 
         }
 
         private void ctrlTestTypeInfo_Load(object sender, EventArgs e)

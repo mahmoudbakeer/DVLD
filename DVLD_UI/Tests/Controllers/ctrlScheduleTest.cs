@@ -27,6 +27,7 @@ namespace DVLD_UI.Tests.Controllers
         enum enMode { AddNew =1 , Update =2 };
         enCreation _Creation;
         enMode _Mode;
+        decimal ExtraFees = 0;
         public clsTestType.enTestType TestType
         {
             get { return _TestType; }
@@ -89,6 +90,7 @@ namespace DVLD_UI.Tests.Controllers
             if(LocalDrivingLicenseApplication.DoesThisPersonAttentTheTest((int)TestType))
             {
                 decimal RetakeFees = clsApplicationType.GetApplicationType((int)clsApplication.eApplicationType.RetakeTest).ApplicationTypeFees;
+                ExtraFees += RetakeFees;
                 _Creation = enCreation.RetakeTest;
                 gbRetakeTest.Enabled = true;
                 lblRAppFees.Text = RetakeFees.ToString();
@@ -102,7 +104,7 @@ namespace DVLD_UI.Tests.Controllers
                 gbRetakeTest.Enabled = false;
             }
             lblDrivingClass.Text = LocalDrivingLicenseApplication.LicenseClassInfo.ClassName;
-            lblFees.Text = LocalDrivingLicenseApplication.LicenseClassInfo.ClassFees.ToString();
+            lblFees.Text = clsTestType.GetTestType((int)TestType).TestTypeFees.ToString();
             lblLDLAID.Text = LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();
             lblName.Text = LocalDrivingLicenseApplication.PersonInfo.FirstName.ToString() + " "+ LocalDrivingLicenseApplication.PersonInfo.SecondName.ToString();
             lblTrial.Text = LocalDrivingLicenseApplication.HowManyTestsDidHeAttended((int)TestType).ToString();
@@ -189,7 +191,7 @@ namespace DVLD_UI.Tests.Controllers
             _Appointment.AppointmentDate = dtpDate.Value;
             _Appointment.CreatedByUserID = clsGlobalUser.gUser.ID ;
             _Appointment.TestClassID = TestType;
-            _Appointment.PaidFees = Convert.ToDecimal(lblFees.Text);
+            _Appointment.PaidFees = Convert.ToDecimal(lblFees.Text) + ExtraFees;
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -198,6 +200,7 @@ namespace DVLD_UI.Tests.Controllers
             if (_Appointment.Save())
             {
                 _Mode = enMode.Update;
+                this.btnSave.Enabled = false;
                 MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }

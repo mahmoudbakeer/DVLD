@@ -468,14 +468,14 @@ All significant actions performed within the system are recorded in an audit log
 #### Login Screen
 This screen provides secure access to the DVLD system. Users enter their username and password to authenticate before gaining access to any system module. Invalid credentials are rejected with an appropriate error notification.
 
-![Login Screen](pictures/LoginScreen.png)
+![Login Screen](Pictures/LoginScreen.png)
 
 ---
 
 #### Main Screen
 The main screen serves as the central navigation hub of the application. It presents the primary menu structure enabling authorized users to navigate to any major system module including People Management, Applications, License Services, Tests, and User Administration.
 
-![Main Screen](pictures/MainScreen.png)
+![Main Screen](Pictures/MainScreen.png)
 
 ---
 
@@ -484,28 +484,28 @@ The main screen serves as the central navigation hub of the application. It pres
 #### Manage People
 Provides a searchable list of all registered persons. Staff can search by National ID or name, and from this screen initiate create, view, update, or delete operations on individual person records.
 
-![Manage People](pictures/ManagePeople.png)
+![Manage People](Pictures/ManagePeople.png)
 
 ---
 
 #### Person Details
 Displays a complete profile of a selected individual, including personal information, contact details, photograph, and associated records such as applications and licenses.
 
-![Person Details](pictures/PersonDetails.png)
+![Person Details](Pictures/PersonDetails.png)
 
 ---
 
 #### Add New Person
 Allows authorized staff to create a new person record. All required personal details are captured through validated input fields. Duplicate National ID entries are prevented by the system.
 
-![Add New Person](pictures/AddNewPicture.png)
+![Add New Person](Pictures/AddNewPicture.png)
 
 ---
 
 #### Update Person Information
 Enables staff to modify the contact details, address, or other mutable attributes of an existing person record. Identity fields such as National ID remain locked after creation.
 
-![Update Person Information](pictures/UpdatePersonInfo.png)
+![Update Person Information](Pictures/UpdatePersonInfo.png)
 
 ---
 
@@ -514,42 +514,42 @@ Enables staff to modify the contact details, address, or other mutable attribute
 #### Manage Users
 Provides a list of all system user accounts. Administrators can view account status, navigate to individual user records, and initiate account management actions.
 
-![Manage Users](pictures/ManageUsers.png)
+![Manage Users](Pictures/ManageUsers.png)
 
 ---
 
 #### Add New User
 Allows administrators to create a new system user account. The account must be linked to an existing person record, and a username and initial password must be assigned.
 
-![Add New User](pictures/AddNewUser.png)
+![Add New User](Pictures/AddNewUser.png)
 
 ---
 
 #### Update User Information
 Enables administrators to modify user account attributes such as permission level and active status.
 
-![Update User Information](pictures/UpdateUserInfo.png)
+![Update User Information](Pictures/UpdateUserInfo.png)
 
 ---
 
 #### Change User Credentials
 Provides a secure interface for updating a user's authentication credentials. The process requires entry of the current password before a new one can be applied.
 
-![Change User Credentials](pictures/ChangeUserInfo.png)
+![Change User Credentials](Pictures/ChangeUserInfo.png)
 
 ---
 
 #### User Details
 Presents a summary view of an individual user account including linked person information, assigned permissions, account status, and recent activity indicators.
 
-![User Details](pictures/UserDetails.png)
+![User Details](Pictures/UserDetails.png)
 
 ---
 
 #### Manage User Account Menu
 Provides a structured menu of account-level operations, allowing users to access credential management, profile review, and permission-related settings from a single point.
 
-![Manage User Account Menu](pictures/ManageUserAccountMenue.png)
+![Manage User Account Menu](Pictures/ManageUserAccountMenue.png)
 
 ---
 
@@ -558,14 +558,14 @@ Provides a structured menu of account-level operations, allowing users to access
 #### Applications Menu
 Presents the main categorized entry point for all license service types available within the system.
 
-![Applications Menu](pictures/ApplicationsMenue.png)
+![Applications Menu](Pictures/ApplicationsMenue.png)
 
 ---
 
 #### Driving License Services Menu
 Provides direct navigation to each specific license service operation. Staff select the applicable service type to proceed with the corresponding application workflow.
 
-![Driving License Services Menu](pictures/DrivingLicenseServicesMenue.png)
+![Driving License Services Menu](Pictures/DrivingLicenseServicesMenue.png)
 
 ---
 
@@ -574,42 +574,42 @@ Provides direct navigation to each specific license service operation. Staff sel
 #### Manage Local Driving License Applications
 Provides a comprehensive management view of all local driving license applications. Applications can be filtered by type, status, date range, and applicant.
 
-![Manage Local Driving License Applications](pictures/ManageLocalDrivingLicenseApplications.png)
+![Manage Local Driving License Applications](Pictures/ManageLocalDrivingLicenseApplications.png)
 
 ---
 
 #### Add New Local Driving Application
 Initiates the first-time license issuance process. The operator selects the applicant from the person registry and assigns the applicable license class. Eligibility checks are performed prior to submission.
 
-![Add New Local Driving Application](pictures/AddnewLocalDrivingApplication.png)
+![Add New Local Driving Application](Pictures/AddnewLocalDrivingApplication.png)
 
 ---
 
 #### Issue Local Driving License — First Time
 Manages the final stage of the first-time license issuance workflow. Confirms that all three tests have been passed and enables the operator to formally issue the license, generating the license record and driver profile.
 
-![Issue Local Driving License First Time](pictures/IssueLocalDrivingLicenseFirsTime.png)
+![Issue Local Driving License First Time](Pictures/IssueLocalDrivingLicenseFirsTime.png)
 
 ---
 
 #### Renew Local Driving License
 Enables processing of license renewal applications. Displays the current license details, calculates the new expiry date, and records the renewal upon confirmation.
 
-![Renew Local Driving License](pictures/RenewLocalDrivingLicense.png)
+![Renew Local Driving License](Pictures/RenewLocalDrivingLicense.png)
 
 ---
 
 #### Replace Local Driving License
 Handles replacement of a lost or damaged driving license. The operator selects the replacement reason and the system deactivates the original license record before issuing the replacement.
 
-![Replace Local Driving License](pictures/ReplaceLocalDrivingLicense.png)
+![Replace Local Driving License](Pictures/ReplaceLocalDrivingLicense.png)
 
 ---
 
 #### Release Local Driving License
 Processes the unblocking of a detained license. After administrative review, the operator confirms the release, which closes the detention record and reinstates the license to active status.
 
-![Release Local Driving License](pictures/ReleaseLocalDrivingLicense.png)
+![Release Local Driving License](Pictures/ReleaseLocalDrivingLicense.png)
 
 ---
 
@@ -618,14 +618,14 @@ Processes the unblocking of a detained license. After administrative review, the
 #### Manage International Licenses
 Provides a list of all issued international driving licenses. Operators can search by person or local license reference and access full details of any record.
 
-![Manage International Licenses](pictures/ManageInternationalLicenses.png)
+![Manage International Licenses](Pictures/ManageInternationalLicenses.png)
 
 ---
 
 #### International License Details
 Displays the full details of a specific international license including the linked local license, issue date, expiry date, and issuing officer.
 
-![International License Details](pictures/InternationalLicenseDetails.png)
+![International License Details](Pictures/InternationalLicenseDetails.png)
 
 ---
 
@@ -634,14 +634,14 @@ Displays the full details of a specific international license including the link
 #### Detain License
 Enables authorized staff to place a driving license in detained status. The detention reason, date, and administering officer are recorded as part of the detention record.
 
-![Detain License](pictures/DetainLicense.png)
+![Detain License](Pictures/DetainLicense.png)
 
 ---
 
 #### Manage Detained Licenses
 Presents a consolidated view of all currently detained licenses. Each entry displays the detention date, reason, and holder information. Operators can initiate release actions from this screen.
 
-![Manage Detained Licenses](pictures/ManageDetainedLicenses.png)
+![Manage Detained Licenses](Pictures/ManageDetainedLicenses.png)
 
 ---
 
@@ -650,28 +650,28 @@ Presents a consolidated view of all currently detained licenses. Each entry disp
 #### Manage Test Appointments
 Displays all scheduled and completed test appointments. Enables filtering by test type, date range, and result.
 
-![Manage Test Appointments](pictures/ManageTestsAppointments.png)
+![Manage Test Appointments](Pictures/ManageTestsAppointments.png)
 
 ---
 
 #### Schedule Vision Test
 Facilitates the creation of a vision test appointment for a new applicant. Links the appointment to the active application and records the scheduled date and associated fee.
 
-![Schedule Vision Test](pictures/ScheduleVisionTest.png)
+![Schedule Vision Test](Pictures/ScheduleVisionTest.png)
 
 ---
 
 #### Schedule Written (Theory) Test
 Manages the creation of a theory test appointment. Accessible only after the corresponding vision test has been passed.
 
-![Schedule Written Test](pictures/ScheduleWrittenTest.png)
+![Schedule Written Test](Pictures/ScheduleWrittenTest.png)
 
 ---
 
 #### Take Test / Record Result
 Used by examiners to record the outcome of a scheduled test. The pass or fail result is entered and confirmed, triggering the appropriate next action — progression or retake registration.
 
-![Take Test](pictures/TakeTest.png)
+![Take Test](Pictures/TakeTest.png)
 
 ---
 
@@ -680,21 +680,21 @@ Used by examiners to record the outcome of a scheduled test. The pass or fail re
 #### Manage Drivers
 Provides a registry of all individuals who have been issued at least one local driving license. Records can be searched by person details and linked to the full license history.
 
-![Manage Drivers](pictures/ManageDrivers.png)
+![Manage Drivers](Pictures/ManageDrivers.png)
 
 ---
 
 #### Local License Details
 Displays the complete record of a specific issued license, including license number, class, issue date, expiry date, current status, and the history of any service transactions applied to it.
 
-![Local License Details](pictures/LocalLicenseDetails.png)
+![Local License Details](Pictures/LocalLicenseDetails.png)
 
 ---
 
 #### Person License History
 Provides a chronological view of all licenses and license-related transactions associated with a specific individual. Serves as a comprehensive audit trail of the person's entire licensing record.
 
-![Person License History](pictures/PersonLicenseHistory.png)
+![Person License History](Pictures/PersonLicenseHistory.png)
 
 ---
 

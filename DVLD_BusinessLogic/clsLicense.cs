@@ -11,7 +11,6 @@ namespace DVLD_BusinessLogic
     public class clsLicense
     {
         private enum enMode { AddNew = 1, Update = 2 };
-       
         private enMode Mode { get; set; }
         public clsLocalDrivingLicenseApplication LocalDrivingApplicationInfo {  get; set; }
         public int LicenseID { get; set; }
@@ -149,10 +148,12 @@ namespace DVLD_BusinessLogic
         {
             return clsLicenseDataAccess.DeleteLicense(LicenseID);
         }
+        public static bool DoesPersonHaveUnExpiredLicenseOfSameType(int LicenseID , int PersonID ,int LicenseClassID)
+        {
+            return clsLicenseDataAccess.DoesPersonHaveUnExpiredLicenseOfSameType(PersonID, LicenseID , LicenseClassID);
+        }
         public bool Save()
         {
-
-
             switch (Mode)
             {
                 case enMode.AddNew:

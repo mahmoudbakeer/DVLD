@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DVLD_DataAccess
 {
@@ -52,7 +54,7 @@ namespace DVLD_DataAccess
                                 PaidFees = (decimal)reader["PaidFees"];
                                 IsActive = (bool)reader["IsActive"];
                                 Notes = (reader["Notes"] == DBNull.Value) ? string.Empty : (string)reader["Notes"];
-                                IssueReason = (reader["IssuReason"] == DBNull.Value) ? string.Empty : (string)reader["IssuReason"];
+                                IssueReason = (reader["IssueReason"] == DBNull.Value) ? string.Empty : (string)reader["IssueReason"];
                             }
                         }
                     }
@@ -177,12 +179,12 @@ namespace DVLD_DataAccess
                             IssueDate = @IssueDate, 
                             ExpirationDate = @ExpirationDate, 
                             CreatedByUserID = @CreatedByUserID, 
-                            ApplicationID = @ApplicationID, 
+                            LocalDrivingLicenseApplicationID = @ApplicationID, 
                             PaidFees = @PaidFees,                           
                             DriverID = @DriverID, 
                             IsActive = @IsActive,
                             Notes = @Notes,
-                            IssueReason = @IssueReason,
+                            IssueReason = @IssueReason 
                             where LicenseID = @LicenseID";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -191,6 +193,7 @@ namespace DVLD_DataAccess
                     {
                         connection.Open();
                         command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+                        command.Parameters.AddWithValue("@LicenseID", LicenseID);
                         command.Parameters.AddWithValue("@IssueDate", IssueDate);
                         command.Parameters.AddWithValue("@ExpirationDate", ExpirationDate);
                         command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
@@ -304,6 +307,52 @@ namespace DVLD_DataAccess
             return (rowsAffected > 0);
 
         }
-        
+         public static bool DoesPersonHaveUnExpiredLicenseOfSameType(int PersonID , int LicenseID , int LicenseClassID)
+        {
+            bool isFound = false;
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            {
+
+                string query = @"SELECT 1 
+                                WHERE EXISTS (
+                                    SELECT 1
+                                    FROM Licenses L 
+                                    JOIN Drivers D ON L.DriverID = D.DriverID 
+                                    WHERE D.PersonID = @PersonID 
+                                    AND L.LicenseClassID = @LicenseClassID 
+                                    AND L.LicenseID <> @LicenseID 
+                                    AND CAST(L.ExpirationDate AS DATE) > CAST(GETDATE() AS DATE)
+                                )";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@PersonID", PersonID);
+                    command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+                    command.Parameters.AddWithValue("@LicenseID", LicenseID);
+
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+
+                            isFound = reader.HasRows;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        //Console.WriteLine("Error: " + ex.Message);
+                        isFound = false;
+                    }
+                }
+            }
+
+            return isFound;
+        }
+
+
     }
 }

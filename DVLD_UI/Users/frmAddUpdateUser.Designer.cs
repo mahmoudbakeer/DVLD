@@ -268,23 +268,24 @@
             // 
             this.lblMainTitle.AutoSize = true;
             this.lblMainTitle.Font = new System.Drawing.Font("Palatino Linotype", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMainTitle.ForeColor = System.Drawing.Color.Red;
+            this.lblMainTitle.ForeColor = System.Drawing.Color.PeachPuff;
             this.lblMainTitle.Location = new System.Drawing.Point(313, 22);
             this.lblMainTitle.Name = "lblMainTitle";
-            this.lblMainTitle.Size = new System.Drawing.Size(217, 44);
+            this.lblMainTitle.Size = new System.Drawing.Size(231, 44);
             this.lblMainTitle.TabIndex = 4;
-            this.lblMainTitle.Text = "Add new user";
+            this.lblMainTitle.Text = "Add New User";
             // 
-            // frmAddNewUser
+            // frmAddUpdateUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(871, 565);
             this.Controls.Add(this.lblMainTitle);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.tabControl1);
-            this.Name = "frmAddNewUser";
+            this.Name = "frmAddUpdateUser";
             this.Text = "frmAddNewUser";
             this.Load += new System.EventHandler(this.frmAddNewUser_Load);
             this.tabControl1.ResumeLayout(false);

@@ -18,7 +18,7 @@ namespace DVLD_UI.Users
                 tpUserCredentials.Enabled = value;
             }
         }
-        private clsUser user;
+        private clsUser user = new clsUser();
         private int _PersonID;
         public int PersonID
         {
@@ -150,7 +150,7 @@ namespace DVLD_UI.Users
             }
             else if (clsUser.IsPersonExistForAnotherUser(PersonID) && _Mode == enMode.Addnew)
             {
-                MessageBox.Show("Error This person is taken, please select another", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("This person is taken", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ctrlPersonCardWithFilter1.Focus();
                 return false;
             }
@@ -165,8 +165,13 @@ namespace DVLD_UI.Users
         {
             if (!GetInfo()) return;
             else
+            
             {
-                if(user.Save())
+                if (MessageBox.Show("Are you sure you want to save the user Info ?", "Attention", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                {
+                    return;
+                }
+                if (user.Save())
                 {
                     MessageBox.Show("Data Added Successfully!","Successeded",MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;

@@ -186,7 +186,8 @@ namespace DVLD_BusinessLogic
         }
         public static bool DoesPersonHaveActiveApplication(int PersonID,int ApplicationTypeID)
         {
-            return (clsApplicationDataAccess.GetActiveApplicationID(PersonID, ApplicationTypeID) != -1);
+            int val = clsApplicationDataAccess.GetActiveApplicationID(PersonID, ApplicationTypeID);
+            return (val != -1);
         }
         public bool DoesPersonHaveActiveApplication(int ApplicationTypeID)
         {

@@ -355,6 +355,10 @@ namespace DVLD_UI.People
             else
             {
                 _FillPersonFromUI();
+                if (MessageBox.Show("Are you sure you want to save the person ?", "Attention", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                {
+                    return;
+                }
                 if (_Person.Save())
                 {
                     if (MessageBox.Show("Successed!", "Informations Added Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
@@ -371,7 +375,10 @@ namespace DVLD_UI.People
             return;
         }
 
-        
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
     

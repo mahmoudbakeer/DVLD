@@ -28,5 +28,10 @@ namespace DVLD_UI.Users.Controllers
         {
             ctrlUserCard1.LoadUser(UserID);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

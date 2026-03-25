@@ -128,11 +128,6 @@ namespace DVLD_UI.Applications
         {
             if (!_validatePerosn()) return;
             CollectInformations();
-            if(clsLocalDrivingLicenseApplication.DoesPersonHaveActiveApplication(LDLA.ApplicantPersonID,LDLA.ApplicationTypeID))
-            {
-                MessageBox.Show("Error,The Person Already have active application of same type\n Please choose another type","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                return;
-            }
             if(clsLocalDrivingLicenseApplication.DoesPersonHaveUnCompletedApplicationFromSameLicenseClass(LDLA.ApplicantPersonID,LDLA.LicenseClassID))
             {
                 MessageBox.Show("Error,The Person Already have UnCompleted application of same License Class , Please choose another License Class", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -145,18 +140,23 @@ namespace DVLD_UI.Applications
                 MessageBox.Show("Person already have a license with the same applied driving class, Choose diffrent driving class", "Not allowed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            else if (MessageBox.Show("Are you sure you want to Save the Application ?", "Attention", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                {
+                    return;
+                }
             if (LDLA.Save())
-            {
-                MessageBox.Show("Succeseded", "Information Updated Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                _Mode = eMode.Update;
-                _LDLAID = LDLA.LocalDrivingLicenseApplicationID;
-                _LoadDefaultValues();
-            }
-            else
-            {
-                MessageBox.Show("Error", "Error Happened While Updating the information", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                {
+                    MessageBox.Show("Succeseded", "Information Updated Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    _Mode = eMode.Update;
+                    _LDLAID = LDLA.LocalDrivingLicenseApplicationID;
+                    this.btnSave.Enabled = false;
+                    _LoadDefaultValues();
+                }
+                else
+                {
+                    MessageBox.Show("Error", "Error Happened While Updating the information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
         }
         private void btnCancel_Click(object sender, EventArgs e)

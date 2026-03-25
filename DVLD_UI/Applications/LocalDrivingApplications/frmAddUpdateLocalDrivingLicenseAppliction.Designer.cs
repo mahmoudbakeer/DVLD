@@ -71,6 +71,7 @@
             // 
             // tpPerosnalInfo
             // 
+            this.tpPerosnalInfo.BackColor = System.Drawing.Color.SaddleBrown;
             this.tpPerosnalInfo.Controls.Add(this.btnNext);
             this.tpPerosnalInfo.Controls.Add(this.ctrlPersonCardWithFilter1);
             this.tpPerosnalInfo.Location = new System.Drawing.Point(4, 22);
@@ -79,12 +80,12 @@
             this.tpPerosnalInfo.Size = new System.Drawing.Size(910, 431);
             this.tpPerosnalInfo.TabIndex = 0;
             this.tpPerosnalInfo.Text = "Personal Info";
-            this.tpPerosnalInfo.UseVisualStyleBackColor = true;
             // 
             // btnNext
             // 
-            this.btnNext.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnNext.Location = new System.Drawing.Point(730, 388);
+            this.btnNext.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNext.Location = new System.Drawing.Point(770, 388);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(101, 37);
             this.btnNext.TabIndex = 1;
@@ -94,7 +95,7 @@
             // 
             // ctrlPersonCardWithFilter1
             // 
-            this.ctrlPersonCardWithFilter1.BackColor = System.Drawing.Color.SeaShell;
+            this.ctrlPersonCardWithFilter1.BackColor = System.Drawing.Color.SaddleBrown;
             this.ctrlPersonCardWithFilter1.FilterEnabled = true;
             this.ctrlPersonCardWithFilter1.Location = new System.Drawing.Point(16, 6);
             this.ctrlPersonCardWithFilter1.Name = "ctrlPersonCardWithFilter1";
@@ -105,6 +106,7 @@
             // 
             // tpApplicationInfo
             // 
+            this.tpApplicationInfo.BackColor = System.Drawing.Color.AntiqueWhite;
             this.tpApplicationInfo.Controls.Add(this.cbLicenseClasses);
             this.tpApplicationInfo.Controls.Add(this.pictureBox4);
             this.tpApplicationInfo.Controls.Add(this.lblLicenseClassTitle);
@@ -119,13 +121,13 @@
             this.tpApplicationInfo.Controls.Add(this.pictureBox1);
             this.tpApplicationInfo.Controls.Add(this.lblApplicationFeesTitle);
             this.tpApplicationInfo.Controls.Add(this.lblApplicationDateTitle);
+            this.tpApplicationInfo.ForeColor = System.Drawing.SystemColors.ControlText;
             this.tpApplicationInfo.Location = new System.Drawing.Point(4, 22);
             this.tpApplicationInfo.Name = "tpApplicationInfo";
             this.tpApplicationInfo.Padding = new System.Windows.Forms.Padding(3);
             this.tpApplicationInfo.Size = new System.Drawing.Size(910, 431);
             this.tpApplicationInfo.TabIndex = 1;
             this.tpApplicationInfo.Text = "Application Info";
-            this.tpApplicationInfo.UseVisualStyleBackColor = true;
             this.tpApplicationInfo.Click += new System.EventHandler(this.tpApplicationInfo_Click);
             // 
             // cbLicenseClasses
@@ -190,6 +192,7 @@
             // lblApplicationDate
             // 
             this.lblApplicationDate.AutoSize = true;
+            this.lblApplicationDate.BackColor = System.Drawing.Color.AntiqueWhite;
             this.lblApplicationDate.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApplicationDate.ForeColor = System.Drawing.Color.Red;
             this.lblApplicationDate.Location = new System.Drawing.Point(250, 132);
@@ -280,8 +283,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnSave.Location = new System.Drawing.Point(479, 567);
+            this.btnSave.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(478, 557);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(101, 37);
             this.btnSave.TabIndex = 5;
@@ -291,12 +295,13 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnCancel.Location = new System.Drawing.Point(363, 567);
+            this.btnCancel.BackColor = System.Drawing.Color.Goldenrod;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Location = new System.Drawing.Point(359, 557);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(101, 37);
             this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Close";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -304,7 +309,7 @@
             // 
             this.lblMainTitle.AutoSize = true;
             this.lblMainTitle.Font = new System.Drawing.Font("Palatino Linotype", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMainTitle.ForeColor = System.Drawing.Color.Red;
+            this.lblMainTitle.ForeColor = System.Drawing.Color.PeachPuff;
             this.lblMainTitle.Location = new System.Drawing.Point(322, 41);
             this.lblMainTitle.Name = "lblMainTitle";
             this.lblMainTitle.Size = new System.Drawing.Size(311, 39);
@@ -315,6 +320,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(967, 605);
             this.Controls.Add(this.lblMainTitle);
             this.Controls.Add(this.btnSave);

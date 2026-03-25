@@ -54,6 +54,7 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(527, 262);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(219, 20);
             this.txtPassword.TabIndex = 2;
             // 
@@ -90,9 +91,9 @@
             this.cbRememberMe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbRememberMe.Location = new System.Drawing.Point(527, 306);
             this.cbRememberMe.Name = "cbRememberMe";
-            this.cbRememberMe.Size = new System.Drawing.Size(120, 24);
+            this.cbRememberMe.Size = new System.Drawing.Size(133, 24);
             this.cbRememberMe.TabIndex = 6;
-            this.cbRememberMe.Text = "Remebre Me";
+            this.cbRememberMe.Text = "Remember Me";
             this.cbRememberMe.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
@@ -118,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Chocolate;
+            this.BackColor = System.Drawing.Color.Coral;
             this.ClientSize = new System.Drawing.Size(800, 398);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.cbRememberMe);

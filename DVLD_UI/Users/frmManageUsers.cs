@@ -195,5 +195,10 @@ namespace DVLD_UI.Users
             _RefreshAllUsers();
             return;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

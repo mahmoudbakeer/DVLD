@@ -40,6 +40,7 @@ namespace DVLD_UI.Users
                 txtUserName.Text = User.UserName;
                 txtPassword.Text = User.Password;
                 txtConfirmpassword.Text = User.Password;
+                cbIsActive.Checked = User.IsActive;
             }
         }
         private void _FillInfo()

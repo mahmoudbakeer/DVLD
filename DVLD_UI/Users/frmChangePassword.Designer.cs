@@ -52,6 +52,7 @@
             // 
             // ctrlUserCard1
             // 
+            this.ctrlUserCard1.BackColor = System.Drawing.SystemColors.Window;
             this.ctrlUserCard1.Location = new System.Drawing.Point(2, 138);
             this.ctrlUserCard1.Name = "ctrlUserCard1";
             this.ctrlUserCard1.Size = new System.Drawing.Size(854, 402);
@@ -152,11 +153,11 @@
             // lblMainTitle
             // 
             this.lblMainTitle.AutoSize = true;
-            this.lblMainTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMainTitle.ForeColor = System.Drawing.Color.Blue;
-            this.lblMainTitle.Location = new System.Drawing.Point(301, 60);
+            this.lblMainTitle.Font = new System.Drawing.Font("Palatino Linotype", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMainTitle.ForeColor = System.Drawing.Color.Azure;
+            this.lblMainTitle.Location = new System.Drawing.Point(283, 49);
             this.lblMainTitle.Name = "lblMainTitle";
-            this.lblMainTitle.Size = new System.Drawing.Size(225, 29);
+            this.lblMainTitle.Size = new System.Drawing.Size(274, 43);
             this.lblMainTitle.TabIndex = 22;
             this.lblMainTitle.Text = "Change Passowrd";
             // 
@@ -167,7 +168,7 @@
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnSave.Location = new System.Drawing.Point(654, 577);
+            this.btnSave.Location = new System.Drawing.Point(722, 580);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(109, 33);
             this.btnSave.TabIndex = 23;
@@ -178,7 +179,7 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnCancel.Location = new System.Drawing.Point(654, 642);
+            this.btnCancel.Location = new System.Drawing.Point(722, 640);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 33);
             this.btnCancel.TabIndex = 24;
@@ -190,7 +191,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackColor = System.Drawing.Color.YellowGreen;
             this.ClientSize = new System.Drawing.Size(856, 757);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);

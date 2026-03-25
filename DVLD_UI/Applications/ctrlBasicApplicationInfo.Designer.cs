@@ -44,7 +44,7 @@
             this.lblStatusDate = new System.Windows.Forms.Label();
             this.lblFees = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
-            this.lblApplicationTypeID = new System.Windows.Forms.Label();
+            this.lblApplicationType = new System.Windows.Forms.Label();
             this.lblApplicantID = new System.Windows.Forms.Label();
             this.lblApplicationID = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -82,7 +82,7 @@
             this.gpApplicationBasicInfo.Controls.Add(this.lblStatusDate);
             this.gpApplicationBasicInfo.Controls.Add(this.lblFees);
             this.gpApplicationBasicInfo.Controls.Add(this.lblStatus);
-            this.gpApplicationBasicInfo.Controls.Add(this.lblApplicationTypeID);
+            this.gpApplicationBasicInfo.Controls.Add(this.lblApplicationType);
             this.gpApplicationBasicInfo.Controls.Add(this.lblApplicantID);
             this.gpApplicationBasicInfo.Controls.Add(this.lblApplicationID);
             this.gpApplicationBasicInfo.Controls.Add(this.label6);
@@ -93,9 +93,9 @@
             this.gpApplicationBasicInfo.Controls.Add(this.label1);
             this.gpApplicationBasicInfo.Controls.Add(this.lblAppIDTitile);
             this.gpApplicationBasicInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpApplicationBasicInfo.Location = new System.Drawing.Point(3, 3);
+            this.gpApplicationBasicInfo.Location = new System.Drawing.Point(0, 3);
             this.gpApplicationBasicInfo.Name = "gpApplicationBasicInfo";
-            this.gpApplicationBasicInfo.Size = new System.Drawing.Size(821, 253);
+            this.gpApplicationBasicInfo.Size = new System.Drawing.Size(828, 262);
             this.gpApplicationBasicInfo.TabIndex = 0;
             this.gpApplicationBasicInfo.TabStop = false;
             this.gpApplicationBasicInfo.Text = "Application Basic Info";
@@ -104,7 +104,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = global::DVLD_UI.Properties.Resources.date_of_birth;
-            this.pictureBox8.Location = new System.Drawing.Point(584, 188);
+            this.pictureBox8.Location = new System.Drawing.Point(595, 188);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(29, 29);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -127,7 +127,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label4.Location = new System.Drawing.Point(453, 197);
+            this.label4.Location = new System.Drawing.Point(502, 197);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 20);
             this.label4.TabIndex = 21;
@@ -136,7 +136,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::DVLD_UI.Properties.Resources.money;
-            this.pictureBox7.Location = new System.Drawing.Point(584, 135);
+            this.pictureBox7.Location = new System.Drawing.Point(595, 135);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(29, 29);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -146,7 +146,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = global::DVLD_UI.Properties.Resources.user;
-            this.pictureBox6.Location = new System.Drawing.Point(584, 88);
+            this.pictureBox6.Location = new System.Drawing.Point(595, 88);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(29, 29);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -156,7 +156,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::DVLD_UI.Properties.Resources.date_of_birth;
-            this.pictureBox5.Location = new System.Drawing.Point(584, 40);
+            this.pictureBox5.Location = new System.Drawing.Point(595, 40);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(29, 29);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -261,16 +261,16 @@
             this.lblStatus.Text = "###";
             this.lblStatus.Click += new System.EventHandler(this.lblStatus_Click);
             // 
-            // lblApplicationTypeID
+            // lblApplicationType
             // 
-            this.lblApplicationTypeID.AutoSize = true;
-            this.lblApplicationTypeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApplicationTypeID.ForeColor = System.Drawing.Color.Crimson;
-            this.lblApplicationTypeID.Location = new System.Drawing.Point(217, 144);
-            this.lblApplicationTypeID.Name = "lblApplicationTypeID";
-            this.lblApplicationTypeID.Size = new System.Drawing.Size(36, 20);
-            this.lblApplicationTypeID.TabIndex = 9;
-            this.lblApplicationTypeID.Text = "###";
+            this.lblApplicationType.AutoSize = true;
+            this.lblApplicationType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApplicationType.ForeColor = System.Drawing.Color.Crimson;
+            this.lblApplicationType.Location = new System.Drawing.Point(217, 144);
+            this.lblApplicationType.Name = "lblApplicationType";
+            this.lblApplicationType.Size = new System.Drawing.Size(36, 20);
+            this.lblApplicationType.TabIndex = 9;
+            this.lblApplicationType.Text = "###";
             // 
             // lblApplicantID
             // 
@@ -299,7 +299,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label6.Location = new System.Drawing.Point(453, 97);
+            this.label6.Location = new System.Drawing.Point(473, 97);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(108, 20);
             this.label6.TabIndex = 6;
@@ -310,7 +310,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(453, 49);
+            this.label5.Location = new System.Drawing.Point(473, 49);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 20);
             this.label5.TabIndex = 5;
@@ -332,7 +332,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label3.Location = new System.Drawing.Point(453, 144);
+            this.label3.Location = new System.Drawing.Point(502, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 20);
             this.label3.TabIndex = 3;
@@ -377,7 +377,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gpApplicationBasicInfo);
             this.Name = "ctrlBasicApplicationInfo";
-            this.Size = new System.Drawing.Size(828, 258);
+            this.Size = new System.Drawing.Size(828, 265);
+            this.Load += new System.EventHandler(this.ctrlBasicApplicationInfo_Load);
             this.gpApplicationBasicInfo.ResumeLayout(false);
             this.gpApplicationBasicInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
@@ -406,7 +407,7 @@
         private System.Windows.Forms.Label lblStatusDate;
         private System.Windows.Forms.Label lblFees;
         private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.Label lblApplicationTypeID;
+        private System.Windows.Forms.Label lblApplicationType;
         private System.Windows.Forms.Label lblApplicantID;
         private System.Windows.Forms.Label lblApplicationID;
         private System.Windows.Forms.PictureBox pictureBox7;

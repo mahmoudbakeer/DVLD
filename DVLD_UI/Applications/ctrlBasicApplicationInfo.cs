@@ -35,8 +35,8 @@ namespace DVLD_UI.Applications
                 lblApplicantID.Text = _Application.PersonInfo.FirstName.ToString();
                 lblApplicationType.Text = _Application.ApplicationTypeInfo.ApplicationTypeTitle.ToString(); ;
                 lblFees.Text = _Application.PaidFees.ToString();
-                lblStatusDate.Text = _Application.LastStatusDate.ToString();
-                lblDate.Text = _Application.ApplicationDate.ToString();
+                lblStatusDate.Text = _Application.LastStatusDate.Date.ToString("yyyy-mm-dd");
+                lblDate.Text = _Application.ApplicationDate.Date.ToString("yyyy-mm-dd");
                 lblCreatedBy.Text = _Application.UserInfo.UserName.ToString();
                 lblStatus.Text = _Application.getStatusText;
             }

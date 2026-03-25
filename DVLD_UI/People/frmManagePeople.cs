@@ -140,6 +140,9 @@ namespace DVLD_UI
                 case "Phone":
                     FilterColumn = "Phone";
                     break;
+                case "Gendor":
+                    FilterColumn = "Gendor";
+                    break;
                 case "None":
                     FilterColumn = "None";
                     break;
@@ -170,6 +173,9 @@ namespace DVLD_UI
             }
         }
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

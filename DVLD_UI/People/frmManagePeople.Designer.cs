@@ -42,8 +42,9 @@
             this.btnAddNewPerson = new System.Windows.Forms.Button();
             this.cbSortBy = new System.Windows.Forms.ComboBox();
             this.SortTitle = new System.Windows.Forms.Label();
-            this.pbManagePeopleForm = new System.Windows.Forms.PictureBox();
             this.txtFilter = new System.Windows.Forms.TextBox();
+            this.pbManagePeopleForm = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAllPeople)).BeginInit();
             this.cmsManagePerson.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbManagePeopleForm)).BeginInit();
@@ -53,8 +54,8 @@
             // 
             this.ManagePeopleTitle.AutoSize = true;
             this.ManagePeopleTitle.Font = new System.Drawing.Font("Palatino Linotype", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ManagePeopleTitle.ForeColor = System.Drawing.Color.Blue;
-            this.ManagePeopleTitle.Location = new System.Drawing.Point(340, 195);
+            this.ManagePeopleTitle.ForeColor = System.Drawing.Color.BlanchedAlmond;
+            this.ManagePeopleTitle.Location = new System.Drawing.Point(338, 182);
             this.ManagePeopleTitle.Name = "ManagePeopleTitle";
             this.ManagePeopleTitle.Size = new System.Drawing.Size(227, 43);
             this.ManagePeopleTitle.TabIndex = 1;
@@ -65,7 +66,7 @@
             this.dgvAllPeople.AllowUserToAddRows = false;
             this.dgvAllPeople.AllowUserToDeleteRows = false;
             this.dgvAllPeople.AllowUserToOrderColumns = true;
-            this.dgvAllPeople.BackgroundColor = System.Drawing.Color.LightSalmon;
+            this.dgvAllPeople.BackgroundColor = System.Drawing.Color.LightGreen;
             this.dgvAllPeople.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAllPeople.ContextMenuStrip = this.cmsManagePerson;
             this.dgvAllPeople.Location = new System.Drawing.Point(5, 298);
@@ -85,31 +86,31 @@
             this.tsmAddNewPerson,
             this.toolStripMenuItem3});
             this.cmsManagePerson.Name = "contextMenuStrip1";
-            this.cmsManagePerson.Size = new System.Drawing.Size(181, 132);
+            this.cmsManagePerson.Size = new System.Drawing.Size(163, 110);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(159, 6);
             // 
             // tsmShowDetails
             // 
             this.tsmShowDetails.Image = global::DVLD_UI.Properties.Resources.show_details;
             this.tsmShowDetails.Name = "tsmShowDetails";
-            this.tsmShowDetails.Size = new System.Drawing.Size(180, 22);
+            this.tsmShowDetails.Size = new System.Drawing.Size(162, 22);
             this.tsmShowDetails.Text = "Show Details";
             this.tsmShowDetails.Click += new System.EventHandler(this.tsmShowDetails_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(159, 6);
             // 
             // tsmDeletePerson
             // 
             this.tsmDeletePerson.Image = global::DVLD_UI.Properties.Resources.delete;
             this.tsmDeletePerson.Name = "tsmDeletePerson";
-            this.tsmDeletePerson.Size = new System.Drawing.Size(180, 22);
+            this.tsmDeletePerson.Size = new System.Drawing.Size(162, 22);
             this.tsmDeletePerson.Text = "Delete Person";
             this.tsmDeletePerson.Click += new System.EventHandler(this.tsmDeletePerson_Click);
             // 
@@ -117,7 +118,7 @@
             // 
             this.tsmEditPerson.Image = global::DVLD_UI.Properties.Resources.update;
             this.tsmEditPerson.Name = "tsmEditPerson";
-            this.tsmEditPerson.Size = new System.Drawing.Size(180, 22);
+            this.tsmEditPerson.Size = new System.Drawing.Size(162, 22);
             this.tsmEditPerson.Text = "Edit Info";
             this.tsmEditPerson.Click += new System.EventHandler(this.tsmEditPerson_Click);
             // 
@@ -125,23 +126,23 @@
             // 
             this.tsmAddNewPerson.Image = global::DVLD_UI.Properties.Resources.Addnew;
             this.tsmAddNewPerson.Name = "tsmAddNewPerson";
-            this.tsmAddNewPerson.Size = new System.Drawing.Size(180, 22);
+            this.tsmAddNewPerson.Size = new System.Drawing.Size(162, 22);
             this.tsmAddNewPerson.Text = "Add New Person";
             this.tsmAddNewPerson.Click += new System.EventHandler(this.tsmAddNewPerson_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(159, 6);
             // 
             // btnAddNewPerson
             // 
             this.btnAddNewPerson.BackColor = System.Drawing.Color.SandyBrown;
             this.btnAddNewPerson.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddNewPerson.ForeColor = System.Drawing.Color.Black;
-            this.btnAddNewPerson.Location = new System.Drawing.Point(777, 228);
+            this.btnAddNewPerson.Location = new System.Drawing.Point(777, 246);
             this.btnAddNewPerson.Name = "btnAddNewPerson";
-            this.btnAddNewPerson.Size = new System.Drawing.Size(129, 53);
+            this.btnAddNewPerson.Size = new System.Drawing.Size(129, 35);
             this.btnAddNewPerson.TabIndex = 3;
             this.btnAddNewPerson.Text = "AddNew";
             this.btnAddNewPerson.UseVisualStyleBackColor = false;
@@ -179,16 +180,6 @@
             this.SortTitle.TabIndex = 5;
             this.SortTitle.Text = "Sort By";
             // 
-            // pbManagePeopleForm
-            // 
-            this.pbManagePeopleForm.Image = global::DVLD_UI.Properties.Resources.group;
-            this.pbManagePeopleForm.Location = new System.Drawing.Point(309, 40);
-            this.pbManagePeopleForm.Name = "pbManagePeopleForm";
-            this.pbManagePeopleForm.Size = new System.Drawing.Size(278, 139);
-            this.pbManagePeopleForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbManagePeopleForm.TabIndex = 0;
-            this.pbManagePeopleForm.TabStop = false;
-            // 
             // txtFilter
             // 
             this.txtFilter.Location = new System.Drawing.Point(309, 259);
@@ -197,12 +188,36 @@
             this.txtFilter.TabIndex = 6;
             this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 
+            // pbManagePeopleForm
+            // 
+            this.pbManagePeopleForm.Image = global::DVLD_UI.Properties.Resources.peopleNew;
+            this.pbManagePeopleForm.Location = new System.Drawing.Point(309, 40);
+            this.pbManagePeopleForm.Name = "pbManagePeopleForm";
+            this.pbManagePeopleForm.Size = new System.Drawing.Size(278, 139);
+            this.pbManagePeopleForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbManagePeopleForm.TabIndex = 0;
+            this.pbManagePeopleForm.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.PowderBlue;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(777, 599);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(129, 35);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Close";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmManagePeople
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(939, 620);
+            this.BackColor = System.Drawing.Color.IndianRed;
+            this.ClientSize = new System.Drawing.Size(939, 648);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.SortTitle);
             this.Controls.Add(this.cbSortBy);
@@ -238,5 +253,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmAddNewPerson;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.TextBox txtFilter;
+        private System.Windows.Forms.Button button1;
     }
 }

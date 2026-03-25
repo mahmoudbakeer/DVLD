@@ -27,6 +27,7 @@ namespace DVLD_BusinessLogic
         public string ImagePath { set; get; }
         public string Gendor {  set; get; }
         public string NationalNo { set; get; }
+        public string FullName { get { return this.FirstName + " " + this.LastName; } }
         public int Age
         {
             get;
@@ -55,18 +56,20 @@ namespace DVLD_BusinessLogic
 
         }
 
-        private clsPerson(int ID, 
-            string FirstName, 
-            string LastName,
-            string SecondName, 
+        private clsPerson(
+            int ID,
+            string FirstName,
+            string SecondName,
             string ThirdName,
+            string LastName,
             string Email, 
             string Phone, 
             string Address, 
             DateTime DateOfBirth,
             int NationalityCountryID, 
             string NationalNo,
-            string ImagePath)
+            string ImagePath,
+            string Gendor)
 
         {
             this.ID = ID;
@@ -80,6 +83,7 @@ namespace DVLD_BusinessLogic
             this.DateOfBirth = DateOfBirth;
             this.NationalityCountryID = NationalityCountryID;
             this.NationalNo = NationalNo;
+            this.Gendor = Gendor;
             this.ImagePath = ImagePath;
             this.Age = DateTime.Now.Year - DateOfBirth.Year;
             if (DateOfBirth > DateTime.Today.AddYears(-Age)) Age--;
@@ -147,7 +151,7 @@ namespace DVLD_BusinessLogic
              DateOfBirth,
              NationalityCountryID,
              NationalNo,
-             ImagePath);
+             ImagePath , Gendor);
             else
                 return null;
         }
@@ -172,7 +176,7 @@ namespace DVLD_BusinessLogic
              DateOfBirth,
              NationalityCountryID,
              NationalNo,
-             ImagePath);
+             ImagePath,Gendor);
             else
                 return null;
         }

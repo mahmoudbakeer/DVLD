@@ -76,6 +76,7 @@ namespace DVLD_UI.Tests
             if (_TestType.UpdateTestType())
             {
                 MessageBox.Show("Successfully Updated", "Updated!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnSave.Enabled = false;
                 this.Close();
             }
             else

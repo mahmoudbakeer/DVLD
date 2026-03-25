@@ -40,6 +40,7 @@
             this.ctrlScheduleTest1.Size = new System.Drawing.Size(485, 727);
             this.ctrlScheduleTest1.TabIndex = 0;
             this.ctrlScheduleTest1.TestType = DVLD_BusinessLogic.clsTestType.enTestType.Vision;
+            this.ctrlScheduleTest1.Load += new System.EventHandler(this.ctrlScheduleTest1_Load);
             // 
             // btnClose
             // 

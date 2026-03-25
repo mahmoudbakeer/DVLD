@@ -39,5 +39,10 @@ namespace DVLD_UI.Tests
             frm.ShowDialog();
             _RefreshAllTestTypes();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

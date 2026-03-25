@@ -72,6 +72,8 @@ namespace DVLD_UI.Tests
             if(Test.Save() && _Appointment.Save())
             {
                 MessageBox.Show("Succeseded", "Test Result Subitted Successfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ctrlTestTypeInfo1.LoadTestTypeInfo(_LocalDrivingLicenseApplicationID, _TestType,Test.TestID);
+                btnSave.Enabled = false;
                 return;
             }
             else

@@ -35,6 +35,7 @@
             this.lblMainTitle = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTestTypes)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,13 +59,13 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.editTestTypeToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(147, 26);
             // 
             // editTestTypeToolStripMenuItem
             // 
             this.editTestTypeToolStripMenuItem.Image = global::DVLD_UI.Properties.Resources.update;
             this.editTestTypeToolStripMenuItem.Name = "editTestTypeToolStripMenuItem";
-            this.editTestTypeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editTestTypeToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.editTestTypeToolStripMenuItem.Text = "Edit Test Type";
             this.editTestTypeToolStripMenuItem.Click += new System.EventHandler(this.editTestTypeToolStripMenuItem_Click);
             // 
@@ -93,16 +94,30 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // frmTestManagment
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Crimson;
+            this.button1.Font = new System.Drawing.Font("Palatino Linotype", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.button1.Location = new System.Drawing.Point(847, 554);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(105, 37);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Close";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // frmTestTypeManagment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(964, 603);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblMainTitle);
             this.Controls.Add(this.dgvTestTypes);
-            this.Name = "frmTestManagment";
+            this.Name = "frmTestTypeManagment";
             this.Text = "frmTestManagment";
             this.Load += new System.EventHandler(this.frmTestManagment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTestTypes)).EndInit();
@@ -122,5 +137,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editTestTypeToolStripMenuItem;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button button1;
     }
 }

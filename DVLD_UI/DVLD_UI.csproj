@@ -229,6 +229,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="clsRegistryUtil.cs" />
     <Compile Include="Tests\Controllers\ctrlScheduleTest.cs">
       <SubType>UserControl</SubType>
     </Compile>

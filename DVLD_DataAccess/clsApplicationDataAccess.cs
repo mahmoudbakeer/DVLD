@@ -53,7 +53,7 @@ namespace DVLD_DataAccess
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("Error :" + ex.Message);
+                        clsEventLogger.LogError(ex.Message);
                         }
                     }
                 }
@@ -101,7 +101,7 @@ namespace DVLD_DataAccess
                 catch (Exception ex)
                 {
                     // Use a proper logging framework in production
-                    Console.WriteLine("Error : " + ex.ToString());
+                    clsEventLogger.LogError(ex.Message);
                 }
             }
 
@@ -150,10 +150,11 @@ namespace DVLD_DataAccess
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("Error :" + ex.ToString());
-                        }
+                        clsEventLogger.LogError(ex.Message);
 
                     }
+
+                }
                 }
 
                 return (rowsAffected > 0);
@@ -182,7 +183,7 @@ namespace DVLD_DataAccess
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine("Error :" + ex.ToString());
+                        clsEventLogger.LogError(ex.Message);
                     }
 
                 }
@@ -243,15 +244,18 @@ namespace DVLD_DataAccess
                         }
                         catch (SqlException ex) when (ex.Number == 547)
                         {
-                            // Foreign key violation
-                            return false;
+                                // Foreign key violation
+                             clsEventLogger.LogError(ex.Message);
+
+                        return false;
                         }
                         catch (SqlException)
                         {
                             throw; // preserve stack trace
-                        }
 
                     }
+
+                }
                 }
 
                 return (rowsAffected > 0);
@@ -283,8 +287,10 @@ namespace DVLD_DataAccess
                         }
                         catch (Exception ex)
                         {
-                            //Console.WriteLine("Error: " + ex.Message);
-                            isFound = false;
+                                //Console.WriteLine("Error: " + ex.Message);
+                                clsEventLogger.LogError(ex.Message);
+
+                                isFound = false;
                         }
                     }
                 }
@@ -317,7 +323,8 @@ namespace DVLD_DataAccess
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("Error : " + ex.ToString());
+                                clsEventLogger.LogError(ex.Message);
+                                Console.WriteLine("Error : " + ex.ToString());
                         }
 
                     }

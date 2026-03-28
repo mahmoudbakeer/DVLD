@@ -49,6 +49,8 @@ namespace DVLD_DataAccess
                     catch (Exception ex)
                     {
                         Console.WriteLine("Error :" + ex.Message);
+                        clsEventLogger.LogError(ex.Message);
+
                     }
                 }
             }
@@ -90,6 +92,8 @@ namespace DVLD_DataAccess
                     catch (Exception ex)
                     {
                         Console.WriteLine("Error :" + ex.Message);
+                        clsEventLogger.LogError(ex.Message);
+
                     }
                 }
             }
@@ -129,6 +133,8 @@ namespace DVLD_DataAccess
                     catch (Exception ex)
                     {
                         throw;
+                        clsEventLogger.LogError(ex.Message);
+
                     }
                 }
 

@@ -188,11 +188,14 @@ namespace DVLD_DataAccess
                     catch (SqlException ex) when (ex.Number == 547)
                     {
                         // Foreign key violation
+                        clsEventLogger.LogError(ex.Message);
                         return false;
                     }
-                    catch (SqlException)
+                    catch (SqlException ex)
                     {
                         throw; // preserve stack trace
+                        clsEventLogger.LogError(ex.Message);
+
                     }
 
                 }
@@ -227,6 +230,8 @@ namespace DVLD_DataAccess
                     catch (SqlException)
                     {
                         throw; // preserve stack trace
+                        clsEventLogger.LogError(ex.Message);
+
                     }
 
                 }

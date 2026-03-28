@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -52,6 +53,7 @@ namespace DVLD_DataAccess
             catch (Exception ex)
             {
                 //Console.WriteLine("Error: " + ex.Message);
+                clsEventLogger.LogError(ex.Message);
                 isFound = false;
             }
             finally
@@ -105,6 +107,7 @@ namespace DVLD_DataAccess
             catch (Exception ex)
             {
                 //Console.WriteLine("Error: " + ex.Message);
+                clsEventLogger.LogError(ex.Message);
                 isFound = false;
             }
             finally
@@ -142,8 +145,9 @@ namespace DVLD_DataAccess
                     connection.Open();
                     rowsAffected = command.ExecuteNonQuery();
                 }
-                catch
+                catch (Exception ex)
                 {
+                    clsEventLogger.LogError(ex.Message);
                     return false;
                 }
             }
@@ -181,6 +185,8 @@ namespace DVLD_DataAccess
             catch (Exception ex)
             {
                 // Console.WriteLine("Error: " + ex.Message);
+                clsEventLogger.LogError(ex.Message);
+
             }
             finally
             {

@@ -40,6 +40,7 @@ namespace DVLD_DataAccess
                 else
                 {
                     // The record was not found
+
                     isFound = false;
                 }
 
@@ -50,6 +51,8 @@ namespace DVLD_DataAccess
             catch (Exception ex)
             {
                 //Console.WriteLine("Error: " + ex.Message);
+                clsEventLogger.LogError(ex.Message);
+
                 isFound = false;
             }
             finally
@@ -87,6 +90,7 @@ namespace DVLD_DataAccess
             catch (Exception ex)
             {
                 //Console.WriteLine("Error: " + ex.Message);
+                clsEventLogger.LogError(ex.Message);
                 return false;
             }
 
@@ -128,6 +132,7 @@ namespace DVLD_DataAccess
             catch (Exception ex)
             {
                 // Console.WriteLine("Error: " + ex.Message);
+                clsEventLogger.LogError(ex.Message);
             }
             finally
             {

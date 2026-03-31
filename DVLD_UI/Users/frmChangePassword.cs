@@ -38,8 +38,8 @@ namespace DVLD_UI.Users
             {
                 ctrlUserCard1.LoadUser(UserID);
                 txtUserName.Text = User.UserName;
-                txtPassword.Text = User.Password;
-                txtConfirmpassword.Text = User.Password;
+                txtPassword.Text = string.Empty;
+                txtConfirmpassword.Text = string.Empty;
                 cbIsActive.Checked = User.IsActive;
             }
         }
@@ -47,7 +47,7 @@ namespace DVLD_UI.Users
         {
             if (!_validatetxtboxes()) return;
             _User.UserName = txtUserName.Text.Trim();
-            _User.Password = txtPassword.Text.Trim();
+            _User.Password = clsHashing.HashString(txtPassword.Text.Trim());
             _User.IsActive = cbIsActive.Checked;
         }
         private bool _validatetxtboxes()

@@ -28,7 +28,7 @@ namespace DVLD_UI
         {
             clsGlobalUser.gUser = clsUser.GetUserByUserNameAndPassword(
                 txtUserName.Text.Trim(),
-                txtPassword.Text.Trim());
+                clsHashing.HashString(txtPassword.Text.Trim()));
 
             if (clsGlobalUser.gUser != null)
             {

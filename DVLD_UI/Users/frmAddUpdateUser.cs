@@ -77,8 +77,13 @@ namespace DVLD_UI.Users
             _PersonID = user.PersonID;
             TabEnabled = true;
             txtUserName.Text = user.UserName;
-            txtPassword.Text = user.Password;
-            txtConfirmpassword.Text = user.Password;
+            txtPassword.Text = string.Empty;
+            txtConfirmpassword.Text = string.Empty;
+            if (_Mode == enMode.Update)
+            {
+                txtConfirmpassword.Enabled = false;
+                txtPassword.Enabled = false;
+            }
             cbIsActive.Checked = user.IsActive;
         }
         private void tabPage1_Click(object sender, EventArgs e)
@@ -97,12 +102,11 @@ namespace DVLD_UI.Users
         {
             if (!_validatePerosn()) return false;
             if(!_validatetxtboxes()) return false;
+            if (_Mode == enMode.Addnew) user.Password = clsHashing.HashString(txtPassword.Text);
             user.PersonID = PersonID;
             user.UserName = txtUserName.Text;
-            user.Password = txtPassword.Text;
             user.IsActive = cbIsActive.Checked;
             return true;
-
         }
         private bool _validatetxtboxes()
         {
@@ -119,19 +123,19 @@ namespace DVLD_UI.Users
                 txtUserName.Focus();
                 return false;
             }
-            if(string.IsNullOrEmpty(txtPassword.Text))
+            if(_Mode == enMode.Addnew && string.IsNullOrEmpty(txtPassword.Text))
             {
                 errorProvider1.SetError(txtPassword, "Cannot be empty!");
                 txtPassword.Focus();
                 return false;
             }
-            if (string.IsNullOrEmpty(txtConfirmpassword.Text))
+            if (_Mode == enMode.Addnew && string.IsNullOrEmpty(txtConfirmpassword.Text))
             {
                 errorProvider1.SetError(txtConfirmpassword, "Cannot be empty!");
                 txtConfirmpassword.Focus();
                 return false;
             }
-            else if (txtConfirmpassword.Text.Trim() != txtPassword.Text.Trim()) 
+            else if (_Mode == enMode.Addnew && txtConfirmpassword.Text.Trim() != txtPassword.Text.Trim()) 
             {
                 errorProvider1.SetError(txtConfirmpassword, "Confirmation Is wrong!!");
                 txtConfirmpassword.Focus();

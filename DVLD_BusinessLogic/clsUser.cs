@@ -55,7 +55,7 @@ namespace DVLD_BusinessLogic
         {
             //call DataAccess Layer 
 
-            this.ID = clsUsersDataAccess.AddNewUser(PersonID, UserName, Password, IsActive);
+            this.ID = clsUsersDataAccess.AddNewUser(PersonID, UserName, clsHashing.HashString(this.Password), IsActive);
 
             return (this.ID != -1);
         }

@@ -227,7 +227,7 @@ namespace DVLD_DataAccess
                         // Foreign key violation
                         return false;
                     }
-                    catch (SqlException)
+                    catch (SqlException ex)
                     {
                         throw; // preserve stack trace
                         clsEventLogger.LogError(ex.Message);
